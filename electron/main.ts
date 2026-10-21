@@ -1,3 +1,4 @@
+import { REVIEW_LIMIT } from "../src/shared/tutoring.js";
 import { Recordings } from "./recordings.js";
 import { maxRecordingBytes, parseSketch } from "../src/shared/music.js";
 import {
@@ -15,7 +16,7 @@ import { z } from "zod";
 import { ContentManager } from "./content.js";
 import { Store } from "./store.js";
 import { KeyVault } from "./vault.js";
-import { askTutor, testAIConnection } from "./tutor.js";
+import { askTutor, testAIConnection, introduceLesson } from "./tutor.js";
 import { setCurriculum, lessons } from "../src/shared/curriculum.js";
 import { trustedSender } from "./security.js";
 import {
@@ -36,6 +37,7 @@ let window: BrowserWindow;
 let busy = false;
 let allowClose = false;
 let closing = false;
+let rendererReady = false;
 let vault: KeyVault;
 let microphoneUntil = 0;
 function handle(channel: string, fn: (...args: any[]) => unknown) {
@@ -92,6 +94,11 @@ if (ownsProfile)
       });
       window.on("close", (event) => {
         if (allowClose) return;
+        // Before the renderer registers its save listener no editing can have begun.
+        if (!rendererReady) {
+          allowClose = true;
+          return;
+        }
         event.preventDefault();
         if (closing) return;
         closing = true;
@@ -113,6 +120,9 @@ if (ownsProfile)
             window.close();
           }
         }, 8000).unref();
+      });
+      handle("renderer-ready", () => {
+        rendererReady = true;
       });
       handle("close-ready", () => {
         allowClose = true;
@@ -259,8 +269,12 @@ if (ownsProfile)
         ["history", (id: string) => store.history(id)],
       ] as const)
         handle(channel, (id) => fn(z.string().uuid().parse(id)));
-      handle("attempt", (a) =>
-        store.saveAttempt(
+      handle("attempt", (a) => {
+        if (a?.complete && busy)
+          throw Error(
+            "Wait for the Professor’s current reply before finishing practice.",
+          );
+        return store.saveAttempt(
           z
             .object({
               lessonId: z.string().max(100),
@@ -271,8 +285,8 @@ if (ownsProfile)
               practicePrompt: z.string().max(4000).optional(),
             })
             .parse(a),
-        ),
-      );
+        );
+      });
       handle("key", (raw) => vault.save(z.string().trim().max(512).parse(raw)));
       handle("test-ai", async (confirmed) => {
         z.literal(true).parse(confirmed);
@@ -287,18 +301,80 @@ if (ownsProfile)
           busy = false;
         }
       });
+      handle("tutor-start", async (raw) => {
+        const r = z
+          .object({
+            lessonId: z.string().max(100).optional(),
+            practicePrompt: z.string().max(4000).optional(),
+            restart: z.boolean().optional(),
+          })
+          .strict()
+          .parse(raw);
+        if (busy) throw Error("The Professor is already working on a request.");
+        const scope = r.lessonId || "studio",
+          lesson = lessons.find((l) => l.id === r.lessonId);
+        if (r.lessonId && !lesson) throw Error("Unknown lesson.");
+        if (r.practicePrompt && r.practicePrompt !== lesson?.transferPrompt)
+          throw Error("Unknown new exercise.");
+        const existing = store.tutorSession(scope);
+        if (
+          !r.restart &&
+          existing &&
+          existing.contentVersion === (lesson?.version || 0) &&
+          existing.practicePrompt === (r.practicePrompt || "")
+        )
+          return existing;
+        if (!lesson) return store.startTutorSession(scope, null);
+        const key = vault.read(),
+          version = lesson.version;
+        busy = true;
+        try {
+          const result = await introduceLesson(
+            key,
+            lesson.id,
+            r.practicePrompt || "",
+            store.profile(),
+            store.settings(),
+          );
+          store.recordUsage(result.usage);
+          if (!result.guidance)
+            throw Error(
+              "The Professor could not introduce this lesson. Please retry; your saved work is unchanged.",
+            );
+          if (lessons.find((l) => l.id === lesson.id)?.version !== version)
+            throw Error(
+              "The lesson changed during this request. Reopen it and retry.",
+            );
+          return store.startTutorSession(
+            scope,
+            result.guidance,
+            r.practicePrompt || "",
+          );
+        } finally {
+          busy = false;
+        }
+      });
       handle("tutor", async (raw) => {
         const r = z
           .object({
+            sessionId: z.string().uuid().optional(),
             text: z.string().trim().min(1).max(20000),
             lessonId: z.string().max(100).optional(),
             question: z.string().max(2000).optional(),
             previous: feedbackSchema.optional(),
-            confirmed: z.boolean(),
+            confirmed: z.boolean().default(true),
             practicePrompt: z.string().max(4000).optional(),
           })
           .parse(raw);
         if (busy) throw Error("A tutor request is already running.");
+        const scope = r.lessonId || "studio";
+        if (!r.lessonId && !store.tutorSession(scope))
+          store.startTutorSession(scope, null);
+        const tutorSession = store.checkTutorSession(
+          scope,
+          r.sessionId,
+          r.practicePrompt || "",
+        );
         const key = vault.read();
         busy = true;
         try {
@@ -307,16 +383,25 @@ if (ownsProfile)
           )?.version;
           const result = await askTutor(
             key,
-            r,
+            { ...r, previous: tutorSession.turns.at(-1)?.feedback },
             store.profile(),
             store.settings(),
             store.state().usage.reduce((s, u) => s + u.cost, 0),
+            undefined,
+            tutorSession.turns.length === REVIEW_LIMIT - 1,
           );
           store.recordUsage(result.usage);
           if (!result.feedback)
             throw Error(
               "The tutor returned incomplete feedback or declined this request. Token usage was recorded. Try a shorter passage.",
             );
+          store.appendTutorTurn(
+            scope,
+            tutorSession.id,
+            r.text,
+            result.feedback,
+            r.practicePrompt || "",
+          );
           if (r.lessonId)
             store.feedback(
               r.lessonId,

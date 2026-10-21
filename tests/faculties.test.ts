@@ -1,3 +1,4 @@
+import { saveReviewedAttempt } from "./tutor-support.js";
 import { blankSketch, place } from "../src/shared/music.js";
 import test from "node:test";
 import assert from "node:assert/strict";
@@ -255,7 +256,7 @@ test("completion is participation; criterion reports are append-only, self-repor
       const l = lessons[0],
         id = criterionId(l, 0),
         criteria = [{ criterionId: id, level: "independent" as const }];
-      s.saveAttempt(a());
+      saveReviewedAttempt(s, a());
       assert.equal(s.state().evidence.length, 0);
       s.recordEvidence({ lessonId: l.id, criteria });
       s.recordEvidence({ lessonId: l.id, criteria });
@@ -269,7 +270,7 @@ test("completion is participation; criterion reports are append-only, self-repor
           }),
         /fresh challenge/,
       );
-      s.saveAttempt({ ...a(), practicePrompt: l.transferPrompt });
+      saveReviewedAttempt(s, { ...a(), practicePrompt: l.transferPrompt });
       assert.throws(
         () =>
           s.recordEvidence({
@@ -278,7 +279,7 @@ test("completion is participation; criterion reports are append-only, self-repor
           }),
         /different work/,
       );
-      s.saveAttempt({
+      saveReviewedAttempt(s, {
         ...a(),
         body: "The empty room smelled of warm bread.",
         reflection: "More welcoming",
@@ -335,7 +336,10 @@ test("Music fixture stays independent and may be attempted without any Writing c
       const sketch = blankSketch();
       sketch.intent = "A quiet answer";
       sketch.phrases[0] = place(sketch.phrases[0], 0, 0, 0, 2);
-      s.saveAttempt({ ...a("music-fixture"), body: JSON.stringify(sketch) });
+      saveReviewedAttempt(s, {
+        ...a("music-fixture"),
+        body: JSON.stringify(sketch),
+      });
       assert.equal(facultyProgress(s.state(), "music").completed, 1);
       assert.equal(facultyProgress(s.state(), "writing").completed, 0);
       assert.equal(facultyProgress(s.state(), "music").xp, 40);

@@ -7,6 +7,7 @@ contextBridge.exposeInMainWorld(
     onCloseRequested: (callback: () => void) => {
       const listener = () => callback();
       ipcRenderer.on("prepare-close", listener);
+      void invoke("renderer-ready");
       return () => ipcRenderer.removeListener("prepare-close", listener);
     },
     finishClose: () => invoke("close-ready"),
@@ -28,6 +29,7 @@ contextBridge.exposeInMainWorld(
     attemptHistory: (id: string) => invoke("attempt-history", id),
     recordEvidence: (request: unknown) => invoke("evidence", request),
     saveAttempt: (a: unknown) => invoke("attempt", a),
+    startTutorSession: (r: unknown) => invoke("tutor-start", r),
     tutor: (r: unknown) => invoke("tutor", r),
     testAIConnection: (confirmed: boolean) => invoke("test-ai", confirmed),
     setKey: (key: string) => invoke("key", key),

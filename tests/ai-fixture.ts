@@ -40,8 +40,24 @@ export async function installAIFixture(
         ],
         question: "Which detail would this speaker notice first?",
       };
+      const guidance = {
+        explanation: "A concrete detail lets the reader infer a feeling.",
+        notice: "Look at the original example’s specific object.",
+        firstStep: "Write the small task in your own words.",
+        finishLine: "A short attempt and one choice you noticed are enough.",
+      };
+      const final = /This is the last review/.test(body.instructions || "");
       const text =
-        body.input === "Reply with only OK." ? "OK" : JSON.stringify(feedback);
+        body.input === "Reply with only OK."
+          ? "OK"
+          : body.text?.format?.name === "lesson_guidance"
+            ? JSON.stringify(guidance)
+            : JSON.stringify({
+                ...feedback,
+                question: final
+                  ? "Keep the detail that supports your intention. That is enough for today."
+                  : feedback.question,
+              });
       return new Response(
         JSON.stringify({
           id: "resp_fixture",

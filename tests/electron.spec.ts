@@ -92,27 +92,17 @@ test("desktop workflow: profile, practice, autosave, revisions, export and resta
     const publicState = await page.evaluate(() => window.bard.load());
     expect(JSON.stringify(publicState)).not.toContain("encryptedKey");
     await page
-      .getByRole("button", { name: "Continue learning", exact: true })
+      .getByRole("button", { name: "Start today’s lesson", exact: true })
       .click();
     await expect(
       page.getByRole("heading", { name: "Something you can touch" }),
     ).toBeVisible();
-    await page
-      .getByLabel("Your exercise")
-      .fill(
-        "One teaspoon dried beside the sink while the untouched coffee cooled.",
-      );
-    await page
-      .getByLabel("One choice worth noticing")
-      .fill(
-        "The untouched coffee suggests someone missing without naming the feeling.",
-      );
-    await page.getByRole("button", { name: "Complete practice" }).click();
+    await expect(page.getByLabel("Your exercise")).toBeDisabled();
     await expect(
-      page.getByRole("button", { name: "Lesson completed" }),
-    ).toBeVisible();
+      page.getByRole("button", { name: "Start lesson", exact: true }),
+    ).toBeDisabled();
     await expect(
-      page.getByRole("button", { name: "Ask the Professor", exact: true }),
+      page.getByRole("button", { name: "Finish practice", exact: true }),
     ).toBeDisabled();
     await page
       .getByRole("button", { name: "The Scriptorium", exact: true })
@@ -300,7 +290,6 @@ test("AI connection status and complete feedback → revision → songbook → r
       await page
         .getByRole("button", { name: "Test AI Connection", exact: true })
         .click();
-      await page.getByRole("button", { name: "Send connection test" }).click();
     }
     await testConnection();
     await expect(
@@ -336,25 +325,25 @@ test("AI connection status and complete feedback → revision → songbook → r
       .getByRole("button", { name: "The Great Hall", exact: true })
       .click();
     await page
-      .getByRole("button", { name: "Continue learning", exact: true })
+      .getByRole("button", { name: "Start today’s lesson", exact: true })
       .click();
     const original =
       "One teaspoon dried beside the sink while the untouched coffee cooled.";
     const revised =
       "One teaspoon dried beside the sink. The coffee cooled beside your empty chair.";
+    await page
+      .getByRole("button", { name: "Start lesson", exact: true })
+      .click();
+    await expect(page.getByLabel("Your exercise")).toBeEnabled();
     await page.getByLabel("Your exercise").fill(original);
     await page
-      .getByLabel("One choice worth noticing")
+      .getByLabel("What did you try, and what changed?")
       .fill("The teaspoon shows a daily habit interrupted.");
-    await page.getByRole("button", { name: "Complete practice" }).click();
     await expect(
-      page.getByRole("button", { name: "Lesson completed" }),
-    ).toBeVisible();
+      page.getByRole("button", { name: "Finish practice", exact: true }),
+    ).toBeDisabled();
     await page
       .getByRole("button", { name: "Ask the Professor", exact: true })
-      .click();
-    await page
-      .getByRole("button", { name: "Confirm request", exact: true })
       .click();
     await expect(
       page.getByRole("heading", { name: "What’s working" }),
@@ -370,6 +359,55 @@ test("AI connection status and complete feedback → revision → songbook → r
     await expect(
       page.getByRole("heading", { name: "What’s working" }),
     ).toBeVisible();
+    await page.getByRole("button", { name: /Ask a follow-up/ }).click();
+    await expect(
+      page.getByText("2 of 3 reviews used", { exact: false }),
+    ).toBeVisible();
+    await page.getByRole("button", { name: /Ask a follow-up/ }).click();
+    await expect(
+      page.getByText("That’s enough feedback for this session", {
+        exact: true,
+      }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("button", { name: /Ask a follow-up/ }),
+    ).toHaveCount(0);
+    const before = await app.evaluate(
+      () => (globalThis as any).__bardCalls.length,
+    );
+    const blocked = await page.evaluate(async () => {
+      try {
+        await window.bard.tutor({
+          lessonId: (await window.bard.load()).tutorSessions.find(
+            (s) => s.turns.length === 3,
+          )!.scope,
+          text: "Another question",
+          confirmed: true,
+        });
+        return "unexpected";
+      } catch (e) {
+        return String(e);
+      }
+    });
+    expect(blocked).toContain("three reviews");
+    expect(
+      await app.evaluate(() => (globalThis as any).__bardCalls.length),
+    ).toBe(before);
+    await page
+      .getByRole("button", { name: "Finish practice", exact: true })
+      .click();
+    await expect(
+      page.getByRole("button", { name: "Practice finished", exact: true }),
+    ).toBeVisible();
+    await page
+      .getByRole("button", { name: "The Great Hall", exact: true })
+      .click();
+    await expect(page.getByLabel("Today’s practice")).toContainText(
+      "Done for today",
+    );
+    await page
+      .getByRole("button", { name: "Reopen today’s lesson", exact: true })
+      .click();
     await page
       .getByRole("button", { name: "Open this draft in the Scriptorium" })
       .click();
@@ -399,7 +437,7 @@ test("AI connection status and complete feedback → revision → songbook → r
     await expect(
       page.getByRole("heading", { name: "What’s working" }),
     ).toBeVisible();
-    await expect(page.getByRole("note")).toContainText("earlier draft");
+    await expect(page.getByRole("note")).toHaveCount(0);
     await page.getByText("Try a revision", { exact: true }).click();
     await expect(
       page.getByLabel("Keep your original. Give the idea another pass."),
@@ -563,37 +601,69 @@ test("Phase 1 upgrades a legacy profile offline, keeps Music separate and persis
       .click();
     await expect(page.locator(".curriculum-card")).toHaveCount(38);
     await page.getByRole("button", { name: /Hear the rhyme distance/ }).click();
+    await installAIFixture(app);
+    await page.evaluate(() => window.bard.setKey("sk-test-only"));
+    await page
+      .getByRole("button", { name: "Back to the Academy", exact: true })
+      .click();
+    await page.getByRole("button", { name: /Hear the rhyme distance/ }).click();
+    await page
+      .getByRole("button", { name: "Start lesson", exact: true })
+      .click();
+    await expect(page.getByLabel("Your exercise")).toBeEnabled();
     await page
       .getByLabel("Your exercise")
       .fill("The lamp stayed bright. I left that night.");
-    await page.getByLabel("One choice worth noticing").fill("Less settled");
     await page
-      .getByRole("button", { name: "Complete practice", exact: true })
+      .getByLabel("What did you try, and what changed?")
+      .fill("Less settled");
+    await page
+      .getByRole("button", { name: "Ask the Professor", exact: true })
       .click();
     await expect(
-      page.getByRole("button", { name: "Lesson completed", exact: true }),
+      page.getByRole("heading", { name: "What’s working" }),
     ).toBeVisible();
+    await page
+      .getByRole("button", { name: "Finish practice", exact: true })
+      .click();
+    await expect(
+      page.getByRole("button", { name: "Practice finished", exact: true }),
+    ).toBeVisible();
+    await page
+      .getByText("Optional check-in: how much help did you need?", {
+        exact: true,
+      })
+      .click();
     await page
       .getByLabel("Evidence for criterion 1")
       .selectOption("independent");
     await page
-      .getByRole("button", { name: "Save skill evidence", exact: true })
+      .getByRole("button", { name: "Save my check-in", exact: true })
       .click();
     await expect(
       page.getByRole("status").filter({ hasText: "Self-assessment saved" }),
     ).toBeVisible();
     await page
-      .getByLabel("Try an unfamiliar challenge", { exact: false })
-      .check();
+      .getByRole("button", {
+        name: "Practise this skill with a new exercise",
+        exact: true,
+      })
+      .click();
+    await page
+      .getByRole("button", { name: "Start lesson", exact: true })
+      .click();
+    await expect(page.getByLabel("Your exercise")).toBeEnabled();
     await expect(page.getByLabel("Your exercise")).toHaveValue("");
     await page
       .getByLabel("Your exercise")
       .fill("Keep the lamp alive. I cannot promise life.");
-    await page.getByLabel("One choice worth noticing").fill("Open ending");
+    await page
+      .getByLabel("What did you try, and what changed?")
+      .fill("Open ending");
     await page.getByRole("button", { name: "Save draft", exact: true }).click();
     await page.getByLabel("Evidence for criterion 1").selectOption("retained");
     await page
-      .getByRole("button", { name: "Save skill evidence", exact: true })
+      .getByRole("button", { name: "Save my check-in", exact: true })
       .click();
     await expect
       .poll(

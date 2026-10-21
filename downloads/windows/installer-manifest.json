@@ -1,23 +1,23 @@
 {
-  "version": "1.2.0",
-  "file": "Bards-College-Setup-1.2.0-x64.exe",
-  "bytes": 140689627,
-  "sha256": "f180d615bd44486b612491cb29d5cb5b905459cd9cd0a15ca4b5f2b00457d5cb",
+  "version": "1.3.0",
+  "file": "Bards-College-Setup-1.3.0-x64.exe",
+  "bytes": 140693345,
+  "sha256": "36cb60a39ceaba213b59a1a82edd4cfc0602c4d14058e6d16bc29159ceb1ba98",
   "parts": [
     {
-      "file": "Bards-College-Setup-1.2.0-x64.exe.part01",
+      "file": "Bards-College-Setup-1.3.0-x64.exe.part01",
       "bytes": 51380224,
-      "sha256": "1f0983581c8b0c653ff41c3dc7a665515004bab23bc25276511f80a46f05be98"
+      "sha256": "6a791c9b9b39f60a3d5fab81fb774433ad4dfb0ba72cb7d9a1f930ce2719ada9"
     },
     {
-      "file": "Bards-College-Setup-1.2.0-x64.exe.part02",
+      "file": "Bards-College-Setup-1.3.0-x64.exe.part02",
       "bytes": 51380224,
-      "sha256": "fa3467be125de3821ba5a666cd6f6982cce28afee474f20bd81eee0dae991d67"
+      "sha256": "511d37ee8ba3558f66e15e219c23a9c0ba2bcda99adb055dac2b82fe419c8650"
     },
     {
-      "file": "Bards-College-Setup-1.2.0-x64.exe.part03",
-      "bytes": 37929179,
-      "sha256": "0e4aca454e3dc38fb912b42ba9fa57622ffc3a837ef061c173ff793dfc7a1626"
+      "file": "Bards-College-Setup-1.3.0-x64.exe.part03",
+      "bytes": 37932897,
+      "sha256": "6d35550849af2efff2a2146512fee564839744700d13feb2aed740990dfdb93b"
     }
   ]
 }

@@ -1,3 +1,4 @@
+import { saveReviewedAttempt } from "./tutor-support.js";
 import test from "node:test";
 import assert from "node:assert/strict";
 import { mkdtempSync, readFileSync, rmSync } from "node:fs";
@@ -125,33 +126,33 @@ test("snapshots deduplicate, preserve earlier writing, and cascade on delete", (
 test("participation requires a brief attempt and reflection; XP is idempotent and does not establish skill", () =>
   withStore((s) => {
     assert.throws(
-      () => s.saveAttempt({ ...attempt(), reflection: "" }),
+      () => saveReviewedAttempt(s, { ...attempt(), reflection: "" }),
       /reflection/,
     );
     assert.throws(
-      () => s.saveAttempt({ ...attempt(), body: "few words" }),
+      () => saveReviewedAttempt(s, { ...attempt(), body: "few words" }),
       /at least 3 words/,
     );
     assert.equal(s.state().attempts.length, 0);
-    s.saveAttempt(attempt());
-    s.saveAttempt(attempt());
+    saveReviewedAttempt(s, attempt());
+    saveReviewedAttempt(s, attempt());
     assert.equal(
       s.state().events.reduce((sum, e) => sum + e.xp, 0),
       40,
     );
-    s.saveAttempt({ ...attempt(), complete: false });
+    saveReviewedAttempt(s, { ...attempt(), complete: false });
     assert.ok(s.state().attempts[0].completedAt);
-    s.saveAttempt(attempt(lessons[1].id));
+    saveReviewedAttempt(s, attempt(lessons[1].id));
     assert.equal(s.state().attempts.length, 2);
   }));
 test("feedback rejects stale responses and keeps earlier notes labelled with their source after revision", () =>
   withStore((s) => {
-    s.saveAttempt(attempt());
+    saveReviewedAttempt(s, attempt());
     s.feedback(lessons[0].id, "stale text", feedback);
     assert.equal(s.state().attempts[0].feedback, null);
     s.feedback(lessons[0].id, attempt().body, feedback);
     assert.deepEqual(s.state().attempts[0].feedback, feedback);
-    s.saveAttempt({ ...attempt(), body: attempt().body + " Again." });
+    saveReviewedAttempt(s, { ...attempt(), body: attempt().body + " Again." });
     assert.deepEqual(s.state().attempts[0].feedback, feedback);
     assert.equal(s.state().attempts[0].feedbackText, attempt().body);
   }));
@@ -243,32 +244,36 @@ test("tutor uses Responses structured output, only pinned model, and lesson rubr
   assert.equal(result.usage.cost, 0.0005);
   assert.deepEqual(result.feedback, feedback);
 });
-test("missing key, confirmation and budget safeguards block before any network call", async () => {
+test("missing key blocks network; old confirmation settings and advisory budgets do not add repeated approvals", async () => {
   const r = { text: "A verse", confirmed: false };
   await assert.rejects(
-    askTutor("", r, defaultProfile, defaultSettings, 0),
+    () => askTutor("", r, defaultProfile, defaultSettings, 0),
     /API key/,
   );
-  await assert.rejects(
-    askTutor("x", r, defaultProfile, defaultSettings, 0),
-    /Confirm/,
-  );
-  await assert.rejects(
-    askTutor(
-      "x",
-      r,
-      defaultProfile,
-      {
-        ...defaultSettings,
-        confirmRequests: false,
-        inputPrice: 1,
-        outputPrice: 1,
-        budget: 1,
+  let calls = 0;
+  const client = {
+    responses: {
+      parse: async () => {
+        calls++;
+        return { output_parsed: null };
       },
-      2,
-    ),
-    /Confirm/,
+    },
+  } as unknown as OpenAI;
+  await askTutor(
+    "test",
+    r,
+    defaultProfile,
+    {
+      ...defaultSettings,
+      confirmRequests: true,
+      budget: 0.01,
+      inputPrice: 10,
+      outputPrice: 10,
+    },
+    100,
+    client,
   );
+  assert.equal(calls, 1);
 });
 test("API errors explain authentication, access, credits, rate limits and outages", () => {
   const error = (status: number, code?: string) =>

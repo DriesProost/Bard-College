@@ -86,6 +86,7 @@ export type Usage = {
   createdAt: string;
 };
 export type State = {
+  tutorSessions: import("./tutoring.js").TutorSession[];
   curriculumVersion: 1 | 2;
   sources: import("./curriculum.js").Curriculum["sources"];
   evidence: SkillEvidence[];
@@ -109,6 +110,7 @@ export type State = {
   credentialProtection: string;
 };
 export type TutorRequest = {
+  sessionId?: string;
   practicePrompt?: string;
   text: string;
   lessonId?: string;
@@ -155,6 +157,11 @@ export type API = {
     reflection: string;
     complete: boolean;
   }) => Promise<void>;
+  startTutorSession: (request: {
+    lessonId?: string;
+    practicePrompt?: string;
+    restart?: boolean;
+  }) => Promise<import("./tutoring.js").TutorSession>;
   tutor: (r: TutorRequest) => Promise<{ feedback: Feedback; usage: Usage }>;
   testAIConnection: (
     confirmed: boolean,
@@ -172,7 +179,7 @@ export const defaultProfile: Profile = {
   onboarded: false,
 };
 export const defaultSettings: Settings = {
-  confirmRequests: true,
+  confirmRequests: false,
   budget: 5,
   inputPrice: 0,
   outputPrice: 0,

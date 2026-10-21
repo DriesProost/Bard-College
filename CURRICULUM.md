@@ -1,3 +1,5 @@
+> Version 1.3.0 update: lessons now require a Professor introduction and review of the current draft. Session limits, clear daily steps, optional plain-language check-ins and the renamed new-exercise action are documented in [GUIDED_LESSONS_VALIDATION.md](GUIDED_LESSONS_VALIDATION.md). This supersedes earlier optional-AI completion behavior; the approved curriculum and historical progress are unchanged.
+
 # Curriculum system — Phase 2
 
 The shipped package now contains **38 Writing lessons**: all 30 original `lesson-*` IDs and eight `writing-*` extensions. Writing and Music are independent faculties. The first nine approved Music units are released, in their proposed order, with their objectives, readiness links and assessment principles. Historical lyrical “The Lute” events belong to Writing participation, never Music skill evidence.

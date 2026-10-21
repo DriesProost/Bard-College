@@ -1,4 +1,10 @@
 import {
+  REVIEW_LIMIT,
+  localDay,
+  type TutorSession,
+  type LessonGuidance,
+} from "../src/shared/tutoring.js";
+import {
   meaningfulSketch,
   parseSketch,
   musicalContentKey,
@@ -162,7 +168,10 @@ export class Store {
     return this.get<Profile>("profile", defaultProfile);
   }
   settings() {
-    return this.get<Settings>("settings", defaultSettings);
+    return {
+      ...this.get<Settings>("settings", defaultSettings),
+      confirmRequests: false,
+    };
   }
   state(): Omit<
     State,
@@ -173,6 +182,7 @@ export class Store {
     | "backups"
   > {
     return {
+      tutorSessions: this.tutorSessions(),
       curriculum: lessons,
       curriculumVersion: 2,
       sources,
@@ -272,6 +282,86 @@ export class Store {
       .prepare("SELECT * FROM snapshots WHERE projectId=? ORDER BY id DESC")
       .all(id) as Snapshot[];
   }
+  tutorSession(scope: string): TutorSession | undefined {
+    const id = this.get<string>("tutor-active:" + scope, "");
+    return id
+      ? this.get<TutorSession | undefined>("tutor-session:" + id, undefined)
+      : undefined;
+  }
+  tutorSessions(): TutorSession[] {
+    const ids = new Set<string>(
+      this.get<string[]>("tutor-day:" + localDay(), []),
+    );
+    const rows = this.db
+      .prepare("SELECT value FROM config WHERE key LIKE 'tutor-active:%'")
+      .all() as { value: string }[];
+    for (const row of rows) ids.add(JSON.parse(row.value));
+    return [...ids]
+      .map((id) =>
+        this.get<TutorSession | undefined>("tutor-session:" + id, undefined),
+      )
+      .filter((s): s is TutorSession => !!s)
+      .sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+  }
+  startTutorSession(
+    scope: string,
+    guidance: LessonGuidance | null,
+    practicePrompt = "",
+  ): TutorSession {
+    const lesson = lessons.find((l) => l.id === scope);
+    if (scope !== "studio" && !lesson) throw Error("Unknown lesson.");
+    if (lesson && !guidance)
+      throw Error("The Professor must introduce the lesson before it starts.");
+    if (practicePrompt && practicePrompt !== lesson?.transferPrompt)
+      throw Error("Unknown new exercise.");
+    const session: TutorSession = {
+      id: crypto.randomUUID(),
+      scope,
+      contentVersion: lesson?.version || 0,
+      practicePrompt,
+      createdAt: new Date().toISOString(),
+      completedAt: "",
+      guidance,
+      turns: [],
+    };
+    this.transaction(() => {
+      this.set("tutor-session:" + session.id, session);
+      this.set("tutor-active:" + scope, session.id);
+    });
+    return session;
+  }
+  checkTutorSession(scope: string, id?: string, practicePrompt = "") {
+    const session = this.tutorSession(scope),
+      lesson = lessons.find((l) => l.id === scope);
+    if (
+      !session ||
+      (id && session.id !== id) ||
+      session.contentVersion !== (lesson?.version || 0) ||
+      session.practicePrompt !== practicePrompt
+    )
+      throw Error("Start or resume this lesson with the Professor first.");
+    if (session.completedAt)
+      throw Error(
+        "This practice session is finished. Start a new session to continue.",
+      );
+    if (session.turns.length >= REVIEW_LIMIT)
+      throw Error(
+        "This session has reached its three reviews. Finish your practice or start a new session.",
+      );
+    return session;
+  }
+  appendTutorTurn(
+    scope: string,
+    id: string,
+    text: string,
+    feedback: Feedback,
+    practicePrompt = "",
+  ) {
+    const session = this.checkTutorSession(scope, id, practicePrompt);
+    session.turns.push({ text, feedback, createdAt: new Date().toISOString() });
+    this.set("tutor-session:" + session.id, session);
+    return session;
+  }
   saveAttempt(a: {
     lessonId: string;
     body: string;
@@ -314,6 +404,27 @@ export class Store {
         throw Error(
           `Write at least ${lesson.minimumWords} words for this short attempt. Completion records participation, not mastery.`,
         );
+      if (a.complete) {
+        const session = this.tutorSession(lesson.id),
+          text = (a.revision || a.body).trim();
+        if (
+          !session?.guidance ||
+          session.contentVersion !== lesson.version ||
+          session.practicePrompt !== (a.practicePrompt || "") ||
+          !session.turns.length ||
+          session.turns.at(-1)!.text.trim() !== text
+        )
+          throw Error(
+            "Get the Professor’s feedback on this draft before finishing practice.",
+          );
+        if (!session.completedAt) {
+          session.completedAt = new Date().toISOString();
+          this.set("tutor-session:" + session.id, session);
+          const key = "tutor-day:" + localDay(),
+            ids = this.get<string[]>(key, []);
+          this.set(key, [...new Set([...ids, session.id])]);
+        }
+      }
       if (a.practicePrompt && a.practicePrompt !== lesson.transferPrompt)
         throw Error("Unknown fresh challenge. Reload the lesson.");
       const changed =

@@ -2014,3 +2014,76 @@ dialog p {
   vertical-align: top;
   margin: 12px;
 }
+
+.daily-practice {
+  margin-bottom: 24px;
+  border: 2px solid #b4a06a;
+}
+.daily-practice h2 {
+  font-size: 28px;
+  margin: 14px 0;
+}
+.daily-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  padding-left: 24px;
+  margin: 24px 0;
+}
+.daily-steps li {
+  padding-left: 4px;
+  color: #52604c;
+}
+.daily-steps small {
+  display: block;
+  margin-top: 5px;
+  line-height: 1.5;
+}
+.daily-steps .done {
+  color: #226348;
+  font-weight: 700;
+}
+.daily-steps .done::marker {
+  content: "✓ ";
+}
+.daily-status {
+  font-weight: 600;
+}
+.professor-guidance {
+  margin-bottom: 24px;
+  border-left: 4px solid #a38b4d;
+}
+.lesson-work {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+.lesson-work:disabled {
+  opacity: 0.65;
+}
+.session-progress {
+  font-size: 12px;
+  font-weight: 600;
+  color: #52604c;
+}
+.session-ending {
+  padding: 16px;
+  border-left: 3px solid #a38b4d;
+  background: #f0eddf;
+}
+.session-ending small {
+  display: block;
+  margin-top: 8px;
+}
+.new-exercise {
+  margin: 12px 0;
+}
+.evidence-panel dd {
+  margin: 6px 0 18px;
+}
+@media (max-width: 1100px) {
+  .daily-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

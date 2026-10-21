@@ -32,6 +32,8 @@ test("Music foundations: counted keyboard tab, synthetic playback, local capture
     let page = await app.firstWindow();
     const errors: string[] = [];
     page.on("pageerror", (e) => errors.push(e.message));
+    await installAIFixture(app);
+    await page.evaluate(() => window.bard.setKey("sk-test-only"));
     await page.getByLabel("Your name").fill("Dries");
     await page.getByRole("button", { name: "Enter the College" }).click();
     await page
@@ -45,6 +47,21 @@ test("Music foundations: counted keyboard tab, synthetic playback, local capture
       "0 participation XP",
     );
     await page.getByRole("button", { name: /An idea before a scale/ }).click();
+    if (
+      await page
+        .getByRole("button", { name: "Start lesson", exact: true })
+        .count()
+    ) {
+      await page
+        .getByRole("button", { name: "Start lesson", exact: true })
+        .click();
+      await expect(
+        page.getByRole("button", {
+          name: "Load original demonstration",
+          exact: true,
+        }),
+      ).toBeEnabled();
+    }
     await page
       .getByRole("button", { name: "Load original demonstration", exact: true })
       .click();
@@ -65,7 +82,7 @@ test("Music foundations: counted keyboard tab, synthetic playback, local capture
       }),
     ).toHaveAttribute("aria-label", /rest/);
     await page
-      .getByLabel("One choice worth noticing")
+      .getByLabel("What did you try, and what changed?")
       .fill("The higher answer leaves a question.");
     await page
       .getByRole("button", { name: "Play Idea A", exact: true })
@@ -75,7 +92,13 @@ test("Music foundations: counted keyboard tab, synthetic playback, local capture
     ).toBeVisible();
     await page.getByRole("button", { name: "Stop playback" }).first().click();
     await page
-      .getByRole("button", { name: "Complete practice", exact: true })
+      .getByRole("button", { name: "Ask the Professor", exact: true })
+      .click();
+    await expect(
+      page.getByRole("heading", { name: "What’s working" }),
+    ).toBeVisible();
+    await page
+      .getByRole("button", { name: "Finish practice", exact: true })
       .click();
     let state = await page.evaluate(() => window.bard.load());
     expect(state.evidence).toHaveLength(0);
@@ -85,9 +108,14 @@ test("Music foundations: counted keyboard tab, synthetic playback, local capture
     expect(state.attempts.filter((a) => a.faculty === "writing")).toHaveLength(
       0,
     );
+    await page
+      .getByText("Optional check-in: how much help did you need?", {
+        exact: true,
+      })
+      .click();
     await page.getByLabel("Evidence for criterion 1").selectOption("supported");
     await page
-      .getByRole("button", { name: "Save skill evidence", exact: true })
+      .getByRole("button", { name: "Save my check-in", exact: true })
       .click();
     expect(
       await page.evaluate(async () => {
@@ -176,6 +204,21 @@ test("Music foundations: counted keyboard tab, synthetic playback, local capture
     // All nine examples can be opened and edited; 6/8 and two-bar miniature preserve their distinct count grids.
     await page.getByRole("button", { name: "Back to the Academy" }).click();
     await page.getByRole("button", { name: /Six eighths, two beats/ }).click();
+    if (
+      await page
+        .getByRole("button", { name: "Start lesson", exact: true })
+        .count()
+    ) {
+      await page
+        .getByRole("button", { name: "Start lesson", exact: true })
+        .click();
+      await expect(
+        page.getByRole("button", {
+          name: "Load original demonstration",
+          exact: true,
+        }),
+      ).toBeEnabled();
+    }
     await page
       .getByRole("button", { name: "Load original demonstration", exact: true })
       .click();
@@ -190,6 +233,21 @@ test("Music foundations: counted keyboard tab, synthetic playback, local capture
     ).toContainText("la");
     await page.getByRole("button", { name: "Back to the Academy" }).click();
     await page.getByRole("button", { name: /First miniature/ }).click();
+    if (
+      await page
+        .getByRole("button", { name: "Start lesson", exact: true })
+        .count()
+    ) {
+      await page
+        .getByRole("button", { name: "Start lesson", exact: true })
+        .click();
+      await expect(
+        page.getByRole("button", {
+          name: "Load original demonstration",
+          exact: true,
+        }),
+      ).toBeEnabled();
+    }
     await page
       .getByRole("button", { name: "Load original demonstration", exact: true })
       .click();
@@ -198,15 +256,18 @@ test("Music foundations: counted keyboard tab, synthetic playback, local capture
     );
     await page.getByRole("button", { name: "Back to the Academy" }).click();
     await page.getByRole("button", { name: /An idea before a scale/ }).click();
+    await page
+      .getByRole("button", {
+        name: "Start another practice session",
+        exact: true,
+      })
+      .click();
     await installAIFixture(app);
     await page.evaluate(() => window.bard.setKey("sk-test-only"));
     // Refresh hasKey without leaving the lesson.
     await page.getByRole("button", { name: "Save draft", exact: true }).click();
     await page
       .getByRole("button", { name: "Ask the Professor", exact: true })
-      .click();
-    await page
-      .getByRole("button", { name: "Confirm request", exact: true })
       .click();
     await expect(
       page.getByRole("heading", { name: "What’s working" }),

@@ -1,3 +1,4 @@
+import { evidenceOptions } from "./shared/tutoring";
 import { musicText } from "./shared/music";
 import { useState } from "react";
 import {
@@ -236,12 +237,9 @@ export function ContentUpdatePanel({
     </section>
   );
 }
-const labels: Record<EvidenceLevel, string> = {
-  introduced: "Introduced",
-  supported: "Tried with support",
-  independent: "Independently demonstrated (self-report)",
-  retained: "Retained on a fresh challenge (self-report)",
-};
+const labels = Object.fromEntries(
+  Object.entries(evidenceOptions).map(([key, value]) => [key, value.label]),
+) as Record<EvidenceLevel, string>;
 export function EvidencePanel({
   lesson,
   state,
@@ -287,71 +285,100 @@ export function EvidencePanel({
   }
   return (
     <section className="paper-card evidence-panel">
-      <h2>Evidence for this skill</h2>
-      <p>
-        Judge each criterion against your saved work. These are your reports,
-        not an AI score or verified mastery. Leave a criterion unreviewed if you
-        lack evidence.
-      </p>
-      {lesson.assessment.map((c, i) => {
-        const id = criterionId(lesson, i);
-        return (
-          <label key={id}>
-            {c}
-            <select
-              aria-label={`Evidence for criterion ${i + 1}`}
-              value={choices[id] || ""}
-              onChange={(e) =>
-                setChoices((s) => ({
-                  ...s,
-                  [id]: e.target.value as EvidenceLevel | "",
-                }))
-              }
-            >
-              <option value="">Not reviewed</option>
-              {Object.entries(labels).map(([key, label]) => (
-                <option value={key} key={key}>
-                  {label}
-                </option>
-              ))}
-            </select>
-          </label>
-        );
-      })}
-      <button
-        className="secondary"
-        disabled={busy || !Object.values(choices).some(Boolean)}
-        onClick={record}
-      >
-        Save skill evidence
-      </button>
-      <p className="hint">
-        Retained evidence needs a previous independent report and different work
-        on the fresh challenge. No extra XP is awarded for selecting a level.
-      </p>
-      {notice && <p role="status">{notice}</p>}
       <details>
-        <summary>{history.length} saved criterion reports</summary>
-        {history
-          .slice()
-          .reverse()
-          .map((e) => (
-            <div className="evidence-record" key={e.id}>
-              <strong>
-                {labels[e.level]} · version {e.contentVersion}
-                {e.contentVersion !== lesson.version
-                  ? " (earlier content)"
-                  : ""}
-              </strong>
-              <p>
-                {e.criterionId} · {new Date(e.createdAt).toLocaleString()}
-              </p>
-              <blockquote>
-                {lesson.faculty === "music" ? musicText(e.draft) : e.draft}
-              </blockquote>
-              <p>{e.reflection}</p>
-            </div>
-          ))}
+        <summary>Optional check-in: how much help did you need?</summary>
+        <h2>Your own check-in</h2>
+        <p>
+          This is separate from the Professor’s feedback. Think about each point
+          below and choose what best describes how you made this draft. “Not
+          sure yet” is fine; you can skip this entire check-in. It does not
+          change XP or decide whether you finish.
+        </p>
+        <details>
+          <summary>What do the choices mean?</summary>
+          <dl>
+            {Object.entries(evidenceOptions).map(([key, option]) => (
+              <div key={key}>
+                <dt>
+                  <strong>{option.label}</strong>
+                </dt>
+                <dd>{option.meaning}</dd>
+              </div>
+            ))}
+          </dl>
+          <p>
+            For example: if a hint helped you replace an abstract phrase with a
+            specific detail, choose “with help”. If you chose the detail
+            yourself and only asked for feedback afterwards, “on my own” may
+            fit.
+          </p>
+        </details>
+        {lesson.assessment.map((c, i) => {
+          const id = criterionId(lesson, i);
+          return (
+            <label key={id}>
+              {c}
+              <select
+                aria-label={`Evidence for criterion ${i + 1}`}
+                value={choices[id] || ""}
+                onChange={(e) =>
+                  setChoices((s) => ({
+                    ...s,
+                    [id]: e.target.value as EvidenceLevel | "",
+                  }))
+                }
+              >
+                <option value="">Not sure yet / skip</option>
+                {Object.entries(labels).map(([key, label]) => (
+                  <option value={key} key={key}>
+                    {label}
+                  </option>
+                ))}
+              </select>
+              {choices[id] && (
+                <small className="hint">
+                  {evidenceOptions[choices[id] as EvidenceLevel].meaning}
+                </small>
+              )}
+            </label>
+          );
+        })}
+        <button
+          className="secondary"
+          disabled={busy || !Object.values(choices).some(Boolean)}
+          onClick={record}
+        >
+          Save my check-in
+        </button>
+        <p className="hint">
+          “I used it in a new exercise” needs a saved “on my own” check-in
+          first, then different work using “Practise this skill with a new
+          exercise”. No choice is an objective score.
+        </p>
+        {notice && <p role="status">{notice}</p>}
+        <details>
+          <summary>{history.length} saved criterion reports</summary>
+          {history
+            .slice()
+            .reverse()
+            .map((e) => (
+              <div className="evidence-record" key={e.id}>
+                <strong>
+                  {labels[e.level]} · version {e.contentVersion}
+                  {e.contentVersion !== lesson.version
+                    ? " (earlier content)"
+                    : ""}
+                </strong>
+                <p>
+                  {e.criterionId} · {new Date(e.createdAt).toLocaleString()}
+                </p>
+                <blockquote>
+                  {lesson.faculty === "music" ? musicText(e.draft) : e.draft}
+                </blockquote>
+                <p>{e.reflection}</p>
+              </div>
+            ))}
+        </details>
       </details>
     </section>
   );

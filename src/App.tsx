@@ -1,3 +1,9 @@
+import {
+  REVIEW_LIMIT,
+  currentSession,
+  reviewedDraft,
+  dailyPractice,
+} from "./shared/tutoring";
 import { MusicWorkbench } from "./MusicWorkbench";
 import { meaningfulSketch, musicText } from "./shared/music";
 import { pendingSaves } from "./persistence";
@@ -310,30 +316,12 @@ export default function App() {
                   }).format(new Date())}
                 </div>
               </div>
-              <section className="hero">
-                <div className="hero-copy">
-                  <div className="eyebrow gold">
-                    <span className="dot" /> A WORD FROM YOUR PROFESSOR
-                  </div>
-                  <h2>
-                    Every great ballad begins
-                    <br />
-                    with a single, imperfect line.
-                  </h2>
-                  <p>
-                    Bring your curiosity. Leave perfection at the door.
-                    <br />
-                    Five minutes is enough to find something worth saying.
-                  </p>
-                  <button className="gold-button" onClick={() => learn()}>
-                    Continue learning <ArrowRight size={17} />
-                  </button>
-                  <span className="hero-meta">
-                    Your quill is ready. Take your time.
-                  </span>
-                </div>
-                <Manuscript />
-              </section>
+              <LessonCard
+                state={state}
+                faculty={faculty}
+                onStart={learn}
+                onFaculty={setFaculty}
+              />
               <div className="stat-row">
                 <div>
                   <span className="stat-icon">
@@ -375,10 +363,10 @@ export default function App() {
               <div className="dashboard-grid">
                 <section>
                   <SectionTitle
-                    title="Today’s small discovery"
-                    label="THE DAILY PRACTICE"
+                    title="Your study desk"
+                    label="SAVE AND RETURN"
                   />
-                  <LessonCard state={state} faculty={faculty} onStart={learn} />
+
                   {review && (
                     <div className="review-reminder">
                       <Leaf size={18} />
@@ -677,40 +665,84 @@ function LessonCard({
   faculty,
   state,
   onStart,
+  onFaculty,
 }: {
   state: State;
   faculty: Faculty;
   onStart: (id: string) => void;
+  onFaculty: (faculty: Faculty) => void;
 }) {
-  const l =
-    lessons.find(
-      (l) =>
-        l.faculty === faculty &&
-        !state.attempts.find((a) => a.lessonId === l.id)?.completedAt,
-    ) ||
-    lessons.filter((l) => l.faculty === faculty).at(-1) ||
-    lessons[0];
+  const daily = dailyPractice(state, faculty);
   return (
-    <div className="today-card">
-      <div className="lesson-illustration">
-        <Feather size={48} strokeWidth={1} />
-        <span>
-          {faculty === "music"
-            ? "THE LUTE & THE IDEA"
-            : "THE QUILL & THE CRAFT"}
-        </span>
+    <section
+      className="paper-card daily-practice"
+      aria-label="Today’s practice"
+    >
+      <div className="faculty-picker" role="group" aria-label="Daily faculty">
+        {(["writing", "music"] as const).map((f) => (
+          <button
+            className={faculty === f ? "primary" : "secondary"}
+            aria-pressed={faculty === f}
+            key={f}
+            onClick={() => onFaculty(f)}
+          >
+            {f === "writing" ? "Writing" : "Music"}
+          </button>
+        ))}
       </div>
-      <div className="today-copy">
-        <div className="eyebrow">
-          {l.discipline} <span>· 5 MIN</span>
-        </div>
-        <h2>{l.title}</h2>
-        <p>{l.objective}</p>
-        <button className="text-button" onClick={() => onStart(l.id)}>
-          Begin this lesson <ArrowRight size={16} />
-        </button>
-      </div>
-    </div>
+      {daily ? (
+        <>
+          <div className="eyebrow">
+            TODAY’S FIVE-MINUTE LESSON · {faculty.toUpperCase()}
+          </div>
+          <h2>{daily.lesson.title}</h2>
+          <p>
+            <strong>Your small task:</strong>{" "}
+            {daily.lesson.minimumTask || daily.lesson.exercise}
+          </p>
+          <ol className="daily-steps">
+            <li className={daily.session?.guidance ? "done" : ""}>
+              Meet your Professor <small>Notice one useful idea.</small>
+            </li>
+            <li className={daily.drafted ? "done" : ""}>
+              Make a small attempt{" "}
+              <small>A few lines or a short musical gesture.</small>
+            </li>
+            <li className={daily.reviewed ? "done" : ""}>
+              Get feedback{" "}
+              <small>
+                Choose one useful next step. Two follow-ups at most.
+              </small>
+            </li>
+            <li className={daily.done ? "done" : ""}>
+              Finish today’s practice{" "}
+              <small>One brief observation; longer work can wait.</small>
+            </li>
+          </ol>
+          <p className="daily-status" role="status">
+            {daily.done
+              ? "Done for today. Your work is saved."
+              : daily.session?.guidance
+                ? "Your lesson is in progress. Pick up where you left off."
+                : "One lesson is enough today. Start whenever you’re ready."}
+          </p>
+          <button className="primary" onClick={() => onStart(daily.lesson.id)}>
+            {daily.done
+              ? "Reopen today’s lesson"
+              : daily.session?.guidance
+                ? "Resume today’s lesson"
+                : "Start today’s lesson"}{" "}
+            <ArrowRight size={16} />
+          </button>
+          <p className="hint">
+            About 1 minute learning, 3 minutes creating, 1 minute reflecting.
+            The Academy has the full path.
+          </p>
+        </>
+      ) : (
+        <p>Open the Academy to add lessons for this faculty.</p>
+      )}
+    </section>
   );
 }
 function FeedbackCard({ feedback }: { feedback: Feedback }) {
@@ -742,6 +774,7 @@ function Tutor({
   initial,
   initialText,
   beforeRequest,
+  onBusyChange,
 }: {
   state: State;
   fail: (e: unknown) => void;
@@ -752,55 +785,71 @@ function Tutor({
   initial?: Feedback | null;
   initialText?: string;
   beforeRequest?: () => Promise<unknown>;
+  onBusyChange?: (busy: boolean) => void;
 }) {
+  const version = lessons.find((l) => l.id === lessonId)?.version || 0;
+  const session = currentSession(
+    state,
+    lessonId || "studio",
+    version,
+    practicePrompt || "",
+  );
+  const last = session?.turns.at(-1);
   const [passage, setPassage] = useState(text || ""),
     [question, setQuestion] = useState(""),
-    [feedback, setFeedback] = useState<Feedback | null>(initial || null),
-    [feedbackSource, setFeedbackSource] = useState(initialText || ""),
-    [busy, setBusy] = useState(false),
-    [confirm, setConfirm] = useState(false),
-    [usage, setUsage] = useState("");
-  const initialSignature = JSON.stringify(initial);
+    [feedback, setFeedback] = useState<Feedback | null>(
+      last?.feedback || (session ? null : initial) || null,
+    ),
+    [feedbackSource, setFeedbackSource] = useState(
+      last?.text || (session ? "" : initialText) || "",
+    ),
+    [busy, setBusy] = useState(false);
   useEffect(() => {
-    setFeedback(initial || null);
-    setFeedbackSource(initialText || "");
-  }, [initialSignature, initialText]);
-  const pricesKnown =
-      state.settings.inputPrice > 0 && state.settings.outputPrice > 0,
-    spent = state.usage.reduce((s, u) => s + u.cost, 0);
-  const estimate =
-    ((Math.ceil((text ?? passage).length / 3) + 1600) *
-      state.settings.inputPrice) /
-      1e6 +
-    (1200 * state.settings.outputPrice) / 1e6;
-  async function request(confirmed = false) {
-    if (
-      !confirmed &&
-      (state.settings.confirmRequests ||
-        (pricesKnown &&
-          state.settings.budget > 0 &&
-          spent + estimate > state.settings.budget))
-    ) {
-      setConfirm(true);
-      return;
-    }
-    setConfirm(false);
+    onBusyChange?.(busy);
+    return () => onBusyChange?.(false);
+  }, [busy]);
+  const count = session?.turns.length || 0,
+    ended = count >= REVIEW_LIMIT || !!session?.completedAt;
+  const ready = !lessonId || !!session?.guidance;
+  useEffect(() => {
+    setFeedback(last?.feedback || (session ? null : initial) || null);
+    setFeedbackSource(last?.text || (session ? "" : initialText) || "");
+    setQuestion("");
+  }, [session?.id, count, JSON.stringify(initial), initialText]);
+  async function request() {
     setBusy(true);
     try {
       await beforeRequest?.();
-      const r = await window.bard.tutor({
+      const result = await window.bard.tutor({
+        sessionId: session?.id,
         text: text ?? passage,
         lessonId,
         practicePrompt,
         question: question || undefined,
-        previous: feedback || undefined,
-        confirmed,
+        confirmed: true,
       });
-      setFeedback(r.feedback);
+      setFeedback(result.feedback);
       setFeedbackSource(text ?? passage);
-      setUsage(
-        `${r.usage.input + r.usage.output} tokens${pricesKnown ? ` · estimated $${r.usage.cost.toFixed(4)}` : " · set token prices in Settings for cost estimates"}`,
-      );
+      setQuestion("");
+      await refresh();
+    } catch (e) {
+      fail(e);
+    } finally {
+      setBusy(false);
+    }
+  }
+  async function restart() {
+    setBusy(true);
+    try {
+      await beforeRequest?.();
+      await window.bard.startTutorSession({
+        lessonId,
+        practicePrompt,
+        restart: true,
+      });
+      setFeedback(null);
+      setFeedbackSource("");
+      setQuestion("");
       await refresh();
     } catch (e) {
       fail(e);
@@ -822,83 +871,89 @@ function Tutor({
           />
         </label>
       )}
+      <p className="session-progress">
+        {count} of {REVIEW_LIMIT} reviews used · one initial review and up to
+        two follow-ups
+      </p>
       {feedback && (
         <>
           {feedbackSource.trim() !== (text ?? passage).trim() && (
             <p className="hint" role="note">
-              Notes on your earlier draft. They are kept here while you revise;
-              ask again for feedback on this version.
+              Notes on your earlier draft.{" "}
+              {ended
+                ? "Start another session if you want feedback on more changes."
+                : "Submit this version when you’re ready."}
             </p>
           )}
           <FeedbackCard feedback={feedback} />
         </>
       )}
-      <label>
-        {feedback
-          ? "A follow-up question (optional)"
-          : "What would you like to explore? (optional)"}
-        <input
-          value={question}
-          maxLength={2000}
-          onChange={(e) => setQuestion(e.target.value)}
-          placeholder="Does the last line feel earned?"
-        />
-      </label>
-      <button
-        className="primary"
-        disabled={busy || !(text ?? passage).trim() || !state.hasKey}
-        onClick={() => request()}
-      >
-        {busy ? (
-          <LoaderCircle className="spin" size={17} />
-        ) : (
-          <Sparkles size={17} />
-        )}{" "}
-        {busy
-          ? "The Professor is reading…"
-          : feedback
-            ? "Ask a follow-up"
-            : "Ask the Professor"}
-      </button>
+      {!ended && (
+        <>
+          <label>
+            {feedback
+              ? "One follow-up question (optional)"
+              : "Anything you want the Professor to notice? (optional)"}
+            <input
+              value={question}
+              onChange={(e) => setQuestion(e.target.value)}
+              maxLength={2000}
+              placeholder={
+                lessonId?.startsWith("music-")
+                  ? "Does the written answer contrast with the first gesture?"
+                  : "Does the last line support my intention?"
+              }
+            />
+          </label>
+          <button
+            className="primary"
+            disabled={
+              busy || !(text ?? passage).trim() || !state.hasKey || !ready
+            }
+            onClick={() => void request()}
+          >
+            {busy ? (
+              <LoaderCircle className="spin" size={17} />
+            ) : (
+              <Sparkles size={17} />
+            )}{" "}
+            {busy
+              ? "The Professor is reading…"
+              : feedback
+                ? `Ask a follow-up (${REVIEW_LIMIT - count} left)`
+                : "Ask the Professor"}
+          </button>
+        </>
+      )}
+      {ended && (
+        <div className="session-ending" role="status">
+          <h3>
+            {session?.completedAt
+              ? "Practice finished"
+              : "That’s enough feedback for this session"}
+          </h3>
+          <p>
+            {lessonId
+              ? "Keep the choice that serves your intention. Finish practice when you’re ready; you don’t need to keep asking questions."
+              : "Take one useful idea back to your draft. There’s no need to keep the conversation going."}
+          </p>
+          <button
+            className="text-button"
+            disabled={busy || !state.hasKey}
+            onClick={() => void restart()}
+          >
+            {busy ? "Preparing…" : "Start another practice session"}
+          </button>
+          <small>
+            A new session keeps your draft and previous session records.
+          </small>
+        </div>
+      )}
       {!state.hasKey && (
         <p className="hint">
-          Add your API key in Settings. Exercises and writing work without it.
+          Add your API key in Settings to work with the Professor. Your drafts
+          remain saved.
         </p>
-      )}
-      <p className="hint">
-        Only this passage, your question, feedback context, and learning profile
-        are sent to OpenAI. No automatic requests. {usage}
-      </p>
-      {confirm && (
-        <Modal
-          title="Send this passage to the Professor?"
-          onClose={() => setConfirm(false)}
-        >
-          <p>
-            This request uses GPT-6 Luna. Your passage and learning context will
-            be sent to OpenAI.
-          </p>
-          <p>
-            {pricesKnown
-              ? `Estimated request cost: $${estimate.toFixed(4)}. Recorded spending: $${spent.toFixed(4)}.`
-              : "Cost estimate unavailable. Enter current GPT-6 Luna token prices in Settings; no prices are assumed."}
-          </p>
-          {pricesKnown &&
-            state.settings.budget > 0 &&
-            spent + estimate > state.settings.budget && (
-              <p className="warning">
-                This may exceed your ${state.settings.budget.toFixed(2)}{" "}
-                advisory budget.
-              </p>
-            )}
-          <p className="hint">
-            Estimates and warnings are not hard billing limits. Check actual
-            charges in your OpenAI account.
-          </p>
-          <button className="primary" onClick={() => request(true)}>
-            Confirm request
-          </button>
-        </Modal>
       )}
     </div>
   );
@@ -931,6 +986,26 @@ function LessonView({
     [history, setAttemptHistory] = useState<AttemptHistory[]>([]),
     [saved, setSaved] = useState(true),
     [saving, setSaving] = useState(false);
+  const session = currentSession(state, id, lesson.version, practicePrompt);
+  const [starting, setStarting] = useState(false),
+    [tutorBusy, setTutorBusy] = useState(false);
+  const reviewed = reviewedDraft(session, revision || body);
+  async function startLesson(restart = false) {
+    setStarting(true);
+    try {
+      if (!(await save(false))) return;
+      await window.bard.startTutorSession({
+        lessonId: id,
+        practicePrompt,
+        restart,
+      });
+      await refresh();
+    } catch (e) {
+      fail(e);
+    } finally {
+      setStarting(false);
+    }
+  }
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const latestAttempt = useRef({ body, revision, reflection, practicePrompt });
   latestAttempt.current = { body, revision, reflection, practicePrompt };
@@ -1023,6 +1098,49 @@ function LessonView({
         <h1>{lesson.title}</h1>
         <p>{lesson.objective}</p>
       </div>
+      <section
+        className="paper-card professor-guidance"
+        aria-label="Your lesson with the Professor"
+      >
+        {session?.guidance ? (
+          <>
+            <div className="eyebrow">YOUR PROFESSOR’S INTRODUCTION</div>
+            <h2>One small skill today</h2>
+            <p>{session.guidance.explanation}</p>
+            <p>
+              <strong>Notice:</strong> {session.guidance.notice}
+            </p>
+            <p>
+              <strong>Start here:</strong> {session.guidance.firstStep}
+            </p>
+            <p>
+              <strong>Enough for today:</strong> {session.guidance.finishLine}
+            </p>
+          </>
+        ) : (
+          <>
+            <h2>Start your lesson with the Professor</h2>
+            <p>
+              The Professor will introduce this exercise and guide your attempt.
+              Your earlier drafts and completions are kept.
+            </p>
+            <button
+              className="primary"
+              disabled={starting || !state.hasKey}
+              onClick={() => void startLesson()}
+            >
+              {starting
+                ? "The Professor is preparing your lesson…"
+                : "Start lesson"}
+            </button>
+            {!state.hasKey && (
+              <p className="hint">
+                Add your OpenAI API key in Settings to start lessons.
+              </p>
+            )}
+          </>
+        )}
+      </section>
       <div className="lesson-layout">
         <article className="paper-card lesson-concept">
           <span className="step-label">01 · THE IDEA</span>
@@ -1092,27 +1210,30 @@ function LessonView({
           <span className="step-label">03 · YOUR TURN</span>
           <h2>A little deliberate practice</h2>
           {lesson.transferPrompt && (
-            <label className="challenge-toggle">
-              <input
-                type="checkbox"
-                disabled={saving}
-                checked={!!practicePrompt}
-                onChange={async (e) => {
-                  const fresh = e.target.checked;
-                  const previous = practicePrompt;
-                  setPracticePrompt(fresh ? lesson.transferPrompt : "");
-                  if (!(await save(false))) {
-                    setPracticePrompt(previous);
-                    return;
-                  }
+            <div className="new-exercise">
+              <p>
+                Want to use this skill in a different situation? This opens a
+                fresh draft and keeps the current one in earlier attempts. It is
+                optional.
+              </p>
+              <button
+                className="secondary"
+                disabled={saving || starting}
+                onClick={async () => {
+                  if (!(await save(false))) return;
+                  setPracticePrompt(
+                    practicePrompt ? "" : lesson.transferPrompt,
+                  );
                   setBody("");
                   setRevision("");
                   setReflection("");
                 }}
-              />
-              Try an unfamiliar challenge (earlier work stays in attempt
-              history)
-            </label>
+              >
+                {practicePrompt
+                  ? "Return to the original exercise"
+                  : "Practise this skill with a new exercise"}
+              </button>
+            </div>
           )}
           <p>{practicePrompt || lesson.minimumTask || lesson.exercise}</p>
           {lesson.extension && (
@@ -1138,81 +1259,89 @@ function LessonView({
           <p className="hint">
             1 min notice · 3 min create · 1 min reflect. {lesson.reflection}
           </p>
-          {lesson.faculty === "music" ? (
-            <MusicWorkbench
-              key={id + practicePrompt}
-              example={lesson.musicExample}
-              value={body}
-              onChange={setBody}
-              lessonId={id}
-              fail={fail}
-              beforeRecord={() => save(false)}
-            />
-          ) : (
-            <>
-              <label className="sr-only" htmlFor="exercise">
-                Your exercise
-              </label>
-              <textarea
-                id="exercise"
-                rows={7}
+          <fieldset className="lesson-work" disabled={!session?.guidance}>
+            {lesson.faculty === "music" ? (
+              <MusicWorkbench
+                key={id + practicePrompt}
+                example={lesson.musicExample}
                 value={body}
-                onChange={(e) => setBody(e.target.value)}
-                maxLength={20000}
-                placeholder="An imperfect first line is a perfectly good beginning…"
+                onChange={setBody}
+                lessonId={id}
+                fail={fail}
+                beforeRecord={() => save(false)}
               />
-            </>
-          )}
-          <div className="editor-meta">
-            <span>
-              {lesson.faculty === "music"
-                ? "Musical sketch"
-                : `${words(body)} words`}
-            </span>
-            <span>{saved ? "Saved locally" : "Saving…"}</span>
-          </div>
-          {!unlocked && (
-            <p className="hint">
-              Recommended first:{" "}
-              {lesson.skillDependencies
-                .map((id) => lessons.find((l) => l.id === id)?.title)
-                .join(", ")}
-              . You can still practise or revisit a skill now; prior completion
-              does not prove readiness.
-            </p>
-          )}
-          <label>
-            One choice worth noticing
-            <textarea
-              rows={2}
-              maxLength={2000}
-              value={reflection}
-              onChange={(e) => setReflection(e.target.value)}
-              placeholder="I chose… because I wanted the reader to…"
-            />
-          </label>
-          <div className="button-row">
-            <button
-              className="primary"
-              disabled={
-                saving ||
-                (lesson.faculty === "music"
-                  ? !meaningfulSketch(revision || body)
-                  : words(body) < lesson.minimumWords) ||
-                reflection.trim().length < 3
-              }
-              onClick={() => save(true)}
-            >
-              <Check size={16} />
-              {attempt?.completedAt ? "Lesson completed" : "Complete practice"}
-            </button>
-            <button className="text-button" onClick={() => save(false)}>
-              Save draft
-            </button>
-          </div>
-          <p className="hint">
-            Feedback is optional. Meaningful practice counts even while offline.
-          </p>
+            ) : (
+              <>
+                <label className="sr-only" htmlFor="exercise">
+                  Your exercise
+                </label>
+                <textarea
+                  id="exercise"
+                  rows={7}
+                  value={body}
+                  onChange={(e) => setBody(e.target.value)}
+                  maxLength={20000}
+                  placeholder="An imperfect first line is a perfectly good beginning…"
+                />
+              </>
+            )}
+            <div className="editor-meta">
+              <span>
+                {lesson.faculty === "music"
+                  ? "Musical sketch"
+                  : `${words(body)} words`}
+              </span>
+              <span>{saved ? "Saved locally" : "Saving…"}</span>
+            </div>
+            {!unlocked && (
+              <p className="hint">
+                Recommended first:{" "}
+                {lesson.skillDependencies
+                  .map((id) => lessons.find((l) => l.id === id)?.title)
+                  .join(", ")}
+                . You can still practise or revisit a skill now; prior
+                completion does not prove readiness.
+              </p>
+            )}
+            <label>
+              What did you try, and what changed?
+              <textarea
+                rows={2}
+                maxLength={2000}
+                value={reflection}
+                onChange={(e) => setReflection(e.target.value)}
+                placeholder="For example: I removed one word so the last line lands more clearly."
+              />
+            </label>
+            <div className="button-row">
+              <button
+                className="primary"
+                disabled={
+                  saving ||
+                  tutorBusy ||
+                  !reviewed ||
+                  !!session?.completedAt ||
+                  (lesson.faculty === "music"
+                    ? !meaningfulSketch(revision || body)
+                    : words(body) < lesson.minimumWords) ||
+                  reflection.trim().length < 3
+                }
+                onClick={() => save(true)}
+              >
+                <Check size={16} />
+                {session?.completedAt ? "Practice finished" : "Finish practice"}
+              </button>
+              <button className="text-button" onClick={() => save(false)}>
+                Save draft
+              </button>
+            </div>
+            {!reviewed && (
+              <p className="hint">
+                Get the Professor’s feedback on your current draft before
+                finishing. One review is enough; follow-ups are optional.
+              </p>
+            )}
+          </fieldset>
         </section>
       </div>
       <section className="paper-card">
@@ -1284,6 +1413,7 @@ function LessonView({
           fail={fail}
           refresh={refresh}
           text={revision || body}
+          onBusyChange={setTutorBusy}
           beforeRequest={async () => {
             if (timer.current) clearTimeout(timer.current);
             await window.bard.saveAttempt({
@@ -1299,7 +1429,7 @@ function LessonView({
         />
         <details>
           <summary>Try a revision</summary>
-          <div>
+          <fieldset className="lesson-work" disabled={!session?.guidance}>
             <p>Keep your original. Give the idea another pass.</p>
             {lesson.faculty === "music" ? (
               <>
@@ -1333,7 +1463,7 @@ function LessonView({
                 />
               </>
             )}
-          </div>
+          </fieldset>
           <button className="secondary" onClick={() => save(false)}>
             Save revision
           </button>
@@ -1794,14 +1924,12 @@ function SettingsView({
     [key, setKey] = useState(""),
     [saving, setSaving] = useState(false),
     [testing, setTesting] = useState(false),
-    [testConfirm, setTestConfirm] = useState(false),
     [testResult, setTestResult] = useState<{
       success: boolean;
       message: string;
       detail?: string;
     } | null>(null);
   async function testConnection() {
-    setTestConfirm(false);
     setTesting(true);
     setTestResult(null);
     try {
@@ -1915,7 +2043,7 @@ function SettingsView({
               testing ||
               !!key.trim()
             }
-            onClick={() => setTestConfirm(true)}
+            onClick={testConnection}
           >
             {testing ? (
               <LoaderCircle className="spin" size={16} />
@@ -1942,46 +2070,10 @@ function SettingsView({
               {testResult.detail && <p>{testResult.detail}</p>}
             </div>
           )}
-          {testConfirm && (
-            <Modal
-              title="Test GPT-6 Luna connection?"
-              onClose={() => setTestConfirm(false)}
-            >
-              <p>
-                This sends only “Reply with only OK.” to OpenAI using{" "}
-                <strong>gpt-6-luna</strong>, with a limit of 64 output tokens.
-                There are no automatic retries or model substitutions.
-              </p>
-              <p>
-                {state.settings.inputPrice > 0 && state.settings.outputPrice > 0
-                  ? `Approximate cost: $${((10 * state.settings.inputPrice + 64 * state.settings.outputPrice) / 1e6).toFixed(6)}. Recorded spending: $${spent.toFixed(4)}.`
-                  : "A small API charge may apply. No cost is assumed because token prices have not been configured."}
-              </p>
-              {state.settings.budget > 0 &&
-                state.settings.inputPrice > 0 &&
-                state.settings.outputPrice > 0 &&
-                spent +
-                  (10 * state.settings.inputPrice +
-                    64 * state.settings.outputPrice) /
-                    1e6 >
-                  state.settings.budget && (
-                  <p className="warning">
-                    This may exceed your advisory budget.
-                  </p>
-                )}
-              <p className="hint">
-                This verifies a real response from the requested model, not
-                merely that a key was entered. Budget warnings are not hard
-                billing limits.
-              </p>
-              <button className="primary" onClick={testConnection}>
-                Send connection test
-              </button>
-            </Modal>
-          )}
           <p className="hint">
-            Writing, lessons, and revision history work without an API key. An
-            unavailable model never triggers a fallback.
+            Drafts, recordings, and revision history remain local. Lessons
+            require the Professor. An unavailable model never triggers a
+            fallback.
           </p>
         </section>
         <section className="paper-card">
@@ -2019,14 +2111,11 @@ function SettingsView({
         </section>
         <section className="paper-card">
           <h2>Spending awareness</h2>
-          <label className="checkbox">
-            <input
-              type="checkbox"
-              checked={settings.confirmRequests}
-              onChange={(e) => patch({ confirmRequests: e.target.checked })}
-            />
-            Confirm each request before sending
-          </label>
+          <p>
+            Lesson and review buttons send requests directly. There are no
+            repeated confirmation popups. Each lesson has one introduction and
+            at most three reviews per session.
+          </p>
           <label>
             Advisory budget in USD
             <input
@@ -2039,8 +2128,8 @@ function SettingsView({
             />
           </label>
           <p className="hint">
-            Zero disables the warning. This is a local estimate, not a hard
-            billing limit. It does not include usage from other apps.
+            Zero disables the budget reminder here. This is a local estimate,
+            not a hard billing limit. It does not include usage from other apps.
           </p>
           <div className="price-fields">
             <label>

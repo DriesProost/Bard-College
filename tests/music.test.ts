@@ -1,3 +1,4 @@
+import { saveReviewedAttempt } from "./tutor-support.js";
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
@@ -179,7 +180,7 @@ test("Music sketches, revisions, history and separate evidence survive restart w
       reflection: "A rising answer",
       complete: true,
     };
-    store.saveAttempt(a);
+    saveReviewedAttempt(store, a);
     assert.equal(facultyProgress(store.state(), "music").completed, 1);
     assert.equal(facultyProgress(store.state(), "writing").completed, 0);
     assert.equal(store.state().evidence.length, 0);
@@ -197,7 +198,7 @@ test("Music sketches, revisions, history and separate evidence survive restart w
     });
     const changed = idea();
     changed.phrases[0] = place(changed.phrases[0], 2, 0, 3, 2);
-    store.saveAttempt({ ...a, revision: JSON.stringify(changed) });
+    saveReviewedAttempt(store, { ...a, revision: JSON.stringify(changed) });
     store.close();
     store = new Store(file);
     assert.equal(store.project(project.id)!.body, project.body);
@@ -205,11 +206,15 @@ test("Music sketches, revisions, history and separate evidence survive restart w
     assert.equal(store.state().attempts[0].revision, JSON.stringify(changed));
     assert.equal(store.state().evidence[0].faculty, "music");
     assert.throws(
-      () => store.saveAttempt({ ...a, body: "bad json" }),
+      () => saveReviewedAttempt(store, { ...a, body: "bad json" }),
       /Invalid musical/,
     );
     assert.throws(
-      () => store.saveAttempt({ ...a, body: JSON.stringify(blankSketch()) }),
+      () =>
+        saveReviewedAttempt(store, {
+          ...a,
+          body: JSON.stringify(blankSketch()),
+        }),
       /intention/,
     );
     store.close();
@@ -310,7 +315,7 @@ test("Music retention cannot be claimed by changing only a sketch UUID, name or 
         reflection: "An uncertain ending",
         complete: true,
       };
-    store.saveAttempt(a);
+    saveReviewedAttempt(store, a);
     store.recordEvidence({
       lessonId: lesson.id,
       criteria: [{ criterionId: criterionId(lesson, 0), level: "independent" }],
@@ -320,7 +325,7 @@ test("Music retention cannot be claimed by changing only a sketch UUID, name or 
       id: crypto.randomUUID(),
       observation: "A new listening note",
     };
-    store.saveAttempt({
+    saveReviewedAttempt(store, {
       ...a,
       body: JSON.stringify(repeat),
       practicePrompt: lesson.transferPrompt,
@@ -336,7 +341,7 @@ test("Music retention cannot be claimed by changing only a sketch UUID, name or 
       /different work/,
     );
     repeat.phrases[0] = place(repeat.phrases[0], 2, 0, 3, 2);
-    store.saveAttempt({
+    saveReviewedAttempt(store, {
       ...a,
       body: JSON.stringify(repeat),
       practicePrompt: lesson.transferPrompt,

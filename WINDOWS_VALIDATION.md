@@ -1,3 +1,5 @@
+> Latest version: **1.3.0**. See [GUIDED_LESSONS_VALIDATION.md](GUIDED_LESSONS_VALIDATION.md) for AI-required lessons, daily steps, review limits and self-checks. Windows hardware, installation and DPAPI checks remain required. Older optional-AI behavior below is historical.
+
 > Current release: use the **1.2.0** installer and [PHASE2_VALIDATION.md](PHASE2_VALIDATION.md) for the required Writing/Music, local recording, upgrade and native Windows acceptance checks. The original 1.0.0 artefact details below are historical; these general install/credential procedures still apply.
 
 # Windows installation and acceptance check
