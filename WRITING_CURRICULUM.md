@@ -1,6 +1,8 @@
 # The College of the Quill — Writing curriculum
 
-**Completed educational proposal for review — 20 October 2026. Not implemented.** Based on selective, documented consultation of all eight supplied books and direct checks of the key visual examples used in this plan. This is not a claim to have read every page, verified every score, heard companion audio, or demonstrated learner outcomes.
+**Approved educational proposal — Phase 1 implemented on 20 October 2026.** Based on selective, documented consultation of all eight supplied books and direct checks of the key visual examples used in this plan. This is not a claim to have read every page, verified every score, heard companion audio, or demonstrated learner outcomes.
+
+Phase 1 implementation details, data migrations, achievable minimum-task adjustments and evidence semantics are documented in [CURRICULUM.md](CURRICULUM.md) and [PHASE1_VALIDATION.md](PHASE1_VALIDATION.md). This approved syllabus remains the pedagogical reference; the shipped data package contains the current explanations and criteria. Music/shared studios remain deferred.
 
 ## Recommendation
 

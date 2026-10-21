@@ -1,10 +1,10 @@
 # The Conservatory of the Lute — Music curriculum
 
-**Completed educational proposal for review — 20 October 2026. Not implemented.** Based on selective, documented consultation of all eight supplied books and direct checks of the key visual examples used in this plan. This is not a claim to have read every page, verified every score, heard companion audio, or demonstrated learner outcomes.
+**Approved educational plan — lessons 01–09 implemented in Phase 2 on 21 October 2026; lessons 10–36 and shared studios remain deferred.** Based on selective, documented consultation of all eight supplied books and direct checks of the key visual examples used in this plan. This is not a claim to have read every page, verified every score, heard companion audio, or demonstrated learner outcomes.
 
 ## Recommendation and progression
 
-**36 composition lessons**, four stages of nine: (1) original gestures and rhythmic/pitch control, (2) harmony and accompaniment as choices, (3) melodic development and harmonisation, (4) form, colour and independent acoustic composition. Seven shared songwriting studios are separate from both faculty counts. The earlier 32-unit sketch is superseded; these Music IDs are proposal-only and have never been installed. Only existing Writing IDs must retain deployed identity.
+**36 composition lessons**, four stages of nine: (1) original gestures and rhythmic/pitch control, (2) harmony and accompaniment as choices, (3) melodic development and harmonisation, (4) form, colour and independent acoustic composition. Seven shared songwriting studios are separate from both faculty counts. The earlier 32-unit sketch is superseded; the remaining Music IDs are still proposals. The first nine Music IDs are now deployed and must also retain their identity; all 30 original Writing IDs remain preserved.
 
 The added space makes compound metre, functional endings, transposition for the singer and bass movement explicit instead of hiding them in overloaded tasks. Memorising scales/chord shapes or playing an existing song never suffices for a composition lesson. Every unit below produces or revises an original gesture, phrase, accompaniment, section or rationale. Units 9, 18, 26 and 36 combine skills; unit 35 assembles existing material over several sessions.
 
@@ -569,7 +569,7 @@ These are **seven additional optional projects**, not seven more lessons inside 
 | combined-06: a narrative acoustic ballad         | writing-ballad-scene; music-34; combined-05 | Outline causal beats and accompaniment roles; compose only one turning beat per short session.         | Story cause/consequence, melodic continuity and room for the telling voice.                                   | F3-B, P8, R6g                          |
 | combined-07: finish and defend an original song  | writing-transfer; music-36; combined-06     | Assemble/revise saved material, with optional longer recording/listening outside the app.              | Before/after evidence in lyric, melody and accompaniment; explained ending; later unfamiliar-brief transfer.  | S10, D24, J16, R11; portfolio design D |
 
-A conceptual check verifies that a note belongs to a chord or a bar adds up; an artistic judgment weighs the stated intention and alternatives. Passing the conceptual check alone does not establish a compelling song. Learners listen/play for themselves and record what they noticed. Future audio capture/playback could preserve ideas; actual machine evaluation requires a separate capability/privacy proposal and is not assumed here.
+A conceptual check verifies that a note belongs to a chord or a bar adds up; an artistic judgment weighs the stated intention and alternatives. Passing the conceptual check alone does not establish a compelling song. Learners listen/play for themselves and record what they noticed. Phase 2 local audio capture/playback preserves ideas without sending recordings to AI; actual machine evaluation still requires a separate reviewed design and is not implemented.
 
 ## Review and optional depth
 

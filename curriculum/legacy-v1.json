@@ -1,0 +1,797 @@
+{
+  "version": 1,
+  "lessons": [
+    {
+      "id": "lesson-6",
+      "title": "Something you can touch",
+      "discipline": "The Quill",
+      "objective": "Replace vague descriptions with sensory images.",
+      "explanation": "Specific objects give the reader evidence. Select one telling detail instead of listing every sense.",
+      "example": "Abstract: “The room was lonely.” Specific: “One teaspoon dried beside the sink.”",
+      "exercise": "Describe a deserted place in three lines without lonely, empty, sad, or beautiful.",
+      "assessment": [
+        "A concrete detail places a reader in a scene.",
+        "The detail suggests rather than labels an emotion."
+      ],
+      "sources": ["stolpe-lyrics"],
+      "minutes": 5,
+      "stage": "Foundations",
+      "version": 1,
+      "prerequisite": null,
+      "skillDependencies": [],
+      "review": [],
+      "reflection": "Name one choice you made, what effect you intended, and one thing you would try differently.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-3",
+      "title": "Speak before you sing",
+      "discipline": "The Quill",
+      "objective": "Use natural speech before adding rhyme.",
+      "explanation": "Start with something a person would actually say. Read it aloud before shaping the ending. Later lessons add rhyme; today, notice whether an unusual word order serves a deliberate voice or merely sounds literary.",
+      "example": "Stilted: “Upon the road did I depart.” Conversational: “I left before the buses started.” The second sentence places a speaker in an ordinary moment.",
+      "exercise": "Return to your deserted place. Write a two-to-four-line conversation between someone arriving and someone leaving. Keep ordinary word order; no rhyme is required yet.",
+      "assessment": [
+        "The dialogue sounds like intentional speech in the writer’s voice.",
+        "A concrete detail or choice makes the situation understandable."
+      ],
+      "sources": ["stolpe-lyrics"],
+      "minutes": 5,
+      "stage": "Foundations",
+      "version": 2,
+      "prerequisite": "lesson-6",
+      "skillDependencies": ["lesson-6"],
+      "review": ["lesson-6"],
+      "reflection": "Name one choice you made, what effect you intended, and one thing you would try differently.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-1",
+      "title": "Let the rhyme arrive",
+      "discipline": "The Quill",
+      "objective": "Find natural rhymes without bending meaning.",
+      "explanation": "Begin with what you want to say. Collect several rhyming words, then choose the one that serves that meaning. A near-rhyme can sound more natural than a strained perfect rhyme.",
+      "example": "“Your yellow scarf is on the chair. / I leave it folded for you there.” Chair/there fits an ordinary sentence; the action suggests why the object matters.",
+      "exercise": "Write two conversational lines ending in a rhyme or near-rhyme. Start with a real object.",
+      "assessment": [
+        "The rhyme can be heard in the writer’s accent.",
+        "Meaning stays intelligible without forced word order."
+      ],
+      "sources": ["pattison-prosody"],
+      "minutes": 5,
+      "stage": "Foundations",
+      "version": 2,
+      "prerequisite": "lesson-3",
+      "skillDependencies": ["lesson-3"],
+      "review": ["lesson-3"],
+      "reflection": "Name one choice you made, what effect you intended, and one thing you would try differently.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-2",
+      "title": "A rhyme worth keeping",
+      "discipline": "The Quill",
+      "objective": "Distinguish a useful rhyme from a predictable one.",
+      "explanation": "A rhyme earns its place when it adds information or feeling. Familiar pairs are not forbidden, but love/above rarely says enough on its own.",
+      "example": "“The kettle clicked. I counted three. / Your empty chair looked back at me.” Three/me frames a concrete absence.",
+      "exercise": "Take the couplet you wrote in “Let the rhyme arrive”. Keep its intended meaning. Change one end word and revise the other line so the rhyme adds a fresh detail, rather than merely being less common.",
+      "assessment": [
+        "The revision adds a specific detail while preserving the intended meaning.",
+        "The writer can explain why the new rhyme serves the scene; novelty alone is not rewarded."
+      ],
+      "sources": ["pattison-prosody"],
+      "minutes": 5,
+      "stage": "Foundations",
+      "version": 2,
+      "prerequisite": "lesson-1",
+      "skillDependencies": ["lesson-1", "lesson-6"],
+      "review": ["lesson-1", "lesson-6"],
+      "reflection": "Name one choice you made, what effect you intended, and one thing you would try differently.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-4",
+      "title": "The pulse of a sentence",
+      "discipline": "The Quill",
+      "objective": "Hear natural word stress.",
+      "explanation": "English alternates stronger and weaker syllables unevenly. Mark the words you naturally emphasise before imposing a beat. Accent and performance affect stress.",
+      "example": "“I LEFT my BOOTS beSIDE the DOOR.” Capitals suggest a possible spoken pulse, not a rule.",
+      "exercise": "Write two lines. Mark four natural stresses in each with capitals and read them aloud.",
+      "assessment": [
+        "Marked stresses are plausible in the writer’s dialect.",
+        "The writer distinguishes strong beats from syllable totals."
+      ],
+      "sources": ["fry-overview"],
+      "minutes": 5,
+      "stage": "Foundations",
+      "version": 1,
+      "prerequisite": "lesson-2",
+      "skillDependencies": ["lesson-3"],
+      "review": ["lesson-3"],
+      "reflection": "Name one choice you made, what effect you intended, and one thing you would try differently.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-5",
+      "title": "A steady walking rhythm",
+      "discipline": "The Quill",
+      "objective": "Maintain a repeatable rhythmic pattern.",
+      "explanation": "A consistent number of strong beats helps listeners anticipate a line. Equal syllable counts alone do not guarantee rhythm. Leave room for intentional variation.",
+      "example": "“The rain came down upon the mill / The wheel was dark, the water still.” Read both against four slow taps.",
+      "exercise": "Write a four-line verse with four strong beats per line. Read it against a tapped pulse.",
+      "assessment": [
+        "A repeatable strong-beat pattern can be spoken aloud.",
+        "Any departure is intentional and its effect is explained."
+      ],
+      "sources": ["fry-overview"],
+      "minutes": 5,
+      "stage": "Foundations",
+      "version": 1,
+      "prerequisite": "lesson-4",
+      "skillDependencies": ["lesson-4", "lesson-1"],
+      "review": ["lesson-4", "lesson-1"],
+      "reflection": "Name one choice you made, what effect you intended, and one thing you would try differently.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-7",
+      "title": "A useful comparison",
+      "discipline": "The Quill",
+      "objective": "Make metaphor reveal a fresh relationship.",
+      "explanation": "A metaphor connects unlike things through a precise shared quality. Extend it only while it continues to illuminate the subject.",
+      "example": "“His apology was a borrowed coat: warm, but never quite his.” The comparison questions sincerity.",
+      "exercise": "Compare trust to an everyday object in two lines. Add one detail that makes the comparison precise.",
+      "assessment": [
+        "The comparison has a precise shared quality.",
+        "The image clarifies the subject instead of adding decoration."
+      ],
+      "sources": [],
+      "minutes": 5,
+      "stage": "Foundations",
+      "version": 1,
+      "prerequisite": "lesson-5",
+      "skillDependencies": ["lesson-6"],
+      "review": ["lesson-6"],
+      "reflection": "Name one choice you made, what effect you intended, and one thing you would try differently.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-14",
+      "title": "The truth in a small thing",
+      "discipline": "The Heart",
+      "objective": "Express emotion through a specific action.",
+      "explanation": "Sincerity is not the same as maximum intensity. An ordinary action can reveal what a speaker cannot say directly.",
+      "example": "“Dad keeps my crooked birthday card / beneath his polished workbench.” Keeping an imperfect gift suggests affection without naming it.",
+      "exercise": "Write three lines of affection, gratitude, longing, or loss. Show one ordinary action instead of naming the emotion; avoid stock phrases such as “broken heart” or “forever yours”.",
+      "assessment": [
+        "An action or object carries the feeling.",
+        "The language sounds specific to this speaker."
+      ],
+      "sources": ["stolpe-lyrics"],
+      "minutes": 5,
+      "stage": "Development",
+      "version": 2,
+      "prerequisite": "lesson-7",
+      "skillDependencies": ["lesson-6", "lesson-3"],
+      "review": ["lesson-6", "lesson-3"],
+      "reflection": "Name one choice you made, what effect you intended, and one thing you would try differently.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-15",
+      "title": "Leave room for the listener",
+      "discipline": "The Heart",
+      "objective": "Use subtext and restraint.",
+      "explanation": "Let spoken words and actions pull in different directions. Trust the reader to notice the gap, while keeping the situation clear.",
+      "example": "“Of course I’m glad you’re going.” / She folded his map along the wrong road.",
+      "exercise": "Write four lines of a farewell. Let one gesture contradict the speaker’s words.",
+      "assessment": [
+        "Speech and gesture imply a readable tension.",
+        "Restraint creates inference rather than mere vagueness."
+      ],
+      "sources": [],
+      "minutes": 5,
+      "stage": "Development",
+      "version": 1,
+      "prerequisite": "lesson-14",
+      "skillDependencies": ["lesson-14", "lesson-7"],
+      "review": ["lesson-14", "lesson-7"],
+      "reflection": "Name one choice you made, what effect you intended, and one thing you would try differently.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-8",
+      "title": "A character at the threshold",
+      "discipline": "The Tale",
+      "objective": "Introduce character through choice.",
+      "explanation": "An early action can reveal desire and a contradiction more efficiently than a biography. Give the person something to want now.",
+      "example": "“The knight sold off his silver spurs / to buy his daughter dancing shoes.” Status gives way to affection.",
+      "exercise": "Introduce a character in four lines. Include a desire and a revealing choice.",
+      "assessment": [
+        "An action reveals both desire and character.",
+        "The reader can tell who acts and what matters."
+      ],
+      "sources": [],
+      "minutes": 5,
+      "stage": "Development",
+      "version": 1,
+      "prerequisite": "lesson-15",
+      "skillDependencies": ["lesson-6", "lesson-14"],
+      "review": ["lesson-6", "lesson-14"],
+      "reflection": "Name one choice you made, what effect you intended, and one thing you would try differently.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-9",
+      "title": "A reason to listen",
+      "discipline": "The Tale",
+      "objective": "Create conflict with a specific obstacle.",
+      "explanation": "A story moves when a desire meets resistance. The obstacle should force a choice rather than merely delay the character.",
+      "example": "A baker wants to feed a stranger, but the final loaf is promised to the mayor.",
+      "exercise": "Give your previous character an obstacle. Write four lines ending just before a decision.",
+      "assessment": [
+        "An obstacle makes a choice necessary.",
+        "The conflict is understandable on one hearing."
+      ],
+      "sources": [],
+      "minutes": 5,
+      "stage": "Development",
+      "version": 1,
+      "prerequisite": "lesson-8",
+      "skillDependencies": ["lesson-8"],
+      "review": ["lesson-8"],
+      "reflection": "Name one choice you made, what effect you intended, and one thing you would try differently.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-10",
+      "title": "The promise in the pocket",
+      "discipline": "The Tale",
+      "objective": "Plant a detail that can pay off later.",
+      "explanation": "A setup quietly teaches the audience what to remember. A payoff changes what that detail means. Too much emphasis announces the ending.",
+      "example": "Setup: a baker keeps a bent pin in her apron. Payoff: when the oven latch jams before the feast, that pin releases it. The small detail becomes a usable tool, rather than a convenient new invention.",
+      "exercise": "Write a two-line setup involving a small object. Add a two-line payoff that makes it matter.",
+      "assessment": [
+        "The payoff uses an identifiable earlier detail.",
+        "The connection surprises without needing a new explanation."
+      ],
+      "sources": [],
+      "minutes": 5,
+      "stage": "Development",
+      "version": 2,
+      "prerequisite": "lesson-9",
+      "skillDependencies": ["lesson-8", "lesson-9"],
+      "review": ["lesson-8", "lesson-9"],
+      "reflection": "Name one choice you made, what effect you intended, and one thing you would try differently.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-11",
+      "title": "The road turns left",
+      "discipline": "The Wit",
+      "objective": "Subvert an established expectation.",
+      "explanation": "A reversal works when the audience can follow the first expectation and recognise the second interpretation. Surprise needs enough logic to feel earned.",
+      "example": "“He swore he feared no dragon’s roar. / The taxman knocked; he barred the door.”",
+      "exercise": "Write a four-line miniature ballad that establishes bravery and then reveals an unexpected fear.",
+      "assessment": [
+        "The first expectation is established clearly.",
+        "The reversal is plausible within the miniature story."
+      ],
+      "sources": [],
+      "minutes": 5,
+      "stage": "Development",
+      "version": 1,
+      "prerequisite": "lesson-10",
+      "skillDependencies": ["lesson-10"],
+      "review": ["lesson-10"],
+      "reflection": "Name one choice you made, what effect you intended, and one thing you would try differently.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-12",
+      "title": "Give the joke some air",
+      "discipline": "The Wit",
+      "objective": "Place the surprising word where it lands.",
+      "explanation": "Timing on the page comes from ordering information. Put essential setup first and the surprising detail near the end. Extra explanation after a punchline often weakens it.",
+      "example": "“The king requested honest counsel. / We sent a mirror. It was banished.”",
+      "exercise": "Write a two-line joke about an ordinary job. Revise so the surprise arrives in the last few words.",
+      "assessment": [
+        "The setup supplies the information needed for the surprise.",
+        "The ending avoids explaining the joke after it lands."
+      ],
+      "sources": [],
+      "minutes": 5,
+      "stage": "Development",
+      "version": 1,
+      "prerequisite": "lesson-11",
+      "skillDependencies": ["lesson-11", "lesson-3"],
+      "review": ["lesson-11", "lesson-3"],
+      "reflection": "Name one choice you made, what effect you intended, and one thing you would try differently.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-13",
+      "title": "Two meanings, one door",
+      "discipline": "The Wit",
+      "objective": "Use wordplay with a readable surface meaning.",
+      "explanation": "A double meaning should support the scene on both readings. Avoid explaining the pun; make the situation do that work.",
+      "example": "“The gardener said he needed space. / I moved the pots; he packed his case.” Space first suggests room for plants, then distance in a relationship.",
+      "exercise": "Write two lines about a profession using a word with two meanings. Keep both readings coherent.",
+      "assessment": [
+        "Both meanings fit the scene.",
+        "The pun remains comprehensible without a footnote."
+      ],
+      "sources": [],
+      "minutes": 5,
+      "stage": "Development",
+      "version": 2,
+      "prerequisite": "lesson-12",
+      "skillDependencies": ["lesson-12", "lesson-1"],
+      "review": ["lesson-12", "lesson-1"],
+      "reflection": "Name one choice you made, what effect you intended, and one thing you would try differently.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-16",
+      "title": "Words need somewhere to breathe",
+      "discipline": "The Lute",
+      "objective": "Fit a lyric to a repeatable phrase.",
+      "explanation": "Speak or sing a simple phrase, then notice where you breathe. Important words should feel comfortable on strong musical moments. No audio equipment is needed.",
+      "example": "Try “I kept a light beside the stair” over four taps, then change “a light” to “every little candle” and feel the crowding.",
+      "exercise": "Hum a short original phrase. Write two lines you can sing to it without rushing important words.",
+      "assessment": [
+        "The phrase can be spoken or sung without crowding important words.",
+        "A revision respects natural stress and breath."
+      ],
+      "sources": ["stolpe-lyrics", "pattison-prosody"],
+      "minutes": 5,
+      "stage": "Development",
+      "version": 1,
+      "prerequisite": "lesson-13",
+      "skillDependencies": ["lesson-4", "lesson-5", "lesson-3"],
+      "review": ["lesson-4", "lesson-5", "lesson-3"],
+      "reflection": "Name one choice you made, what effect you intended, and one thing you would try differently.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-17",
+      "title": "A home for the chorus",
+      "discipline": "The Lute",
+      "objective": "Give verse and chorus different jobs.",
+      "explanation": "Verses develop particulars; a chorus returns to the central idea. Repetition gains meaning when each verse changes the listener’s understanding.",
+      "example": "Verse: a packed suitcase, an unpaid fare. Chorus: “There’s still a road that leads me home.”",
+      "exercise": "Reuse four lines from an earlier scene or emotional exercise as a verse. Add a two-line chorus that names the larger idea, then explain in your reflection how the scene supports it.",
+      "assessment": [
+        "The verse gives particulars and the chorus a central idea.",
+        "The returning hook gains meaning from the verse."
+      ],
+      "sources": ["stolpe-lyrics"],
+      "minutes": 5,
+      "stage": "Development",
+      "version": 2,
+      "prerequisite": "lesson-16",
+      "skillDependencies": ["lesson-6", "lesson-14", "lesson-16"],
+      "review": ["lesson-6", "lesson-14", "lesson-16"],
+      "reflection": "Name one choice you made, what effect you intended, and one thing you would try differently.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-18",
+      "title": "Departure and return",
+      "discipline": "The Lute",
+      "objective": "Recognise tension, release, and variation.",
+      "explanation": "In many tonal songs, I feels settled, IV opens outward, and V invites return to I. These are common effects, not universal rules. Variation in lyric phrasing can echo departure and return.",
+      "example": "In C major, try C–F–G–C (I–IV–V–I), or imagine a question followed by an answer.",
+      "exercise": "Write a question line, a more urgent line, and a resolving line. Optionally sing over C–F–G–C.",
+      "assessment": [
+        "The resolving line answers the earlier tension.",
+        "Musical claims remain optional without audio evidence."
+      ],
+      "sources": ["pattison-prosody"],
+      "minutes": 5,
+      "stage": "Development",
+      "version": 1,
+      "prerequisite": "lesson-17",
+      "skillDependencies": ["lesson-17", "lesson-5"],
+      "review": ["lesson-17", "lesson-5"],
+      "reflection": "Name one choice you made, what effect you intended, and one thing you would try differently.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-19",
+      "title": "A line made to be heard",
+      "discipline": "The Voice",
+      "objective": "Use emphasis and pauses to guide a listener.",
+      "explanation": "Performance can change the meaning of the same words. Mark breaths and stress, then check that the audience can understand the story on one hearing.",
+      "example": "“I never said / you stole the crown.” Stress I, said, or you to hear different implications.",
+      "exercise": "Choose four lines of your work. Mark pauses with / and key stresses with capitals. Perform two different readings.",
+      "assessment": [
+        "Pause and emphasis choices serve the intended meaning.",
+        "The writer reflects on how another reading changes the effect."
+      ],
+      "sources": ["pattison-prosody"],
+      "minutes": 5,
+      "stage": "Development",
+      "version": 1,
+      "prerequisite": "lesson-18",
+      "skillDependencies": ["lesson-4", "lesson-16"],
+      "review": ["lesson-4", "lesson-16"],
+      "reflection": "Name one choice you made, what effect you intended, and one thing you would try differently.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-20",
+      "title": "The verse earns its ending",
+      "discipline": "The Quill",
+      "objective": "Revise a complete verse with intention.",
+      "explanation": "Revision is a sequence of decisions. Check meaning first, then image, rhythm, rhyme, and unnecessary words. Keep an imperfection when it serves the voice.",
+      "example": "Before: “I waited in the freezing cold for you.” After: “Your last train left. I stayed beside the rail.” The revision makes the waiting visible. Which version works better depends on the speaker’s intention.",
+      "exercise": "Bring an earlier four-line verse. State its intention, revise two lines for clarity and concision, then read aloud once. Explain one choice you changed and one you kept.",
+      "assessment": [
+        "Two revisions serve the stated intention.",
+        "An explicit rationale weighs meaning, image, rhythm, and rhyme."
+      ],
+      "sources": ["pattison-prosody", "stolpe-lyrics"],
+      "minutes": 5,
+      "stage": "Development",
+      "version": 2,
+      "prerequisite": "lesson-19",
+      "skillDependencies": ["lesson-6", "lesson-2", "lesson-5", "lesson-14"],
+      "review": ["lesson-6", "lesson-2", "lesson-5", "lesson-14"],
+      "reflection": "Name one choice you made, what effect you intended, and one thing you would try differently.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-21",
+      "title": "One sound, several effects",
+      "discipline": "The Quill",
+      "objective": "Use alliteration and assonance to support meaning.",
+      "explanation": "Alliteration repeats nearby initial consonant sounds; assonance repeats vowel sounds in nearby stressed syllables. Either can bind a phrase. Its effect depends on stress, pace, accent and context, so listen rather than assuming a sound always expresses one feeling.",
+      "example": "Alliteration: “Tin cups clatter on the cart” repeats /k/. Assonance: “Slow boats roll beyond the coast” repeats /oʊ/ in many English accents. Speak both; your accent may differ.",
+      "exercise": "Rewrite one earlier image twice: once with repeated consonants, once with shared vowel sounds. Choose the version that fits your intent.",
+      "assessment": [
+        "Sound repetition remains readable.",
+        "The writer explains a specific intended effect."
+      ],
+      "skillDependencies": ["lesson-6", "lesson-4"],
+      "sources": [],
+      "minutes": 5,
+      "stage": "Integration",
+      "version": 2,
+      "prerequisite": "lesson-20",
+      "review": ["lesson-6", "lesson-4"],
+      "reflection": "Name one choice you made, what effect you intended, and one thing you would try differently.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-22",
+      "title": "A shape to think inside",
+      "discipline": "The Quill",
+      "objective": "Draft an original four-line alternating-rhyme stanza.",
+      "explanation": "A stanza is a unit of thought as well as sound. An ABAB scheme asks lines one and three, then two and four, to answer each other. Try a loose four-beat pulse before strict metre.",
+      "example": "“The ferry bell outlived the light / A coat lay folded on the shore / One window kept its watch all night / Until the tide returned once more.”",
+      "exercise": "Write four lines in ABAB with four strong beats per line. Reuse an image from “Something you can touch”; mark one place where speech resists the pattern.",
+      "assessment": [
+        "The intended rhyme scheme is identifiable.",
+        "The writer recognises tension between metre and natural speech."
+      ],
+      "skillDependencies": ["lesson-5", "lesson-1", "lesson-21"],
+      "sources": ["fry-overview"],
+      "minutes": 5,
+      "stage": "Integration",
+      "version": 2,
+      "prerequisite": "lesson-21",
+      "review": ["lesson-5", "lesson-1", "lesson-21"],
+      "reflection": "Name one choice you made, what effect you intended, and one thing you would try differently.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-23",
+      "title": "A hook that means more",
+      "discipline": "The Lute",
+      "objective": "Create a concise title-hook whose meaning changes with context.",
+      "explanation": "A hook is a memorable return, not merely a repeated phrase. Give a short title two plausible contexts, then let the verse earn one of them.",
+      "example": "Title: “A little room.” A cramped apartment first; the freedom to forgive later.",
+      "exercise": "Choose a two-to-five-word title. Write two contrasting two-line verse sketches leading into that same title.",
+      "assessment": [
+        "The title is concise and repeatable.",
+        "The contexts change its emotional meaning."
+      ],
+      "skillDependencies": ["lesson-17", "lesson-15"],
+      "sources": ["stolpe-lyrics", "pattison-prosody"],
+      "minutes": 5,
+      "stage": "Integration",
+      "version": 1,
+      "prerequisite": "lesson-22",
+      "review": ["lesson-17", "lesson-15"],
+      "reflection": "Name one choice you made, what effect you intended, and one thing you would try differently.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-24",
+      "title": "Keep the camera steady",
+      "discipline": "The Tale",
+      "objective": "Control speaker, addressee, and time.",
+      "explanation": "A lyric has a viewpoint even when it does not name a narrator. Unsignalled changes of you, she, or tense can confuse a listener. Change them deliberately when the story needs a turn.",
+      "example": "Confusing: “You left. She waits. I will be gone.” Clearer: “You left at dawn. I waited by the gate.”",
+      "exercise": "Take four earlier lines. Underline speaker, addressee, and time cues; revise one confusing shift or explain an intentional one.",
+      "assessment": [
+        "Pronouns have understandable referents.",
+        "A time or perspective shift has a clear purpose."
+      ],
+      "skillDependencies": ["lesson-8", "lesson-9"],
+      "sources": [],
+      "minutes": 5,
+      "stage": "Integration",
+      "version": 1,
+      "prerequisite": "lesson-23",
+      "review": ["lesson-8", "lesson-9"],
+      "reflection": "Name one choice you made, what effect you intended, and one thing you would try differently.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-25",
+      "title": "Change the light",
+      "discipline": "The Heart",
+      "objective": "Create emotional contrast without contradicting the speaker.",
+      "explanation": "Tender details can sharpen an angry verse; humour can make grief more human. Contrast becomes useful when both feelings arise from the same situation.",
+      "example": "“I cursed your mug beside the sink, / then washed it carefully by hand.” Irritation and tenderness attach to the same object and opposing actions.",
+      "exercise": "Revise an earlier emotional stanza to contain a contrasting feeling. Keep the situation and speaker coherent.",
+      "assessment": [
+        "Both feelings have concrete support.",
+        "The contrast deepens rather than obscures the central situation."
+      ],
+      "skillDependencies": ["lesson-14", "lesson-15", "lesson-24"],
+      "sources": ["pattison-prosody"],
+      "minutes": 5,
+      "stage": "Integration",
+      "version": 2,
+      "prerequisite": "lesson-24",
+      "review": ["lesson-14", "lesson-15", "lesson-24"],
+      "reflection": "Name one choice you made, what effect you intended, and one thing you would try differently.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-26",
+      "title": "The joke belongs to someone",
+      "discipline": "The Wit",
+      "objective": "Build humour from character rather than a detached punchline.",
+      "explanation": "A narrative joke becomes stronger when the reversal reveals a desire or blind spot already present in the character. Let consequences follow the setup.",
+      "example": "“The mayor fined all idle talk. / By noon, his speech had bankrupted him.” The consequence reveals the same habit the character wants to punish.",
+      "exercise": "Return to your character and obstacle. Write a four-line comic consequence using an earlier planted detail.",
+      "assessment": [
+        "The surprise grows from an established character trait.",
+        "The payoff reuses a detail and remains legible."
+      ],
+      "skillDependencies": ["lesson-10", "lesson-11", "lesson-12", "lesson-13"],
+      "sources": [],
+      "minutes": 5,
+      "stage": "Integration",
+      "version": 2,
+      "prerequisite": "lesson-25",
+      "review": ["lesson-10", "lesson-11", "lesson-12", "lesson-13"],
+      "reflection": "Name one choice you made, what effect you intended, and one thing you would try differently.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-27",
+      "title": "Make the bridge earn its place",
+      "discipline": "The Lute",
+      "objective": "Use a bridge to change perspective.",
+      "explanation": "A bridge offers information or perspective that a repeated verse cannot. It can question the chorus, reveal a cost, or change the listener’s understanding before the return.",
+      "example": "Chorus: “I always leave a light.” Bridge idea: the speaker realises the light is for themself.",
+      "exercise": "Write a two-line bridge for your earlier chorus. Add one sentence explaining how the chorus means something different afterwards.",
+      "assessment": [
+        "The bridge adds a distinct perspective.",
+        "The returning chorus remains coherent but gains meaning."
+      ],
+      "skillDependencies": ["lesson-17", "lesson-23", "lesson-25"],
+      "sources": ["pattison-prosody"],
+      "minutes": 5,
+      "stage": "Integration",
+      "version": 1,
+      "prerequisite": "lesson-26",
+      "review": ["lesson-17", "lesson-23", "lesson-25"],
+      "reflection": "Name one choice you made, what effect you intended, and one thing you would try differently.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-28",
+      "title": "Test on one hearing",
+      "discipline": "The Voice",
+      "objective": "Revise for a listener who cannot reread.",
+      "explanation": "Reading aloud reveals breath, ambiguity, and crowded phrasing. A silent text review cannot measure actual delivery; record your own observations instead of asking AI to infer a performance.",
+      "example": "“After Mira called Jo’s sister, she left.” The pronoun may confuse a first-time listener.",
+      "exercise": "Use an earlier verse and chorus, up to eight lines. Read them aloud once. Mark a stumble, a breath, or an unclear reference; if none occurs, name an emphasis choice. Revise one place and read again.",
+      "assessment": [
+        "The self-report identifies a specific listening obstacle.",
+        "The revision improves clarity without flattening the voice."
+      ],
+      "skillDependencies": ["lesson-19", "lesson-24", "lesson-16"],
+      "sources": ["stolpe-lyrics"],
+      "minutes": 5,
+      "stage": "Integration",
+      "version": 2,
+      "prerequisite": "lesson-27",
+      "review": ["lesson-19", "lesson-24", "lesson-16"],
+      "reflection": "Name one choice you made, what effect you intended, and one thing you would try differently.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-29",
+      "title": "Revise for one intention",
+      "discipline": "The Quill",
+      "objective": "Evaluate several craft choices against a central purpose.",
+      "explanation": "Prosody treats sound, structure, image, and language as choices serving the same emotional intention. Perfect regularity is not always the best choice for an unsettled speaker.",
+      "example": "A speaker denying fear may use a steady refrain, then lose the rhyme at the moment of doubt.",
+      "exercise": "Use a previous verse and chorus (up to eight lines). State the central intention. Spend three minutes revising one image and one rhythmic or rhyme choice; explain how both serve the intention and identify a deliberate irregularity you kept.",
+      "assessment": [
+        "The intention is specific enough to guide decisions.",
+        "Two craft choices and one deliberate irregularity are justified by their effect rather than a rigid rule."
+      ],
+      "skillDependencies": [
+        "lesson-20",
+        "lesson-22",
+        "lesson-25",
+        "lesson-27",
+        "lesson-28"
+      ],
+      "sources": ["pattison-prosody"],
+      "minutes": 5,
+      "stage": "Integration",
+      "version": 2,
+      "prerequisite": "lesson-28",
+      "review": [
+        "lesson-20",
+        "lesson-22",
+        "lesson-25",
+        "lesson-27",
+        "lesson-28"
+      ],
+      "reflection": "Name one choice you made, what effect you intended, and one thing you would try differently.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-30",
+      "title": "A small finished work",
+      "discipline": "The Tale",
+      "objective": "Transfer learned skills into an independently revised miniature.",
+      "explanation": "A complete short piece can carry an arc: establish a situation, develop pressure, and leave a changed understanding. Completion is a considered decision, not proof of mastery.",
+      "example": "Outline: a messenger guards a sealed letter; rain reveals blank paper; they choose what to say in their own voice.",
+      "exercise": "Use a previous verse and chorus or short poem, up to twelve lines. Spend one minute identifying its opening promise, three revising its ending, and one naming a craft skill to practise next. Do not compose a new whole song in this session.",
+      "assessment": [
+        "The ending answers or deliberately reframes the opening.",
+        "A revision rationale names evidence and a next practice goal."
+      ],
+      "skillDependencies": ["lesson-29", "lesson-26"],
+      "sources": [],
+      "minutes": 5,
+      "stage": "Integration",
+      "version": 2,
+      "prerequisite": "lesson-29",
+      "review": ["lesson-29", "lesson-26"],
+      "reflection": "Name one choice you made, what effect you intended, and one thing you would try differently.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    }
+  ]
+}

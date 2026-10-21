@@ -1,0 +1,2361 @@
+{
+  "version": 2,
+  "sources": {
+    "design": {
+      "title": "Bard’s College original instructional design",
+      "locator": "WRITING_CURRICULUM.md and CURRICULUM_GAP_ANALYSIS.md",
+      "scope": "Original explanations, contrasts, five-minute tasks, extensions and self-assessment. Not empirically validated."
+    },
+    "S3": {
+      "title": "Andrea Stolpe — Popular Lyric Writing (S3)",
+      "locator": "ST ch. 3 “Two Types of Detail”, text/part0007.html, complete extracted text",
+      "scope": "T: observable detail and reflective meaning can support each other; too much density or abstraction can obscure the intention. No fixed detail ratio or forced two-column task imported. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "S4": {
+      "title": "Andrea Stolpe — Popular Lyric Writing (S4)",
+      "locator": "ST ch. 4 “Rhyme”, text/part0008.html, opening",
+      "scope": "T: compare meaning/sound possibilities, including looser links in sung phrasing. No particular recorded rhyme effect claimed. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "S5": {
+      "title": "Andrea Stolpe — Popular Lyric Writing (S5)",
+      "locator": "ST ch. 5 “Reflections of Music Form and Structure”, text/part0009.html, opening",
+      "scope": "T: relationships between lyric lines and musical phrases. Unreviewed images excluded. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "S7": {
+      "title": "Andrea Stolpe — Popular Lyric Writing (S7)",
+      "locator": "ST ch. 7 “The Chorus”, text/part0011.html, opening",
+      "scope": "T: a chorus can bring particular details into a larger purpose. This is an option, not every song's required structure. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "S8": {
+      "title": "Andrea Stolpe — Popular Lyric Writing (S8)",
+      "locator": "ST ch. 8 “Contrast”, text/part0012.html, opening; ch. 9 “The Content Compass”, text/part0013.html, opening",
+      "scope": "T: contrasting structures/content scopes and progression of ideas. Our bridge tasks D. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "S9": {
+      "title": "Andrea Stolpe — Popular Lyric Writing (S9)",
+      "locator": "ST ch. 8 “Contrast”, text/part0012.html, opening; ch. 9 “The Content Compass”, text/part0013.html, opening",
+      "scope": "T: contrasting structures/content scopes and progression of ideas. Our bridge tasks D. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "S10": {
+      "title": "Andrea Stolpe — Popular Lyric Writing (S10)",
+      "locator": "ST ch. 10 “Final Touches”, text/part0014.html, complete extracted text",
+      "scope": "T: specific verbs, viewpoint, tense and conversational revision. Deliberate intelligible shifts remain allowed. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "P3": {
+      "title": "Pat Pattison — Writing Better Lyrics, second edition (P3)",
+      "locator": "PA ch. 3 “Making Metaphors”, OEBPS/PATT_9781599633657_epub_s3.html, opening",
+      "scope": "T: a comparison needs a revealing relationship. Original comparisons/tasks D. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "P7": {
+      "title": "Pat Pattison — Writing Better Lyrics, second edition (P7)",
+      "locator": "PA ch. 7 “Verse Development and Power Positions”, _s7.html, opening; ch. 8 “Travelogues: Verse Continuity”, _s8.html, opening, same OEBPS prefix",
+      "scope": "T: verses can deepen a returning refrain; scenes need a meaningful relationship. Our narrative-causality exercise D. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "P8": {
+      "title": "Pat Pattison — Writing Better Lyrics, second edition (P8)",
+      "locator": "PA ch. 7 “Verse Development and Power Positions”, _s7.html, opening; ch. 8 “Travelogues: Verse Continuity”, _s8.html, opening, same OEBPS prefix",
+      "scope": "T: verses can deepen a returning refrain; scenes need a meaningful relationship. Our narrative-causality exercise D. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "P10": {
+      "title": "Pat Pattison — Writing Better Lyrics, second edition (P10)",
+      "locator": "PA ch. 10 “Perspectives”, OEBPS/PATT_9781599633657_epub_s10.html, opening",
+      "scope": "T: viewpoint shapes the singer/audience relationship. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "P14": {
+      "title": "Pat Pattison — Writing Better Lyrics, second edition (P14)",
+      "locator": "PA ch. 14 “Meter: Something in Common”, OEBPS/PATT_9781599633657_epub_s14.html, opening and assets images/p147-001.jpg, images/p148-001.jpg relative to OEBPS",
+      "scope": "T/V: stress/phrase-length relationships; see exact visual boundary below. Eight-bar/common metre is an example, not a universal song requirement. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "P18": {
+      "title": "Pat Pattison — Writing Better Lyrics, second edition (P18)",
+      "locator": "PA ch. 18 “Prosody: Structure as Film Score”, _s18.html, complete extracted text; ch. 21 “The Great Balancing Act”, _s21.html, opening",
+      "scope": "T: sound/form/meaning can align or intentionally conflict. Stability through phrase/rhyme relationships is a contextual hypothesis to test, not a deterministic listener response. Ch. 18's rhyme-scale image remains U. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "P21": {
+      "title": "Pat Pattison — Writing Better Lyrics, second edition (P21)",
+      "locator": "PA ch. 18 “Prosody: Structure as Film Score”, _s18.html, complete extracted text; ch. 21 “The Great Balancing Act”, _s21.html, opening",
+      "scope": "T: sound/form/meaning can align or intentionally conflict. Stability through phrase/rhyme relationships is a contextual hypothesis to test, not a deterministic listener response. Ch. 18's rhyme-scale image remains U. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "F1": {
+      "title": "Stephen Fry — The Ode Less Travelled; supplied digital edition uncertain (F1)",
+      "locator": "FR ch. 1 I, The_ode_less_travelled_unlockin_split_011.html and opening _012.html; section II “End-stopping, Enjambment and Caesura” within _012.html",
+      "scope": "T/V for inspected bold/italic distinction; T for line/syntax/metrical expectation and first part of section II. Dialect variation allowed. All scansion images are not thereby verified. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "F1-II": {
+      "title": "Stephen Fry — The Ode Less Travelled; supplied digital edition uncertain (F1-II)",
+      "locator": "FR ch. 1 I, The_ode_less_travelled_unlockin_split_011.html and opening _012.html; section II “End-stopping, Enjambment and Caesura” within _012.html",
+      "scope": "T/V for inspected bold/italic distinction; T for line/syntax/metrical expectation and first part of section II. Dialect variation allowed. All scansion images are not thereby verified. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "F2": {
+      "title": "Stephen Fry — The Ode Less Travelled; supplied digital edition uncertain (F2)",
+      "locator": "FR ch. 2 I, “Partial Rhymes”, The_ode_less_travelled_unlockin_split_015.html, bounded discussion",
+      "scope": "T: rhyme by sound, assonance/consonance and the difference from eye rhyme. Terms/preferences vary with tradition and author. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "F3": {
+      "title": "Stephen Fry — The Ode Less Travelled; supplied digital edition uncertain (F3)",
+      "locator": "FR ch. 3 I stanza/form opening and III “The Ballad” opening, The_ode_less_travelled_unlockin_split_017.html",
+      "scope": "T: stanza expectation, ballad narrative and common four/three-stress variants. Free-verse comparison and our causal-scene outline D. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "F3-B": {
+      "title": "Stephen Fry — The Ode Less Travelled; supplied digital edition uncertain (F3-B)",
+      "locator": "FR ch. 3 I stanza/form opening and III “The Ballad” opening, The_ode_less_travelled_unlockin_split_017.html",
+      "scope": "T: stanza expectation, ballad narrative and common four/three-stress variants. Free-verse comparison and our causal-scene outline D. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "F4": {
+      "title": "Stephen Fry — The Ode Less Travelled; supplied digital edition uncertain (F4)",
+      "locator": "FR ch. 4 I “Diction and Poetics Today”, The_ode_less_travelled_unlockin_split_020.html, opening",
+      "scope": "T: diction can produce a particular imaginative effect. Personal-voice framework D, not an extracted method. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "D16": {
+      "title": "Sheila Davis — The Craft of Lyric Writing, first edition (D16)",
+      "locator": "DA ch. 16 “From Pun to Funny”, file 187–189 (printed 177–179); ch. 17 “Rhyme and Other Sound Effects”, file 195–197 (printed 185–187)",
+      "scope": "T: context for wordplay/incongruity and sound relationships. Satire/plot twists original synthesis; historical humour theories not accepted as universal facts. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "D17": {
+      "title": "Sheila Davis — The Craft of Lyric Writing, first edition (D17)",
+      "locator": "DA ch. 16 “From Pun to Funny”, file 187–189 (printed 177–179); ch. 17 “Rhyme and Other Sound Effects”, file 195–197 (printed 185–187)",
+      "scope": "T: context for wordplay/incongruity and sound relationships. Satire/plot twists original synthesis; historical humour theories not accepted as universal facts. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "D18": {
+      "title": "Sheila Davis — The Craft of Lyric Writing, first edition (D18)",
+      "locator": "DA ch. 18 “Feeling the Rhythm”, file 224–225 (printed 214–215); ch. 19 “Reinforcing Meaning and Emotion”, file 241–242 (printed 231–232)",
+      "scope": "T/V for table on file 242 only: language stress, musical emphasis and purpose. We reject a universal “music first is superior” conclusion and fixed speech-foot durations. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "D19": {
+      "title": "Sheila Davis — The Craft of Lyric Writing, first edition (D19)",
+      "locator": "DA ch. 18 “Feeling the Rhythm”, file 224–225 (printed 214–215); ch. 19 “Reinforcing Meaning and Emotion”, file 241–242 (printed 231–232)",
+      "scope": "T/V for table on file 242 only: language stress, musical emphasis and purpose. We reject a universal “music first is superior” conclusion and fixed speech-foot durations. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "D24": {
+      "title": "Sheila Davis — The Craft of Lyric Writing, first edition (D24)",
+      "locator": "DA ch. 24 “Review—Revise—Fine Tune”, file 303–304 (printed 293–294), opening critique",
+      "scope": "T: compare draft and intention, clarify viewpoint and tone. Original rubrics/transfer tasks D; no proprietary student example distributed. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "J1": {
+      "title": "Jack Perricone — Melody in Songwriting (J1)",
+      "locator": "JP ch. 1 file 10–16; ch. 2 file 17–23",
+      "scope": "T: pitch/rhythm, step/leap, phrase/breath, relative tonal tendencies and independent melody. V only for specified phrase illustration. Harmonic-series generalisations not used as universal laws. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "J2": {
+      "title": "Jack Perricone — Melody in Songwriting (J2)",
+      "locator": "JP ch. 1 file 10–16; ch. 2 file 17–23",
+      "scope": "T: pitch/rhythm, step/leap, phrase/breath, relative tonal tendencies and independent melody. V only for specified phrase illustration. Harmonic-series generalisations not used as universal laws. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "J3": {
+      "title": "Jack Perricone — Melody in Songwriting (J3)",
+      "locator": "JP ch. 3 file 24–28, 31–34; ch. 4 file 35–36",
+      "scope": "T: pulse, metre, duration, syncopation and emphasis; immediate/delayed/unresolved notes. Most score details U. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "J4": {
+      "title": "Jack Perricone — Melody in Songwriting (J4)",
+      "locator": "JP ch. 3 file 24–28, 31–34; ch. 4 file 35–36",
+      "scope": "T: pulse, metre, duration, syncopation and emphasis; immediate/delayed/unresolved notes. Most score details U. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "J7": {
+      "title": "Jack Perricone — Melody in Songwriting (J7)",
+      "locator": "JP ch. 7 file 53–55; ch. 11 file 89–91",
+      "scope": "T/V: outline/embellishment and developmental rhythm/contour; exact versus diatonic sequence, bounded visual checks below. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "J11": {
+      "title": "Jack Perricone — Melody in Songwriting (J11)",
+      "locator": "JP ch. 7 file 53–55; ch. 11 file 89–91",
+      "scope": "T/V: outline/embellishment and developmental rhythm/contour; exact versus diatonic sequence, bounded visual checks below. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "J13": {
+      "title": "Jack Perricone — Melody in Songwriting (J13)",
+      "locator": "JP ch. 13 file 110–115; ch. 16 file 130–131",
+      "scope": "T: function is contextual, not simply a chord-name dictionary; harmonic rhythm and alternative chord roles under a melody. Crowded/ambiguous extracted accidental examples not adopted. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "J16": {
+      "title": "Jack Perricone — Melody in Songwriting (J16)",
+      "locator": "JP ch. 13 file 110–115; ch. 16 file 130–131",
+      "scope": "T: function is contextual, not simply a chord-name dictionary; harmonic rhythm and alternative chord roles under a melody. Crowded/ambiguous extracted accidental examples not adopted. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "R1": {
+      "title": "Rikky Rooksby — How to Write Songs on Guitar (R1)",
+      "locator": "RR section 1 file 10–12; section 2 opening file 13–14",
+      "scope": "T/V: several valid composition entry points; triad construction and selected tab/diagram checks below. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "R2": {
+      "title": "Rikky Rooksby — How to Write Songs on Guitar (R2)",
+      "locator": "RR section 1 file 10–12; section 2 opening file 13–14",
+      "scope": "T/V: several valid composition entry points; triad construction and selected tab/diagram checks below. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "Rminor": {
+      "title": "Rikky Rooksby — How to Write Songs on Guitar (Rminor)",
+      "locator": "RR section 3 file 61–63; section 6 “Compound Time”, file 88 (printed 77)",
+      "scope": "T: natural-minor versus major-V alternatives; 6/8 grouping and distinction of tempo/metre. Compound≠automatic swing. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "R6c": {
+      "title": "Rikky Rooksby — How to Write Songs on Guitar (R6c)",
+      "locator": "RR section 3 file 61–63; section 6 “Compound Time”, file 88 (printed 77)",
+      "scope": "T: natural-minor versus major-V alternatives; 6/8 grouping and distinction of tempo/metre. Compound≠automatic swing. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "R6g": {
+      "title": "Rikky Rooksby — How to Write Songs on Guitar (R6g)",
+      "locator": "RR section 6 “Strumming”/“Fingerpicking”, file 92; section 11 “Part Playing” and related context file 159–161",
+      "scope": "T/V only for selected tab cell: rhythm, sustain, separate accompaniment roles and space for voice. Studio/electric examples not proof of acoustic ergonomics. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "R11": {
+      "title": "Rikky Rooksby — How to Write Songs on Guitar (R11)",
+      "locator": "RR section 6 “Strumming”/“Fingerpicking”, file 92; section 11 “Part Playing” and related context file 159–161",
+      "scope": "T/V only for selected tab cell: rhythm, sustain, separate accompaniment roles and space for voice. Studio/electric examples not proof of acoustic ergonomics. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "Rcapo": {
+      "title": "Rikky Rooksby — How to Write Songs on Guitar (Rcapo)",
+      "locator": "RR section 10 “Odd Keys and the Capo”, file 149 (printed 127), prose",
+      "scope": "T: change sounding key while keeping familiar shapes to fit the singer. Table/specific record transpositions U. The statement that a capo lowers string tension is not adopted as a general physical claim. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "KMref": {
+      "title": "Jimmy Kachulis — The Songwriter’s Workshop: Melody (KMref)",
+      "locator": "KM file 15 (printed xiii), notes/tab/chord reference",
+      "scope": "V for specified pitch classes and C/Am diagrams only. Not the whole chart. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "KM1": {
+      "title": "Jimmy Kachulis — The Songwriter’s Workshop: Melody (KM1)",
+      "locator": "KM lesson 1 file 19–20 (printed 3–4); lesson 2 opening file 21 (printed 5)",
+      "scope": "T/V for note-duration representation on file 19; T for phrase space. No audio heard. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "KM2": {
+      "title": "Jimmy Kachulis — The Songwriter’s Workshop: Melody (KM2)",
+      "locator": "KM lesson 1 file 19–20 (printed 3–4); lesson 2 opening file 21 (printed 5)",
+      "scope": "T/V for note-duration representation on file 19; T for phrase space. No audio heard. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "KM18": {
+      "title": "Jimmy Kachulis — The Songwriter’s Workshop: Melody (KM18)",
+      "locator": "KM lesson 18 file 66–67 (printed 50–51); lesson 19 file 68–69 (printed 52–53); development context file 65",
+      "scope": "T/V for specified common-tone/chord labels; T for retained rhythm/new shape. Printed score/prose discrepancy below. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "KM19": {
+      "title": "Jimmy Kachulis — The Songwriter’s Workshop: Melody (KM19)",
+      "locator": "KM lesson 18 file 66–67 (printed 50–51); lesson 19 file 68–69 (printed 52–53); development context file 65",
+      "scope": "T/V for specified common-tone/chord labels; T for retained rhythm/new shape. Printed score/prose discrepancy below. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "KM24": {
+      "title": "Jimmy Kachulis — The Songwriter’s Workshop: Melody (KM24)",
+      "locator": "KM lesson 24 file 78–80 (printed 62–64); related motif-fragment lesson 22 file 74–75 (printed 58–59)",
+      "scope": "T; V for specified phrase lengths/fragments on file 74. Contrast and transformations can develop sections; musical effectiveness untested. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "KHbasics": {
+      "title": "Jimmy Kachulis — The Songwriter’s Workshop: Harmony (KHbasics)",
+      "locator": "KH file 11–16, alphabet/chords/transposition/overview; lesson 1 file 22–23 (printed 3–4)",
+      "scope": "T: useful labels and transposition, tempo/feel/density/motif distinction. Overview teaching approach, not empirical efficacy. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "KH1": {
+      "title": "Jimmy Kachulis — The Songwriter’s Workshop: Harmony (KH1)",
+      "locator": "KH file 11–16, alphabet/chords/transposition/overview; lesson 1 file 22–23 (printed 3–4)",
+      "scope": "T: useful labels and transposition, tempo/feel/density/motif distinction. Overview teaching approach, not empirical efficacy. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "KH32": {
+      "title": "Jimmy Kachulis — The Songwriter’s Workshop: Harmony (KH32)",
+      "locator": "KH lesson 32 file 129–134 (printed 110–115)",
+      "scope": "T/V for specified chord substitution on file 129; all later variations not independently transcribed. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "KH36": {
+      "title": "Jimmy Kachulis — The Songwriter’s Workshop: Harmony (KH36)",
+      "locator": "KH lessons 36–37 file 148–153 (printed 129–134)",
+      "scope": "T/V for fixed C and harmonisation opening checked on 148/151; alternative harmony affects interpretation contextually, not fixed emotional categories. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "KH37": {
+      "title": "Jimmy Kachulis — The Songwriter’s Workshop: Harmony (KH37)",
+      "locator": "KH lessons 36–37 file 148–153 (printed 129–134)",
+      "scope": "T/V for fixed C and harmonisation opening checked on 148/151; alternative harmony affects interpretation contextually, not fixed emotional categories. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "KHcad": {
+      "title": "Jimmy Kachulis — The Songwriter’s Workshop: Harmony (KHcad)",
+      "locator": "KH lesson 39 major opening file 162–163 (printed 143–144); lesson 40 file 166–167 (printed 147–148)",
+      "scope": "T/V for checked major cadences and half-cadence melody ending. Source uses “full cadence” broadly; advanced modal/minor categories not imported as a universal taxonomy. Coverage is selective; unverified audio and other source examples are excluded. Private books are not shipped or sent to the tutor."
+    },
+    "pattison-prosody": {
+      "title": "Prosody in Music and Songwriting",
+      "locator": "https://online.berklee.edu/takenote/prosody-in-music-and-songwriting/",
+      "scope": "Full public article. Central expressive intention; stability/instability; choosing rhyme distance to support meaning. No examples or exercise text copied."
+    },
+    "stolpe-lyrics": {
+      "title": "How to Write Song Lyrics",
+      "locator": "https://online.berklee.edu/takenote/how-to-write-song-lyrics/",
+      "scope": "Full public article. Sensory small-moment writing before rhyme; conversational authenticity; concrete verses and a clear central chorus; concise form; relationship of lyric and melodic rhythm."
+    },
+    "fry-overview": {
+      "title": "The Ode Less Travelled — public publisher overview",
+      "locator": "https://www.penguin.co.uk/books/352178/the-ode-less-travelled-by-stephen-fry/9780099509349",
+      "scope": "Publisher overview only, not the full book or a readable sample. Supports the broad emphasis on learning metre, rhyme and verse forms through progressive exercises. No detailed claims about Fry’s exercises, definitions or teaching sequence are attributed to this overview."
+    }
+  },
+  "lessons": [
+    {
+      "id": "lesson-6",
+      "title": "Something you can touch",
+      "faculty": "writing",
+      "discipline": "The Quill",
+      "objective": "Replace vague descriptions with sensory images.",
+      "explanation": "Specific objects give the reader evidence. Select one telling detail instead of listing every sense. Choose details for what this speaker notices; adding more senses mechanically is not the goal.",
+      "example": "Abstract: “The room was lonely.” Specific: “One teaspoon dried beside the sink.”",
+      "weakExample": "“It was a nice place” supplies an evaluation but no sensory evidence.",
+      "exercise": "Describe a deserted place in three lines without lonely, empty, sad, or beautiful.",
+      "minimumTask": "Describe a deserted place in three lines without lonely, empty, sad, or beautiful.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "An unfamiliar room must feel welcoming without using a word for an emotion. Write a miniature and identify a craft choice.",
+      "minimumWords": 3,
+      "prerequisite": null,
+      "assessment": [
+        "A concrete detail places a reader in a scene.",
+        "The detail suggests rather than labels an emotion.",
+        "The chosen detail gives evidence for this specific scene without requiring a named emotion."
+      ],
+      "skillDependencies": [],
+      "review": [],
+      "sources": ["S3", "design"],
+      "minutes": 5,
+      "stage": "1. Foundations",
+      "version": 2,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-3",
+      "title": "Speak before you sing",
+      "faculty": "writing",
+      "discipline": "The Quill",
+      "objective": "Use natural speech before adding rhyme.",
+      "explanation": "Start with something a person would actually say. Read it aloud before shaping the ending. Later lessons add rhyme; today, notice whether an unusual word order serves a deliberate voice or merely sounds literary. Keep the speaker’s idiom, dialect and intention intact. A conversational line need not have identical syllable counts to its neighbour.",
+      "example": "Stilted: “Upon the road did I depart.” Conversational: “I left before the buses started.” The second sentence places a speaker in an ordinary moment.",
+      "weakExample": "An inverted line chosen only to secure a rhyme obscures what the speaker would say.",
+      "exercise": "Return to your deserted place. Write a two-to-four-line conversation between someone arriving and someone leaving. Keep ordinary word order; no rhyme is required yet.",
+      "minimumTask": "Return to your deserted place. Write a two-to-four-line conversation between someone arriving and someone leaving. Keep ordinary word order; no rhyme is required yet.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "A person avoids answering a practical question. Write their reply and decide what ordinary speech can imply.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-6",
+      "assessment": [
+        "The dialogue sounds like intentional speech in the writer’s voice.",
+        "A concrete detail or choice makes the situation understandable.",
+        "The writer can speak the line naturally without an unexplained inversion imposed by rhyme."
+      ],
+      "skillDependencies": ["lesson-6"],
+      "review": ["lesson-6"],
+      "sources": ["S10", "design"],
+      "minutes": 5,
+      "stage": "1. Foundations",
+      "version": 3,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-1",
+      "title": "Let the rhyme arrive",
+      "faculty": "writing",
+      "discipline": "The Quill",
+      "objective": "Find natural rhymes without bending meaning.",
+      "explanation": "Begin with what you want to say. Collect several rhyming words, then choose the one that serves that meaning. A near-rhyme can sound more natural than a strained perfect rhyme. Test candidate endings aloud in your own accent. A sound match is useful only when the thought still belongs to this speaker.",
+      "example": "“Your yellow scarf is on the chair. / I leave it folded for you there.” Chair/there fits an ordinary sentence; the action suggests why the object matters.",
+      "weakExample": "“My coffee cold did grow for thee” bends ordinary syntax for its ending.",
+      "exercise": "Write two conversational lines ending in a rhyme or near-rhyme. Start with a real object.",
+      "minimumTask": "Write two conversational lines ending in a rhyme or near-rhyme. Start with a real object.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "Write a tiny invitation to a neighbour. Decide whether rhyme would help the invitation sound natural; explain a choice.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-3",
+      "assessment": [
+        "The rhyme can be heard in the writer’s accent.",
+        "Meaning stays intelligible without forced word order.",
+        "The ending sounds match or deliberately approximate one another in the writer’s stated accent."
+      ],
+      "skillDependencies": ["lesson-3"],
+      "review": ["lesson-3"],
+      "sources": ["S4", "F2", "design"],
+      "minutes": 5,
+      "stage": "1. Foundations",
+      "version": 3,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-2",
+      "title": "A rhyme worth keeping",
+      "faculty": "writing",
+      "discipline": "The Quill",
+      "objective": "Distinguish a useful rhyme from a predictable one.",
+      "explanation": "A rhyme earns its place when it adds information or feeling. Familiar pairs are not forbidden, but love/above rarely says enough on its own. Novelty alone is not an improvement: compare what the revised rhyme lets the listener understand about this particular situation.",
+      "example": "“The kettle clicked. I counted three. / Your empty chair looked back at me.” Three/me frames a concrete absence.",
+      "weakExample": "A novel rhyme that changes the intended event solves sound at the expense of meaning.",
+      "exercise": "Take the couplet you wrote in “Let the rhyme arrive”. Keep its intended meaning. Change one end word and revise the other line so the rhyme adds a fresh detail, rather than merely being less common.",
+      "minimumTask": "Take the couplet you wrote in “Let the rhyme arrive”. Keep its intended meaning. Change one end word and revise the other line so the rhyme adds a fresh detail, rather than merely being less common.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "A celebratory line needs a detail that belongs only to this occasion. Offer a revision that preserves its intent.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-1",
+      "assessment": [
+        "The revision adds a specific detail while preserving the intended meaning.",
+        "The writer can explain why the new rhyme serves the scene; novelty alone is not rewarded.",
+        "A changed detail adds intended meaning rather than merely a less familiar end word."
+      ],
+      "skillDependencies": ["lesson-1", "lesson-6"],
+      "review": ["lesson-1", "lesson-6"],
+      "sources": ["S4", "P18", "design"],
+      "minutes": 5,
+      "stage": "1. Foundations",
+      "version": 3,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "writing-near-rhyme",
+      "title": "Hear the rhyme distance",
+      "faculty": "writing",
+      "discipline": "The Quill",
+      "objective": "Compare exact and near rhyme by stressed sound and intention.",
+      "explanation": "Rhyme is heard, not inferred from spelling. Keep the thought constant while testing a closer or looser sound link; terminology varies across authors.",
+      "example": "For a line ending “light”, compare endings “night” and “life”; describe the unchanged vowel and changed final consonant in the second pair.",
+      "weakExample": "Claiming “love/move” is a perfect rhyme because the spelling matches supplies visual rather than aural evidence.",
+      "exercise": "Revise one saved couplet with two alternative endings. Speak both and choose one for its meaning and sound.",
+      "minimumTask": "Revise one saved couplet with two alternative endings. Speak both and choose one for its meaning and sound.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "A speaker wants to leave a promise unsettled. Write two endings and choose the sound connection that fits your intent.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-2",
+      "assessment": [
+        "Identifies the actual sound relationship in the learner’s accent.",
+        "Defends a choice without contorted syntax."
+      ],
+      "skillDependencies": ["lesson-2"],
+      "review": ["lesson-2"],
+      "sources": ["S4", "F2", "D17", "design"],
+      "minutes": 5,
+      "stage": "1. Foundations",
+      "version": 1,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-4",
+      "title": "The pulse of a sentence",
+      "faculty": "writing",
+      "discipline": "The Quill",
+      "objective": "Hear natural word stress.",
+      "explanation": "English alternates stronger and weaker syllables unevenly. Mark the words you naturally emphasise before imposing a beat. Accent and performance affect stress. Syllable count and stress are different evidence. Mark a plausible reading, acknowledge accent variation, and listen for the words that carry meaning.",
+      "example": "“I LEFT my BOOTS beSIDE the DOOR.” Capitals suggest a possible spoken pulse, not a rule.",
+      "weakExample": "Counting eight syllables without locating word stress does not identify the pulse.",
+      "exercise": "Write two lines. Mark four natural stresses in each with capitals and read them aloud.",
+      "minimumTask": "Write two lines. Mark four natural stresses in each with capitals and read them aloud.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "Write a brief announcement with a change of emphasis that changes what the listener understands.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-3",
+      "assessment": [
+        "Marked stresses are plausible in the writer’s dialect.",
+        "The writer distinguishes strong beats from syllable totals.",
+        "Stress markings represent a defensible reading rather than a syllable-count rule."
+      ],
+      "skillDependencies": ["lesson-3"],
+      "review": ["lesson-3"],
+      "sources": ["F1", "design"],
+      "minutes": 5,
+      "stage": "1. Foundations",
+      "version": 2,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-5",
+      "title": "A steady walking rhythm",
+      "faculty": "writing",
+      "discipline": "The Quill",
+      "objective": "Maintain a repeatable rhythmic pattern.",
+      "explanation": "A consistent number of strong beats helps listeners anticipate a line. Equal syllable counts alone do not guarantee rhythm. Leave room for intentional variation. A pulse is an expectation rather than an obligation to hammer every syllable. Name a deliberate variation instead of treating every irregularity as a mistake.",
+      "example": "“The rain came down upon the mill / The wheel was dark, the water still.” Read both against four slow taps.",
+      "weakExample": "Giving every syllable equal force does not demonstrate a pattern of strong beats.",
+      "exercise": "Write a four-line verse with four strong beats per line. Read it against a tapped pulse.",
+      "minimumTask": "Write a four-line verse with four strong beats per line. Read it against a tapped pulse.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "A line must sound like an unhurried walk. Draft it, speak it, and explain which words carry the motion.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-4",
+      "assessment": [
+        "A repeatable strong-beat pattern can be spoken aloud.",
+        "Any departure is intentional and its effect is explained.",
+        "A retained irregularity is identified and related to the intended pace or voice."
+      ],
+      "skillDependencies": ["lesson-4", "lesson-1"],
+      "review": ["lesson-4", "lesson-1"],
+      "sources": ["F1", "P14", "design"],
+      "minutes": 5,
+      "stage": "1. Foundations",
+      "version": 2,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "writing-metre-variation",
+      "title": "Expect a beat; bend it deliberately",
+      "faculty": "writing",
+      "discipline": "The Quill",
+      "objective": "Distinguish syllable count, stress, metre and deliberate variation.",
+      "explanation": "A metrical expectation is a background against which actual speech can vary. Equal syllable totals need not share the same stress pattern.",
+      "example": "“The gate was shut. / I stayed outside.” lets the pause carry emphasis; test it against a continuous reading.",
+      "weakExample": "Assuming two eight-syllable lines must sound alike ignores lexical stress and phrasing.",
+      "exercise": "Mark the expected beats in two saved lines, revise one collision and explain one variation you keep.",
+      "minimumTask": "Mark the expected beats in two saved lines, revise one collision and explain one variation you keep.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "Write a brief calm statement with one intentional disturbance. Mark a defensible reading and explain the change.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-4",
+      "assessment": [
+        "Marks a defensible reading and separates expectation from speech.",
+        "Explains the effect of the revision or intentional exception."
+      ],
+      "skillDependencies": ["lesson-4", "lesson-5"],
+      "review": ["lesson-4", "lesson-5"],
+      "sources": ["F1", "D19", "design"],
+      "minutes": 5,
+      "stage": "1. Foundations",
+      "version": 1,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-7",
+      "title": "A useful comparison",
+      "faculty": "writing",
+      "discipline": "The Quill",
+      "objective": "Make metaphor reveal a fresh relationship.",
+      "explanation": "A metaphor connects unlike things through a precise shared quality. Extend it only while it continues to illuminate the subject. The comparison should reveal a shared quality that matters here. Ornament without a useful relationship may obscure the idea.",
+      "example": "“His apology was a borrowed coat: warm, but never quite his.” The comparison questions sincerity.",
+      "weakExample": "Calling trust “a shiny thing” gives no shared property to explore.",
+      "exercise": "Compare trust to an everyday object in two lines. Add one detail that makes the comparison precise.",
+      "minimumTask": "Compare trust to an everyday object in two lines. Add one detail that makes the comparison precise.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "Make an unfamiliar abstract idea concrete in a tiny scene. Let the reader infer a relationship.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-6",
+      "assessment": [
+        "The comparison has a precise shared quality.",
+        "The image clarifies the subject instead of adding decoration.",
+        "One precise shared quality explains why this comparison belongs in the scene."
+      ],
+      "skillDependencies": ["lesson-6"],
+      "review": ["lesson-6"],
+      "sources": ["P3", "design"],
+      "minutes": 5,
+      "stage": "1. Foundations",
+      "version": 2,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-14",
+      "title": "The truth in a small thing",
+      "faculty": "writing",
+      "discipline": "The Heart",
+      "objective": "Express emotion through a specific action.",
+      "explanation": "Sincerity is not the same as maximum intensity. An ordinary action can reveal what a speaker cannot say directly. Specificity can express gratitude or irritation as well as loss. Direct emotional language is also valid when it serves this speaker.",
+      "example": "“Dad keeps my crooked birthday card / beneath his polished workbench.” Keeping an imperfect gift suggests affection without naming it.",
+      "weakExample": "Naming “huge sadness” without an action leaves the feeling unsupported for this task.",
+      "exercise": "Write three lines of affection, gratitude, longing, or loss. Show one ordinary action instead of naming the emotion; avoid stock phrases such as “broken heart” or “forever yours”.",
+      "minimumTask": "Write three lines of affection, gratitude, longing, or loss. Show one ordinary action instead of naming the emotion; avoid stock phrases such as “broken heart” or “forever yours”.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "Show relief during an everyday task without naming relief. Choose the action that carries it.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-6",
+      "assessment": [
+        "An action or object carries the feeling.",
+        "The language sounds specific to this speaker.",
+        "The action is particular to this speaker and situation, not a generic emotional symbol."
+      ],
+      "skillDependencies": ["lesson-6", "lesson-3"],
+      "review": ["lesson-6", "lesson-3"],
+      "sources": ["S3", "design"],
+      "minutes": 5,
+      "stage": "1. Foundations",
+      "version": 3,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-15",
+      "title": "Leave room for the listener",
+      "faculty": "writing",
+      "discipline": "The Heart",
+      "objective": "Use subtext and restraint.",
+      "explanation": "Let spoken words and actions pull in different directions. Trust the reader to notice the gap, while keeping the situation clear. Restraint still needs enough evidence for an inference. A contradiction between speech and gesture should be legible rather than merely mysterious.",
+      "example": "“Of course I’m glad you’re going.” / She folded his map along the wrong road.",
+      "weakExample": "A random gesture with no relationship to the farewell creates obscurity rather than subtext.",
+      "exercise": "Write four lines of a farewell. Let one gesture contradict the speaker’s words.",
+      "minimumTask": "Write four lines of a farewell. Let one gesture contradict the speaker’s words.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "A speaker says they are staying, but the scene suggests departure. Make the contradiction legible.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-14",
+      "assessment": [
+        "Speech and gesture imply a readable tension.",
+        "Restraint creates inference rather than mere vagueness.",
+        "The reader has enough concrete cues to infer the tension without an explanatory afterthought."
+      ],
+      "skillDependencies": ["lesson-14", "lesson-7"],
+      "review": ["lesson-14", "lesson-7"],
+      "sources": ["S3", "P18", "design"],
+      "minutes": 5,
+      "stage": "2. Meaning and narrative",
+      "version": 2,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "writing-symbol",
+      "title": "Let an object change meaning",
+      "faculty": "writing",
+      "discipline": "The Quill",
+      "objective": "Develop a recurring object through changing context.",
+      "explanation": "A repeated object becomes meaningful through what happens around it. Do not require a universal symbolic dictionary.",
+      "example": "A gate first shelters a garden; later the same locked gate excludes a returning friend.",
+      "weakExample": "Explaining “the gate symbolises loneliness” without any changed scene does not enact the development.",
+      "exercise": "Write two two-line moments using the same ordinary object with a changed relationship.",
+      "minimumTask": "Write two two-line moments using the same ordinary object with a changed relationship.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "Return to the same object before and after an unfamiliar decision. Let its significance change through context.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-7",
+      "assessment": [
+        "Contexts allow a reader to infer a changed meaning.",
+        "The object remains concrete and relevant."
+      ],
+      "skillDependencies": ["lesson-7", "lesson-15"],
+      "review": ["lesson-7", "lesson-15"],
+      "sources": ["P18", "design"],
+      "minutes": 5,
+      "stage": "2. Meaning and narrative",
+      "version": 1,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-8",
+      "title": "A character at the threshold",
+      "faculty": "writing",
+      "discipline": "The Tale",
+      "objective": "Introduce character through choice.",
+      "explanation": "An early action can reveal desire and a contradiction more efficiently than a biography. Give the person something to want now. A small consequential action can reveal a desire more efficiently than a list of personal traits. The choice must belong to this character.",
+      "example": "“The knight sold off his silver spurs / to buy his daughter dancing shoes.” Status gives way to affection.",
+      "weakExample": "A list of age, clothing and eye colour supplies no revealing choice.",
+      "exercise": "Introduce a character in four lines. Include a desire and a revealing choice.",
+      "minimumTask": "Introduce a character in four lines. Include a desire and a revealing choice.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "A new character must give up one thing to obtain another. Reveal them through the action, not a biography.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-6",
+      "assessment": [
+        "An action reveals both desire and character.",
+        "The reader can tell who acts and what matters.",
+        "The choice changes what the audience understands about the character’s desire."
+      ],
+      "skillDependencies": ["lesson-6", "lesson-14"],
+      "review": ["lesson-6", "lesson-14"],
+      "sources": ["P10", "design"],
+      "minutes": 5,
+      "stage": "2. Meaning and narrative",
+      "version": 2,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-9",
+      "title": "A reason to listen",
+      "faculty": "writing",
+      "discipline": "The Tale",
+      "objective": "Create conflict with a specific obstacle.",
+      "explanation": "A story moves when a desire meets resistance. The obstacle should force a choice rather than merely delay the character. The obstacle matters because it changes what the character can choose or lose. More events alone do not create stronger conflict.",
+      "example": "A baker wants to feed a stranger, but the final loaf is promised to the mayor.",
+      "weakExample": "A delay that never threatens the desire adds an event without consequential conflict.",
+      "exercise": "Give your previous character an obstacle. Write four lines ending just before a decision.",
+      "minimumTask": "Give your previous character an obstacle. Write four lines ending just before a decision.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "An ordinary errand becomes a difficult choice. Write only the moment that makes the choice necessary.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-8",
+      "assessment": [
+        "An obstacle makes a choice necessary.",
+        "The conflict is understandable on one hearing.",
+        "A specific cost or consequence explains why the obstacle makes this choice matter."
+      ],
+      "skillDependencies": ["lesson-8"],
+      "review": ["lesson-8"],
+      "sources": ["P8", "design"],
+      "minutes": 5,
+      "stage": "2. Meaning and narrative",
+      "version": 2,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-10",
+      "title": "The promise in the pocket",
+      "faculty": "writing",
+      "discipline": "The Tale",
+      "objective": "Plant a detail that can pay off later.",
+      "explanation": "A setup quietly teaches the audience what to remember. A payoff changes what that detail means. Too much emphasis announces the ending. Let the earlier detail cause or enable the later action. A surprise supplied only at the ending is not evidence of setup and payoff.",
+      "example": "Setup: a baker keeps a bent pin in her apron. Payoff: when the oven latch jams before the feast, that pin releases it. The small detail becomes a usable tool, rather than a convenient new invention.",
+      "weakExample": "A key introduced only at the ending does not pay off an earlier setup.",
+      "exercise": "Write a two-line setup involving a small object. Add a two-line payoff that makes it matter.",
+      "minimumTask": "Write a two-line setup involving a small object. Add a two-line payoff that makes it matter.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "Write a tiny mystery in which an early ordinary detail becomes necessary at the end. Avoid a new rescue device.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-8",
+      "assessment": [
+        "The payoff uses an identifiable earlier detail.",
+        "The connection surprises without needing a new explanation.",
+        "The payoff depends on a detail the reader could notice earlier."
+      ],
+      "skillDependencies": ["lesson-8", "lesson-9"],
+      "review": ["lesson-8", "lesson-9"],
+      "sources": ["design"],
+      "minutes": 5,
+      "stage": "2. Meaning and narrative",
+      "version": 3,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-11",
+      "title": "The road turns left",
+      "faculty": "writing",
+      "discipline": "The Wit",
+      "objective": "Subvert an established expectation.",
+      "explanation": "A reversal works when the audience can follow the first expectation and recognise the second interpretation. Surprise needs enough logic to feel earned. A reversal can surprise while still being plausible in the established world. The audience needs an expectation to revise.",
+      "example": "“He swore he feared no dragon’s roar. / The taxman knocked; he barred the door.”",
+      "weakExample": "An unexpected ending with no connection to the established character is arbitrary.",
+      "exercise": "Write a four-line miniature ballad that establishes bravery and then reveals an unexpected fear.",
+      "minimumTask": "Write a four-line miniature ballad that establishes bravery and then reveals an unexpected fear.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "A confident expert meets an unfamiliar small problem. Create a plausible change in the audience’s expectation.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-10",
+      "assessment": [
+        "The first expectation is established clearly.",
+        "The reversal is plausible within the miniature story.",
+        "The ending reinterprets an established expectation instead of introducing an unrelated event."
+      ],
+      "skillDependencies": ["lesson-10"],
+      "review": ["lesson-10"],
+      "sources": ["D16", "design"],
+      "minutes": 5,
+      "stage": "2. Meaning and narrative",
+      "version": 2,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-12",
+      "title": "Give the joke some air",
+      "faculty": "writing",
+      "discipline": "The Wit",
+      "objective": "Place the surprising word where it lands.",
+      "explanation": "Timing on the page comes from ordering information. Put essential setup first and the surprising detail near the end. Extra explanation after a punchline often weakens it. Compare the order in which information arrives. A clean landing may need fewer words after the surprising detail, rather than a more elaborate joke.",
+      "example": "“The king requested honest counsel. / We sent a mirror. It was banished.”",
+      "weakExample": "Explaining the surprise in another sentence can remove its intended landing.",
+      "exercise": "Write a two-line joke about an ordinary job. Revise so the surprise arrives in the last few words.",
+      "minimumTask": "Write a two-line joke about an ordinary job. Revise so the surprise arrives in the last few words.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "Write a short comic complaint that needs no explanation after its ending. Judge where the surprise lands.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-11",
+      "assessment": [
+        "The setup supplies the information needed for the surprise.",
+        "The ending avoids explaining the joke after it lands.",
+        "Information order allows the intended surprise to arrive without an explanatory tail."
+      ],
+      "skillDependencies": ["lesson-11", "lesson-3"],
+      "review": ["lesson-11", "lesson-3"],
+      "sources": ["D16", "design"],
+      "minutes": 5,
+      "stage": "2. Meaning and narrative",
+      "version": 2,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-13",
+      "title": "Two meanings, one door",
+      "faculty": "writing",
+      "discipline": "The Wit",
+      "objective": "Use wordplay with a readable surface meaning.",
+      "explanation": "A double meaning should support the scene on both readings. Avoid explaining the pun; make the situation do that work. A pun needs a coherent surface reading as well as a second connection. The goal is understandable wordplay, not a vocabulary puzzle.",
+      "example": "“The gardener said he needed space. / I moved the pots; he packed his case.” Space first suggests room for plants, then distance in a relationship.",
+      "weakExample": "A second dictionary meaning that does not fit the scene is not a coherent pun.",
+      "exercise": "Write two lines about a profession using a word with two meanings. Keep both readings coherent.",
+      "minimumTask": "Write two lines about a profession using a word with two meanings. Keep both readings coherent.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "Invent a two-line notice with two coherent readings. A first-time listener should understand the surface meaning.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-12",
+      "assessment": [
+        "Both meanings fit the scene.",
+        "The pun remains comprehensible without a footnote.",
+        "Both meanings fit the same scene and the surface reading remains understandable."
+      ],
+      "skillDependencies": ["lesson-12", "lesson-1"],
+      "review": ["lesson-12", "lesson-1"],
+      "sources": ["D16", "design"],
+      "minutes": 5,
+      "stage": "2. Meaning and narrative",
+      "version": 3,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-16",
+      "title": "Words need somewhere to breathe",
+      "faculty": "writing",
+      "discipline": "The Lute",
+      "objective": "Fit a lyric to a repeatable phrase.",
+      "explanation": "Speak or sing a simple phrase, then notice where you breathe. Important words should feel comfortable on strong musical moments. No audio equipment is needed. Document the phrase, stress or breath you tried and what you noticed. Text feedback can inspect that plan; it cannot confirm how your actual performance sounded.",
+      "example": "Try “I kept a light beside the stair” over four taps, then change “a light” to “every little candle” and feel the crowding.",
+      "weakExample": "Adding syllables until the important word must be rushed gives weak phrasing evidence.",
+      "exercise": "Hum or speak an original repeatable rhythmic phrase. Fit two lines to it, mark a breath/rest and document one word-stress choice.",
+      "minimumTask": "Hum or speak an original repeatable rhythmic phrase. Fit two lines to it, mark a breath/rest and document one word-stress choice.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "An important instruction must fit a brief spoken phrase. Make space for its key words and note your reading.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-4",
+      "assessment": [
+        "The phrase can be spoken or sung without crowding important words.",
+        "A revision respects natural stress and breath.",
+        "Performance observations are identified as the learner’s report, not as something heard by a text tutor."
+      ],
+      "skillDependencies": ["lesson-4", "lesson-5", "lesson-3"],
+      "review": ["lesson-4", "lesson-5", "lesson-3"],
+      "sources": ["S5", "J1", "design"],
+      "minutes": 5,
+      "stage": "2. Meaning and narrative",
+      "version": 2,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-17",
+      "title": "A home for the chorus",
+      "faculty": "writing",
+      "discipline": "The Lute",
+      "objective": "Give verse and chorus different jobs.",
+      "explanation": "Verses develop particulars; a chorus returns to the central idea. Repetition gains meaning when each verse changes the listener’s understanding. Use an existing short verse and add one returning idea before expanding. A chorus is one structural option, not a requirement for every poem or song.",
+      "example": "Verse: a packed suitcase, an unpaid fare. Chorus: “There’s still a road that leads me home.”",
+      "weakExample": "Repeating the verse detail without a larger returning idea gives the chorus no distinct job.",
+      "exercise": "Reuse four lines from an earlier scene or emotional exercise as a verse. Add a two-line chorus that names the larger idea, then explain in your reflection how the scene supports it.",
+      "minimumTask": "Reuse two lines from a saved scene. Add one short returning line naming its larger idea; note how they connect.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "Use a new everyday event to suggest a returning central idea. Contrast a particular with a larger meaning.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-6",
+      "assessment": [
+        "The verse gives particulars and the chorus a central idea.",
+        "The returning hook gains meaning from the verse.",
+        "The proposed returning line offers a broader idea supported by the reused particulars."
+      ],
+      "skillDependencies": ["lesson-6", "lesson-14", "lesson-16"],
+      "review": ["lesson-6", "lesson-14", "lesson-16"],
+      "sources": ["S7", "design"],
+      "minutes": 5,
+      "stage": "3. Lyric architecture and revision",
+      "version": 3,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-18",
+      "title": "Departure and return",
+      "faculty": "writing",
+      "discipline": "The Lute",
+      "objective": "Create and revise tension and release in language.",
+      "explanation": "A question creates an expectation; a subsequent line can sharpen, postpone or answer it. This is a writing exercise. Chord function is taught and assessed separately in Music. The unresolved and resolving effects are contextual. An answer may deliberately reframe a question rather than close every uncertainty.",
+      "example": "“Who kept the harbour light awake? / The keeper left; the light remained. / By dawn his daughter took the stair.” creates and then answers an implied question.",
+      "weakExample": "Labeling three unrelated statements “tension/release” supplies no answer to a question.",
+      "exercise": "Write a question, a complication and a response in three short lines. Explain what changed. Musical accompaniment is optional and earns no theory credit.",
+      "minimumTask": "Write a question, a complication and a response in three short lines. Explain what changed. Musical accompaniment is optional and earns no theory credit.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "Write a three-line exchange whose final line changes what the first line led us to expect.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-17",
+      "assessment": [
+        "The resolving line answers the earlier tension.",
+        "Musical claims remain optional without audio evidence.",
+        "The writer can identify what expectation changed and why the final response belongs."
+      ],
+      "skillDependencies": ["lesson-17", "lesson-5"],
+      "review": ["lesson-17", "lesson-5"],
+      "sources": ["P18", "design"],
+      "minutes": 5,
+      "stage": "3. Lyric architecture and revision",
+      "version": 2,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-19",
+      "title": "A line made to be heard",
+      "faculty": "writing",
+      "discipline": "The Voice",
+      "objective": "Use emphasis and pauses to guide a listener.",
+      "explanation": "Performance can change the meaning of the same words. Mark breaths and stress, then check that the audience can understand the story on one hearing. Keep the words fixed while trying two readings so that a change of emphasis is observable. Your own listening report is not something the tutor has heard.",
+      "example": "“I never said / you stole the crown.” Stress I, said, or you to hear different implications.",
+      "weakExample": "Capitalising every word identifies no meaningful contrast of emphasis.",
+      "exercise": "Choose four lines of your work. Mark pauses with / and key stresses with capitals. Perform two different readings.",
+      "minimumTask": "Choose four lines of your work. Mark pauses with / and key stresses with capitals. Perform two different readings.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "Write one sentence that could sound reassuring or suspicious. Mark two readings and explain what changes.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-4",
+      "assessment": [
+        "Pause and emphasis choices serve the intended meaning.",
+        "The writer reflects on how another reading changes the effect.",
+        "The learner describes how a different emphasis changes an implication while words stay fixed."
+      ],
+      "skillDependencies": ["lesson-4", "lesson-16"],
+      "review": ["lesson-4", "lesson-16"],
+      "sources": ["F1", "J3", "design"],
+      "minutes": 5,
+      "stage": "3. Lyric architecture and revision",
+      "version": 2,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-20",
+      "title": "The verse earns its ending",
+      "faculty": "writing",
+      "discipline": "The Quill",
+      "objective": "Revise a complete verse with intention.",
+      "explanation": "Revision is a sequence of decisions. Check meaning first, then image, rhythm, rhyme, and unnecessary words. Keep an imperfection when it serves the voice. For the minimum session revise just one line, first preserving its meaning. Fewer words are not automatically clearer or more authentic.",
+      "example": "Before: “I waited in the freezing cold for you.” After: “Your last train left. I stayed beside the rail.” The revision makes the waiting visible. Which version works better depends on the speaker’s intention.",
+      "weakExample": "Deleting words solely to reduce the count may damage the stated intention.",
+      "exercise": "Bring an earlier four-line verse. State its intention, revise two lines for clarity and concision, then read aloud once. Explain one choice you changed and one you kept.",
+      "minimumTask": "Use an existing four-line verse. State its intent in a few words and revise one line for clarity; note one reason.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "An overlong message must keep its speaker’s warmth. Revise it without simply deleting the personal details.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-6",
+      "assessment": [
+        "At least one revision serves the stated intention.",
+        "A brief rationale weighs meaning, clarity and the speaker’s voice.",
+        "At least one deliberate revision is justified by the intended meaning rather than word count alone."
+      ],
+      "skillDependencies": ["lesson-6", "lesson-2", "lesson-5", "lesson-14"],
+      "review": ["lesson-6", "lesson-2", "lesson-5"],
+      "sources": ["S10", "D24", "design"],
+      "minutes": 5,
+      "stage": "3. Lyric architecture and revision",
+      "version": 3,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-21",
+      "title": "One sound, several effects",
+      "faculty": "writing",
+      "discipline": "The Quill",
+      "objective": "Use alliteration and assonance to support meaning.",
+      "explanation": "Alliteration repeats nearby initial consonant sounds; assonance repeats vowel sounds in nearby stressed syllables. Either can bind a phrase. Its effect depends on stress, pace, accent and context, so listen rather than assuming a sound always expresses one feeling. Sound effects depend on accent, pace and context. Neither a particular vowel nor a repeated consonant carries one universal emotion.",
+      "example": "Alliteration: “Tin cups clatter on the cart” repeats /k/. Assonance: “Slow boats roll beyond the coast” repeats /oʊ/ in many English accents. Speak both; your accent may differ.",
+      "weakExample": "Sound repetition that makes the image unintelligible fails the chosen clarity goal.",
+      "exercise": "Rewrite one earlier image twice: once with repeated consonants, once with shared vowel sounds. Choose the version that fits your intent.",
+      "minimumTask": "Rewrite one earlier image twice: once with repeated consonants, once with shared vowel sounds. Choose the version that fits your intent.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "Describe a new moving object. Choose sound relationships to support the pace rather than a rule about pleasant sounds.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-6",
+      "assessment": [
+        "Sound repetition remains readable.",
+        "The writer explains a specific intended effect.",
+        "The actual repeated sounds are identifiable in the writer’s accent and connected to the chosen effect."
+      ],
+      "skillDependencies": ["lesson-6", "lesson-4"],
+      "review": ["lesson-6", "lesson-4"],
+      "sources": ["D17", "design"],
+      "minutes": 5,
+      "stage": "3. Lyric architecture and revision",
+      "version": 3,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-22",
+      "title": "A shape to think inside",
+      "faculty": "writing",
+      "discipline": "The Quill",
+      "objective": "Draft an original four-line alternating-rhyme stanza.",
+      "explanation": "A stanza is a unit of thought as well as sound. An ABAB scheme asks lines one and three, then two and four, to answer each other. Try a loose four-beat pulse before strict metre. The minimum is one compact four-line attempt. Identify a speech-pattern collision or defend a chosen variation rather than chase mathematical regularity at any cost.",
+      "example": "“The ferry bell outlived the light / A coat lay folded on the shore / One window kept its watch all night / Until the tide returned once more.”",
+      "weakExample": "Choosing four rhyming endings without a connected thought supplies a scheme but not a stanza.",
+      "exercise": "Write four lines in ABAB with four strong beats per line. Reuse an image from “Something you can touch”; mark one place where speech resists the pattern.",
+      "minimumTask": "Write four lines in ABAB with four strong beats per line. Reuse an image from “Something you can touch”; mark one place where speech resists the pattern.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "Write a small patterned stanza about a practical task; explain one place where its structure helps or resists speech.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-5",
+      "assessment": [
+        "The intended rhyme scheme is identifiable.",
+        "The writer recognises tension between metre and natural speech.",
+        "The four lines form a connected thought as well as an intended sound pattern."
+      ],
+      "skillDependencies": ["lesson-5", "lesson-1", "lesson-21"],
+      "review": ["lesson-5", "lesson-1", "lesson-21"],
+      "sources": ["F3", "design"],
+      "minutes": 5,
+      "stage": "3. Lyric architecture and revision",
+      "version": 3,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "writing-form-choice",
+      "title": "Choose the shape",
+      "faculty": "writing",
+      "discipline": "The Quill",
+      "objective": "Compare a patterned stanza with deliberate freer lineation.",
+      "explanation": "A line ending directs attention, while an end-stop or enjambment changes how syntax moves. Form is a choice, not a quality ranking.",
+      "example": "“I left the key / beneath your apology” defers the object’s location; compare the single-line version.",
+      "weakExample": "Inserting breaks every third word without an intended effect supplies arbitrary lineation.",
+      "exercise": "Recast two existing lines with two different break patterns; defend one. Optional extension: a complete constrained stanza.",
+      "minimumTask": "Recast two existing lines with two different break patterns; defend one. Optional extension: a complete constrained stanza.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "A sentence conceals a surprise. Arrange it in lines in two ways and justify where the discovery arrives.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-22",
+      "assessment": [
+        "Identifies an audible or semantic effect of a break.",
+        "Makes the chosen form serve the intended reading."
+      ],
+      "skillDependencies": ["lesson-22"],
+      "review": ["lesson-22"],
+      "sources": ["F1-II", "F3", "design"],
+      "minutes": 5,
+      "stage": "3. Lyric architecture and revision",
+      "version": 1,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-23",
+      "title": "A hook that means more",
+      "faculty": "writing",
+      "discipline": "The Lute",
+      "objective": "Create a concise title-hook whose meaning changes with context.",
+      "explanation": "A hook is a memorable return, not merely a repeated phrase. Give a short title two plausible contexts, then let the verse earn one of them. Keep the title fixed while changing its context. The listener’s new understanding should come from the surrounding particulars, not simply a claim that the hook means more.",
+      "example": "Title: “A little room.” A cramped apartment first; the freedom to forgive later.",
+      "weakExample": "Repeating the same title after two interchangeable situations supplies no changed meaning.",
+      "exercise": "Choose a two-to-five-word title. Write two contrasting two-line verse sketches leading into that same title.",
+      "minimumTask": "Choose a two-to-five-word title. Write two contrasting two-line verse sketches leading into that same title.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "Invent a short returning phrase whose meaning changes between two unfamiliar situations.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-17",
+      "assessment": [
+        "The title is concise and repeatable.",
+        "The contexts change its emotional meaning.",
+        "The changed context provides specific evidence for the hook’s changed significance."
+      ],
+      "skillDependencies": ["lesson-17", "lesson-15"],
+      "review": ["lesson-17", "lesson-15"],
+      "sources": ["P7", "design"],
+      "minutes": 5,
+      "stage": "3. Lyric architecture and revision",
+      "version": 2,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-24",
+      "title": "Keep the camera steady",
+      "faculty": "writing",
+      "discipline": "The Tale",
+      "objective": "Control speaker, addressee, and time.",
+      "explanation": "A lyric has a viewpoint even when it does not name a narrator. Unsignalled changes of you, she, or tense can confuse a listener. Change them deliberately when the story needs a turn. Intentional viewpoint or tense shifts can work. Add enough cues that the listener can follow who speaks, who is addressed and when the event happens.",
+      "example": "Confusing: “You left. She waits. I will be gone.” Clearer: “You left at dawn. I waited by the gate.”",
+      "weakExample": "An unexplained switch from “you” to “she” makes the addressee uncertain.",
+      "exercise": "Take four earlier lines. Underline speaker, addressee, and time cues; revise one confusing shift or explain an intentional one.",
+      "minimumTask": "Take four earlier lines. Underline speaker, addressee, and time cues; revise one confusing shift or explain an intentional one.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "A listener enters halfway through a scene. Write four short lines that orient them without a biography.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-8",
+      "assessment": [
+        "Pronouns have understandable referents.",
+        "A time or perspective shift has a clear purpose.",
+        "Any deliberate shift includes enough cues to remain understandable on one hearing."
+      ],
+      "skillDependencies": ["lesson-8", "lesson-9"],
+      "review": ["lesson-8", "lesson-9"],
+      "sources": ["P10", "S10", "design"],
+      "minutes": 5,
+      "stage": "3. Lyric architecture and revision",
+      "version": 2,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "writing-ballad-scene",
+      "title": "Make the next scene necessary",
+      "faculty": "writing",
+      "discipline": "The Quill",
+      "objective": "Sustain narrative causality in a ballad scene.",
+      "explanation": "A story advances when an action changes what can happen next. A familiar ballad pulse can help, but is not compulsory.",
+      "example": "A ferryman hides the fare; the passenger must offer the only message they carry.",
+      "weakExample": "Three unrelated places mentioned in sequence give geography without causal development.",
+      "exercise": "Outline desire, obstacle and consequence; draft only the turning beat in two to four lines.",
+      "minimumTask": "Outline desire, obstacle and consequence; draft only the turning beat in two to four lines.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "A messenger cannot deliver a message as planned. Create the next consequential choice and draft only its turning beat.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-10",
+      "assessment": [
+        "A choice changes the next possible action.",
+        "Speaker, time and stakes remain understandable."
+      ],
+      "skillDependencies": ["lesson-10", "lesson-24"],
+      "review": ["lesson-10", "lesson-24"],
+      "sources": ["P8", "F3-B", "design"],
+      "minutes": 5,
+      "stage": "3. Lyric architecture and revision",
+      "version": 1,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-25",
+      "title": "Change the light",
+      "faculty": "writing",
+      "discipline": "The Heart",
+      "objective": "Create emotional contrast without contradicting the speaker.",
+      "explanation": "Tender details can sharpen an angry verse; humour can make grief more human. Contrast becomes useful when both feelings arise from the same situation. Mixed feelings become believable when both arise from the same situation. Contrast is a choice to support the intention, not an automatic improvement.",
+      "example": "“I cursed your mug beside the sink, / then washed it carefully by hand.” Irritation and tenderness attach to the same object and opposing actions.",
+      "weakExample": "Adding a cheerful line unrelated to the situation supplies contrast without emotional causality.",
+      "exercise": "Revise an earlier emotional stanza to contain a contrasting feeling. Keep the situation and speaker coherent.",
+      "minimumTask": "Revise an earlier emotional stanza to contain a contrasting feeling. Keep the situation and speaker coherent.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "Write a small moment containing gratitude and irritation toward the same person. Ground both in what happens.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-14",
+      "assessment": [
+        "Both feelings have concrete support.",
+        "The contrast deepens rather than obscures the central situation.",
+        "Both feelings follow from the same situation without requiring a single approved interpretation."
+      ],
+      "skillDependencies": ["lesson-14", "lesson-15", "lesson-24"],
+      "review": ["lesson-14", "lesson-15", "lesson-24"],
+      "sources": ["P18", "design"],
+      "minutes": 5,
+      "stage": "4. Independent integration",
+      "version": 3,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-26",
+      "title": "The joke belongs to someone",
+      "faculty": "writing",
+      "discipline": "The Wit",
+      "objective": "Build humour from character rather than a detached punchline.",
+      "explanation": "A narrative joke becomes stronger when the reversal reveals a desire or blind spot already present in the character. Let consequences follow the setup. The comic consequence should arise from an established desire or blind spot. A detached punchline may be clever while supplying little character evidence.",
+      "example": "“The mayor fined all idle talk. / By noon, his speech had bankrupted him.” The consequence reveals the same habit the character wants to punish.",
+      "weakExample": "A detached pun that reveals nothing about the character misses the character-humour objective.",
+      "exercise": "Return to your character and obstacle. Write a four-line comic consequence using an earlier planted detail.",
+      "minimumTask": "Reuse an earlier character and planted detail. Add two short lines showing a comic consequence of the character’s choice.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "A fictional rule-maker suffers a consequence of their own habit. Make the comic consequence feel earned.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-10",
+      "assessment": [
+        "The surprise grows from an established character trait.",
+        "The payoff reuses a detail and remains legible.",
+        "The consequence reveals an already established trait or desire."
+      ],
+      "skillDependencies": ["lesson-10", "lesson-11", "lesson-12", "lesson-13"],
+      "review": ["lesson-10", "lesson-11", "lesson-12"],
+      "sources": ["D16", "design"],
+      "minutes": 5,
+      "stage": "4. Independent integration",
+      "version": 3,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "writing-satire",
+      "title": "Make the rule expose itself",
+      "faculty": "writing",
+      "discipline": "The Quill",
+      "objective": "Use contradiction to satirise a fictional behaviour or institution.",
+      "explanation": "Satire has a target and a point of view. Incongruity can expose a rule whose consequences defeat its stated purpose; insults alone are not that mechanism.",
+      "example": "A fictional silence committee hires a town crier to announce its bans.",
+      "weakExample": "Calling every official foolish gives an opinion without showing the contradiction.",
+      "exercise": "Draft a four-line announcement whose practical consequence undermines its official aim.",
+      "minimumTask": "Draft a four-line announcement whose practical consequence undermines its official aim.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "A fictional institution announces a helpful measure that defeats its own purpose. Make the contradiction visible.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-26",
+      "assessment": [
+        "The target and contradiction are legible.",
+        "The consequence grows from the established rule."
+      ],
+      "skillDependencies": ["lesson-26"],
+      "review": ["lesson-26"],
+      "sources": ["D16", "design"],
+      "minutes": 5,
+      "stage": "4. Independent integration",
+      "version": 1,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-27",
+      "title": "Make the bridge earn its place",
+      "faculty": "writing",
+      "discipline": "The Lute",
+      "objective": "Use a bridge to change perspective.",
+      "explanation": "A bridge offers information or perspective that a repeated verse cannot. It can question the chorus, reveal a cost, or change the listener’s understanding before the return. A bridge is optional. Keep it when it adds a perspective or consequence that makes the return worthwhile; a new label alone does not create that role.",
+      "example": "Chorus: “I always leave a light.” Bridge idea: the speaker realises the light is for themself.",
+      "weakExample": "Restating the chorus in different words adds no new perspective.",
+      "exercise": "Write a two-line bridge for your earlier chorus. Add one sentence explaining how the chorus means something different afterwards.",
+      "minimumTask": "Write a two-line bridge for your earlier chorus. Add one sentence explaining how the chorus means something different afterwards.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "A speaker changes their mind before returning to a familiar promise. Draft the change in two lines.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-17",
+      "assessment": [
+        "The bridge adds a distinct perspective.",
+        "The returning chorus remains coherent but gains meaning.",
+        "The new perspective has a clear relationship to the returning central idea."
+      ],
+      "skillDependencies": ["lesson-17", "lesson-23", "lesson-25"],
+      "review": ["lesson-17", "lesson-23", "lesson-25"],
+      "sources": ["S8", "S9", "design"],
+      "minutes": 5,
+      "stage": "4. Independent integration",
+      "version": 2,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-28",
+      "title": "Test on one hearing",
+      "faculty": "writing",
+      "discipline": "The Voice",
+      "objective": "Revise for a listener who cannot reread.",
+      "explanation": "Reading aloud reveals breath, ambiguity, and crowded phrasing. A silent text review cannot measure actual delivery; record your own observations instead of asking AI to infer a performance. Use a brief self-observation about a pause, emphasis, stumble or reference. If there was no obstacle, explain an intentional reading choice instead of inventing a flaw.",
+      "example": "“After Mira called Jo’s sister, she left.” The pronoun may confuse a first-time listener.",
+      "weakExample": "“It sounds fine” without identifying a reading choice provides little usable evidence.",
+      "exercise": "Use an earlier verse and chorus, up to eight lines. Read them aloud once. Mark a stumble, a breath, or an unclear reference; if none occurs, name an emphasis choice. Revise one place and read again.",
+      "minimumTask": "Read up to four saved lines aloud once. Mark one reading choice or obstacle and revise one place if needed.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "Write a short instruction for a listener who hears it once. Identify and repair one possible misunderstanding.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-19",
+      "assessment": [
+        "The self-report identifies a specific listening obstacle.",
+        "The revision improves clarity without flattening the voice.",
+        "A specific observation supports the revision or the decision to keep a reading."
+      ],
+      "skillDependencies": ["lesson-19", "lesson-24", "lesson-16"],
+      "review": ["lesson-19", "lesson-24", "lesson-16"],
+      "sources": ["J1", "D24", "design"],
+      "minutes": 5,
+      "stage": "4. Independent integration",
+      "version": 3,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-29",
+      "title": "Revise for one intention",
+      "faculty": "writing",
+      "discipline": "The Quill",
+      "objective": "Evaluate several craft choices against a central purpose.",
+      "explanation": "Prosody treats sound, structure, image, and language as choices serving the same emotional intention. Perfect regularity is not always the best choice for an unsettled speaker. For five minutes evaluate one change against a stated intention. Exploring a second craft choice or a retained irregularity is optional longer work.",
+      "example": "A speaker denying fear may use a steady refrain, then lose the rhyme at the moment of doubt.",
+      "weakExample": "A list of edits with no link to the intention is an activity record, not an evaluation.",
+      "exercise": "Use a previous verse and chorus (up to eight lines). State the central intention. Spend three minutes revising one image and one rhythmic or rhyme choice; explain how both serve the intention and identify a deliberate irregularity you kept.",
+      "minimumTask": "Use up to four saved lines. Name the intention briefly and revise one image or sound choice. Explain the effect in a few words.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "An unfamiliar speaker makes a promise they doubt. Choose two craft decisions and explain how they support the intent.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-20",
+      "assessment": [
+        "The intention is specific enough to guide a decision.",
+        "At least one craft choice is justified by its effect rather than a rigid rule.",
+        "At least one changed or retained craft choice is tied to evidence for the stated intention."
+      ],
+      "skillDependencies": [
+        "lesson-20",
+        "lesson-22",
+        "lesson-25",
+        "lesson-27",
+        "lesson-28"
+      ],
+      "review": ["lesson-20", "lesson-22", "lesson-25"],
+      "sources": ["P18", "D19", "design"],
+      "minutes": 5,
+      "stage": "4. Independent integration",
+      "version": 3,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "writing-voice",
+      "title": "Choose what sounds like you",
+      "faculty": "writing",
+      "discipline": "The Quill",
+      "objective": "Identify and vary personal stylistic decisions.",
+      "explanation": "Voice emerges from repeated choices of detail, syntax, register and rhythm. It can develop; it is not a fixed personality score.",
+      "example": "Compare “The rain got in again” with “The ceiling has resumed its argument”; choose the voice that fits this speaker.",
+      "weakExample": "Using elaborate words merely to sound literary supplies no intentional voice.",
+      "exercise": "Rewrite two lines in two registers; name one habit to retain and one to test next.",
+      "minimumTask": "Rewrite two lines in two registers; name one habit to retain and one to test next.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "Describe a new small mistake in two voices. Decide which register belongs to this speaker and why.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-29",
+      "assessment": [
+        "Points to actual language choices and their effects.",
+        "Keeps a coherent speaker without rewarding ornament automatically."
+      ],
+      "skillDependencies": ["lesson-29"],
+      "review": ["lesson-29"],
+      "sources": ["F4", "design"],
+      "minutes": 5,
+      "stage": "4. Independent integration",
+      "version": 1,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "lesson-30",
+      "title": "A small finished work",
+      "faculty": "writing",
+      "discipline": "The Tale",
+      "objective": "Transfer learned skills into an independently revised miniature.",
+      "explanation": "A complete short piece can carry an arc: establish a situation, develop pressure, and leave a changed understanding. Completion is a considered decision, not proof of mastery. Revise an existing ending before adding more material. A considered stopping point and a specific next practice goal give more evidence than a completion badge.",
+      "example": "Outline: a messenger guards a sealed letter; rain reveals blank paper; they choose what to say in their own voice.",
+      "weakExample": "Stopping at the word limit does not establish that the ending answers the opening.",
+      "exercise": "Use a previous verse and chorus or short poem, up to twelve lines. Spend one minute identifying its opening promise, three revising its ending, and one naming a craft skill to practise next. Do not compose a new whole song in this session.",
+      "minimumTask": "Use an existing miniature of up to six lines. Revise its last line to answer or reframe the opening; name a next practice goal.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "Revise a new miniature so its ending changes the reader’s understanding of the opening. Choose the relevant craft yourself.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-29",
+      "assessment": [
+        "The ending answers or deliberately reframes the opening.",
+        "A revision rationale names evidence and a next practice goal.",
+        "The next practice goal names a specific craft decision, not a numerical quality score."
+      ],
+      "skillDependencies": ["lesson-29", "lesson-26"],
+      "review": ["lesson-29", "lesson-26"],
+      "sources": ["P8", "D24", "design"],
+      "minutes": 5,
+      "stage": "4. Independent integration",
+      "version": 3,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "writing-transfer",
+      "title": "Carry the skill into unfamiliar work",
+      "faculty": "writing",
+      "discipline": "The Quill",
+      "objective": "Transfer two chosen craft skills to a new brief.",
+      "explanation": "Independent transfer means selecting a useful tool when the prompt does not name it. An explanation and later revisit provide more evidence than a completion badge.",
+      "example": "In a new miniature about repairing a kite, use a planted knot and a changed final image, then explain their relationship.",
+      "weakExample": "Reusing the earlier poem with only the nouns replaced provides weak evidence of fresh decisions.",
+      "exercise": "Choose two skills, revise a new four-line miniature and name evidence for each. Portfolio comparison can take longer.",
+      "minimumTask": "Choose two skills, revise a new four-line miniature and name evidence for each. Portfolio comparison can take longer.",
+      "extension": "Optional, resumable: develop this attempt into a fuller stanza or scene, try a second version, and compare its effect with your intended meaning. Keep your earlier draft.",
+      "transferPrompt": "Create a four-line miniature for an unfamiliar audience and purpose of your choice. Select two useful skills without a recipe, then explain the evidence.",
+      "minimumWords": 3,
+      "prerequisite": "lesson-30",
+      "assessment": [
+        "Applies two relevant skills without a step-by-step recipe.",
+        "Explains an effect and sets a specific next practice goal."
+      ],
+      "skillDependencies": ["lesson-30", "writing-voice"],
+      "review": ["lesson-30", "writing-voice"],
+      "sources": ["D24", "design"],
+      "minutes": 5,
+      "stage": "4. Independent integration",
+      "version": 1,
+      "reflection": "Name one changed or deliberately retained choice and its effect. A few words are enough.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      }
+    },
+    {
+      "id": "music-01",
+      "faculty": "music",
+      "title": "An idea before a scale",
+      "discipline": "The Lute",
+      "objective": "Turn an intention into two contrasting musical gestures. An intention suggests experiments, not a compulsory mood-to-chord formula.",
+      "explanation": "Begin on a comfortable string with two or three notes. Repeating a low note and answering higher is one possible contrast, not a formula for emotion. Play slowly, choose an intention, and compare two alternatives. The grid saves your plan; it does not prove how you performed it.",
+      "example": "A higher answering gesture can contrast with a low repeated note.",
+      "weakExample": "Naming an emotion without making or describing a gesture supplies no compositional evidence.",
+      "exercise": "Choose one intention; play two short one-string gestures and record their frets plus one contrast.",
+      "minimumTask": "Choose one intention; play two short one-string gestures and record their frets plus one contrast.",
+      "extension": "Optional 15–20 minutes: play and revise your saved idea, record a local take if useful, and compare one alternative. Stop and resume later; speed and difficulty are not goals.",
+      "transferPrompt": "Choose a different intention and contrast a repeated open-string gesture with a higher answer.",
+      "minimumWords": 1,
+      "prerequisite": null,
+      "assessment": [
+        "Two identifiable alternatives; one choice linked to an intention.",
+        "Document one choice, a comparison and an intended effect. Separate the written plan from your own listening observations."
+      ],
+      "skillDependencies": [],
+      "review": [],
+      "sources": ["R1", "J1"],
+      "minutes": 5,
+      "stage": "Gestures, pulse and pitch",
+      "version": 1,
+      "reflection": "Briefly name one choice and its intended effect; listening or playing observations are your self-report.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      },
+      "musicExample": {
+        "kind": "bard-music-v1",
+        "id": "819ccb1d-746d-41a4-8748-9c25a7bb04c2",
+        "tuning": "standard",
+        "capo": 0,
+        "intent": "Original teaching demonstration — adapt it to your own intention.",
+        "observation": "",
+        "tempo": 80,
+        "phrases": [
+          {
+            "name": "Idea A",
+            "meter": "4/4",
+            "bars": 1,
+            "notes": [
+              {
+                "tick": 0,
+                "string": 0,
+                "fret": 0,
+                "duration": 2
+              },
+              {
+                "tick": 2,
+                "string": 0,
+                "fret": 0,
+                "duration": 2
+              }
+            ]
+          },
+          {
+            "name": "Answer B",
+            "meter": "4/4",
+            "bars": 1,
+            "notes": [
+              {
+                "tick": 0,
+                "string": 0,
+                "fret": 3,
+                "duration": 2
+              },
+              {
+                "tick": 2,
+                "string": 0,
+                "fret": 5,
+                "duration": 2
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "music-02",
+      "faculty": "music",
+      "title": "Pulse and space",
+      "discipline": "The Lute",
+      "objective": "Create an attack/rest pattern against a pulse. Silence is part of a composition.",
+      "explanation": "Tap a steady quarter-note pulse: 1 and 2 and 3 and 4 and. An attack begins a note; a hold lets it continue, while a rest stops it. Leave deliberate space. The grid explicitly marks rests and holds so that equal spacing alone never implies a duration.",
+      "example": "Attacks on beats 1 and 3 with beats 2 and 4 silent define a repeatable choice.",
+      "weakExample": "“Play some notes quickly” specifies neither pulse nor rests.",
+      "exercise": "Tap four beats; mark two attacks and a rest on a one-bar grid.",
+      "minimumTask": "Tap four beats; mark two attacks and a rest on a one-bar grid.",
+      "extension": "Optional 15–20 minutes: play and revise your saved idea, record a local take if useful, and compare one alternative. Stop and resume later; speed and difficulty are not goals.",
+      "transferPrompt": "Start with silence instead of an attack; make a new four-beat pattern and describe its effect.",
+      "minimumWords": 1,
+      "prerequisite": "music-01",
+      "assessment": [
+        "The grid distinguishes attacks from silence; the learner can explain the repeated pattern.",
+        "Document one choice, a comparison and an intended effect. Separate the written plan from your own listening observations."
+      ],
+      "skillDependencies": ["music-01"],
+      "review": ["music-01"],
+      "sources": ["J3", "KH1"],
+      "minutes": 5,
+      "stage": "Gestures, pulse and pitch",
+      "version": 1,
+      "reflection": "Briefly name one choice and its intended effect; listening or playing observations are your self-report.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      },
+      "musicExample": {
+        "kind": "bard-music-v1",
+        "id": "d9e3b8b6-7076-417d-9993-61825427b1b4",
+        "tuning": "standard",
+        "capo": 0,
+        "intent": "Original teaching demonstration — adapt it to your own intention.",
+        "observation": "",
+        "tempo": 80,
+        "phrases": [
+          {
+            "name": "Idea A",
+            "meter": "4/4",
+            "bars": 1,
+            "notes": [
+              {
+                "tick": 0,
+                "string": 0,
+                "fret": 0,
+                "duration": 2
+              },
+              {
+                "tick": 4,
+                "string": 0,
+                "fret": 0,
+                "duration": 2
+              }
+            ]
+          },
+          {
+            "name": "Answer B",
+            "meter": "4/4",
+            "bars": 1,
+            "notes": [
+              {
+                "tick": 2,
+                "string": 0,
+                "fret": 0,
+                "duration": 2
+              },
+              {
+                "tick": 6,
+                "string": 0,
+                "fret": 0,
+                "duration": 2
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "music-03",
+      "faculty": "music",
+      "title": "Durations and subdivisions",
+      "discipline": "The Lute",
+      "objective": "Control how long a note lasts, separately from when it begins.",
+      "explanation": "A quarter lasts two eighth-note slots. An eighth lasts one. In 4/4 there are eight eighth-note slots: two eighths + one quarter + one quarter rest + one quarter = eight slots. Attack and duration are separate: a held note has no new attack on its second slot.",
+      "example": "Two eighths, one quarter, one quarter rest and one quarter fill four quarter-note beats.",
+      "weakExample": "Five quarter notes labelled one 4/4 bar do not fit the stated metre.",
+      "exercise": "Write one 4/4 bar using quarter/eighth values and a rest; count it while playing a single pitch.",
+      "minimumTask": "Write one 4/4 bar using quarter/eighth values and a rest; count it while playing a single pitch.",
+      "extension": "Optional 15–20 minutes: play and revise your saved idea, record a local take if useful, and compare one alternative. Stop and resume later; speed and difficulty are not goals.",
+      "transferPrompt": "On a different comfortable pitch, place two eighth notes after a rest and fill one 4/4 bar.",
+      "minimumWords": 1,
+      "prerequisite": "music-02",
+      "assessment": [
+        "Durations sum correctly; intended attacks and holds are unambiguous.",
+        "Document one choice, a comparison and an intended effect. Separate the written plan from your own listening observations."
+      ],
+      "skillDependencies": ["music-02"],
+      "review": ["music-02"],
+      "sources": ["J3", "KM1"],
+      "minutes": 5,
+      "stage": "Gestures, pulse and pitch",
+      "version": 1,
+      "reflection": "Briefly name one choice and its intended effect; listening or playing observations are your self-report.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      },
+      "musicExample": {
+        "kind": "bard-music-v1",
+        "id": "08307b9e-88e6-43b3-8c19-f907acedc9e2",
+        "tuning": "standard",
+        "capo": 0,
+        "intent": "Original teaching demonstration — adapt it to your own intention.",
+        "observation": "",
+        "tempo": 80,
+        "phrases": [
+          {
+            "name": "Idea A",
+            "meter": "4/4",
+            "bars": 1,
+            "notes": [
+              {
+                "tick": 0,
+                "string": 0,
+                "fret": 0,
+                "duration": 1
+              },
+              {
+                "tick": 1,
+                "string": 0,
+                "fret": 0,
+                "duration": 1
+              },
+              {
+                "tick": 2,
+                "string": 0,
+                "fret": 0,
+                "duration": 2
+              },
+              {
+                "tick": 6,
+                "string": 0,
+                "fret": 0,
+                "duration": 2
+              }
+            ]
+          },
+          {
+            "name": "Answer B",
+            "meter": "4/4",
+            "bars": 1,
+            "notes": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "music-04",
+      "faculty": "music",
+      "title": "Three or four beats",
+      "discipline": "The Lute",
+      "objective": "Change grouping rather than merely speed.",
+      "explanation": "At the same quarter-note tempo, 3/4 has three quarter-note beats and 4/4 has four. Their eighth-note grids have six and eight slots respectively. Make the first beat of each bar an intentional point of return. Changing the tempo alone does not change the grouping.",
+      "example": "Accent beat 1 of each group of three, then each group of four.",
+      "weakExample": "Playing the same accents faster does not demonstrate changed grouping.",
+      "exercise": "Create a short pattern in 3/4 and adapt it to 4/4; keep a comparable quarter-note pulse.",
+      "minimumTask": "Create a short pattern in 3/4 and adapt it to 4/4; keep a comparable quarter-note pulse.",
+      "extension": "Optional 15–20 minutes: play and revise your saved idea, record a local take if useful, and compare one alternative. Stop and resume later; speed and difficulty are not goals.",
+      "transferPrompt": "Begin on a different beat and adapt a new 3/4 pattern to 4/4 without changing the quarter-note tempo.",
+      "minimumWords": 1,
+      "prerequisite": "music-03",
+      "assessment": [
+        "Both bars are counted correctly; the learner identifies the changed grouping.",
+        "Document one choice, a comparison and an intended effect. Separate the written plan from your own listening observations."
+      ],
+      "skillDependencies": ["music-03"],
+      "review": ["music-03"],
+      "sources": ["J3"],
+      "minutes": 5,
+      "stage": "Gestures, pulse and pitch",
+      "version": 1,
+      "reflection": "Briefly name one choice and its intended effect; listening or playing observations are your self-report.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      },
+      "musicExample": {
+        "kind": "bard-music-v1",
+        "id": "111b2b63-56b3-4160-a276-7944de3dba66",
+        "tuning": "standard",
+        "capo": 0,
+        "intent": "Original teaching demonstration — adapt it to your own intention.",
+        "observation": "",
+        "tempo": 80,
+        "phrases": [
+          {
+            "name": "Idea A",
+            "meter": "3/4",
+            "bars": 1,
+            "notes": [
+              {
+                "tick": 0,
+                "string": 0,
+                "fret": 0,
+                "duration": 2
+              },
+              {
+                "tick": 2,
+                "string": 0,
+                "fret": 1,
+                "duration": 2
+              },
+              {
+                "tick": 4,
+                "string": 0,
+                "fret": 3,
+                "duration": 2
+              }
+            ]
+          },
+          {
+            "name": "Answer B",
+            "meter": "4/4",
+            "bars": 1,
+            "notes": [
+              {
+                "tick": 0,
+                "string": 0,
+                "fret": 0,
+                "duration": 2
+              },
+              {
+                "tick": 2,
+                "string": 0,
+                "fret": 1,
+                "duration": 2
+              },
+              {
+                "tick": 4,
+                "string": 0,
+                "fret": 3,
+                "duration": 2
+              },
+              {
+                "tick": 6,
+                "string": 0,
+                "fret": 0,
+                "duration": 2
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "music-05",
+      "faculty": "music",
+      "title": "Six eighths, two beats",
+      "discipline": "The Lute",
+      "objective": "Distinguish compound duple 6/8 from simple triple 3/4. Six equal subdivisions can be grouped differently.",
+      "explanation": "Count 6/8 as 1-la-li 2-la-li: two dotted-quarter beats, each divided into three eighths. Count 3/4 as 1-and 2-and 3-and: three quarter beats, each divided into two. Both contain six eighths. Compare at the same eighth-note speed to hear the grouping; compound metre does not automatically mean swing.",
+      "example": "A 3+3 accent grouping differs from 2+2+2 with the same six eighth-note slots.",
+      "weakExample": "Calling every six-note bar 6/8 ignores the stated grouping.",
+      "exercise": "Create a six-attack pattern; count 6/8 as 1-la-li 2-la-li, then compare three groups of two.",
+      "minimumTask": "Create a six-attack pattern; count 6/8 as 1-la-li 2-la-li, then compare three groups of two.",
+      "extension": "Optional 15–20 minutes: play and revise your saved idea, record a local take if useful, and compare one alternative. Stop and resume later; speed and difficulty are not goals.",
+      "transferPrompt": "Use a different pitch and compare six eighths grouped 3+3 against 2+2+2.",
+      "minimumWords": 1,
+      "prerequisite": "music-04",
+      "assessment": [
+        "Labels both groupings; explains the difference without confusing tempo and metre.",
+        "Document one choice, a comparison and an intended effect. Separate the written plan from your own listening observations."
+      ],
+      "skillDependencies": ["music-04"],
+      "review": ["music-04"],
+      "sources": ["R6c", "J3"],
+      "minutes": 5,
+      "stage": "Gestures, pulse and pitch",
+      "version": 1,
+      "reflection": "Briefly name one choice and its intended effect; listening or playing observations are your self-report.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      },
+      "musicExample": {
+        "kind": "bard-music-v1",
+        "id": "ed84f9a9-9f2e-4207-a912-cca4d75bbd17",
+        "tuning": "standard",
+        "capo": 0,
+        "intent": "Original teaching demonstration — adapt it to your own intention.",
+        "observation": "",
+        "tempo": 80,
+        "phrases": [
+          {
+            "name": "Idea A",
+            "meter": "6/8",
+            "bars": 1,
+            "notes": [
+              {
+                "tick": 0,
+                "string": 0,
+                "fret": 0,
+                "duration": 1
+              },
+              {
+                "tick": 1,
+                "string": 0,
+                "fret": 0,
+                "duration": 1
+              },
+              {
+                "tick": 2,
+                "string": 0,
+                "fret": 0,
+                "duration": 1
+              },
+              {
+                "tick": 3,
+                "string": 0,
+                "fret": 0,
+                "duration": 1
+              },
+              {
+                "tick": 4,
+                "string": 0,
+                "fret": 0,
+                "duration": 1
+              },
+              {
+                "tick": 5,
+                "string": 0,
+                "fret": 0,
+                "duration": 1
+              }
+            ]
+          },
+          {
+            "name": "Answer B",
+            "meter": "3/4",
+            "bars": 1,
+            "notes": [
+              {
+                "tick": 0,
+                "string": 0,
+                "fret": 0,
+                "duration": 1
+              },
+              {
+                "tick": 1,
+                "string": 0,
+                "fret": 0,
+                "duration": 1
+              },
+              {
+                "tick": 2,
+                "string": 0,
+                "fret": 0,
+                "duration": 1
+              },
+              {
+                "tick": 3,
+                "string": 0,
+                "fret": 0,
+                "duration": 1
+              },
+              {
+                "tick": 4,
+                "string": 0,
+                "fret": 0,
+                "duration": 1
+              },
+              {
+                "tick": 5,
+                "string": 0,
+                "fret": 0,
+                "duration": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "music-06",
+      "faculty": "music",
+      "title": "Find and remember a pitch",
+      "discipline": "The Lute",
+      "objective": "Connect string/fret locations with pitch names and an octave. Use playing/listening self-report without pretending text proves pitch matching.",
+      "explanation": "Standard tuning, no capo, low to high: E2 A2 D3 G3 B3 E4. A fret raises pitch by one semitone. Open high e and B-string fret 5 both sound E4 (a unison); D-string fret 2 sounds E3 (an octave lower). The grid shows sounding pitch names. Listen yourself and briefly describe what you noticed: neither typed locations nor AI feedback establishes intonation.",
+      "example": "Open e and B5 are the same sounding pitch in standard tuning; D2 is an octave lower.",
+      "weakExample": "Matching fret numbers across different strings does not guarantee matching pitches.",
+      "exercise": "Find E on open high e and at B-string fret 5; add a lower E and label tuning.",
+      "minimumTask": "Find E on open high e and at B-string fret 5; add a lower E and label tuning.",
+      "extension": "Optional 15–20 minutes: play and revise your saved idea, record a local take if useful, and compare one alternative. Stop and resume later; speed and difficulty are not goals.",
+      "transferPrompt": "Find another pair of unisons in standard tuning and an octave-related location; name the sounding pitches.",
+      "minimumWords": 1,
+      "prerequisite": "music-01",
+      "assessment": [
+        "Locations agree with declared tuning; the learner distinguishes unison from octave.",
+        "Document one choice, a comparison and an intended effect. Separate the written plan from your own listening observations."
+      ],
+      "skillDependencies": ["music-01"],
+      "review": ["music-01"],
+      "sources": ["KMref", "KHbasics"],
+      "minutes": 5,
+      "stage": "Gestures, pulse and pitch",
+      "version": 1,
+      "reflection": "Briefly name one choice and its intended effect; listening or playing observations are your self-report.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      },
+      "musicExample": {
+        "kind": "bard-music-v1",
+        "id": "0fce8a4d-4672-40e3-b719-0cf00ac89f44",
+        "tuning": "standard",
+        "capo": 0,
+        "intent": "Original teaching demonstration — adapt it to your own intention.",
+        "observation": "",
+        "tempo": 80,
+        "phrases": [
+          {
+            "name": "Idea A",
+            "meter": "4/4",
+            "bars": 1,
+            "notes": [
+              {
+                "tick": 0,
+                "string": 0,
+                "fret": 0,
+                "duration": 2
+              },
+              {
+                "tick": 2,
+                "string": 1,
+                "fret": 5,
+                "duration": 2
+              },
+              {
+                "tick": 4,
+                "string": 3,
+                "fret": 2,
+                "duration": 2
+              }
+            ]
+          },
+          {
+            "name": "Answer B",
+            "meter": "4/4",
+            "bars": 1,
+            "notes": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "music-07",
+      "faculty": "music",
+      "title": "Steps, leaps and a response",
+      "discipline": "The Lute",
+      "objective": "Choose interval motion to contrast two short motifs.",
+      "explanation": "A step moves to an adjacent scale note; a leap skips one or more scale notes. Semitone distance and scale-degree distance are different. High-e frets 0–1–3 sound E–F–G; fret 0 to 7 is E–B, seven semitones, a perfect fifth. Make an original alternative and say which motion suits your intention.",
+      "example": "On high e, frets 0–1–3 ascend by steps; 0–7 begins with a perfect fifth.",
+      "weakExample": "Fret distance and scale-degree distance used interchangeably can misname an interval.",
+      "exercise": "Invent two three-note gestures, one mainly stepwise and one with a leap; name one interval.",
+      "minimumTask": "Invent two three-note gestures, one mainly stepwise and one with a leap; name one interval.",
+      "extension": "Optional 15–20 minutes: play and revise your saved idea, record a local take if useful, and compare one alternative. Stop and resume later; speed and difficulty are not goals.",
+      "transferPrompt": "Choose a new starting note; make two contrasting three-note gestures and name one interval.",
+      "minimumWords": 1,
+      "prerequisite": "music-03",
+      "assessment": [
+        "Correctly identifies the selected interval; makes an intentional alternative.",
+        "Document one choice, a comparison and an intended effect. Separate the written plan from your own listening observations."
+      ],
+      "skillDependencies": ["music-03", "music-06"],
+      "review": ["music-03", "music-06"],
+      "sources": ["J1", "KMref"],
+      "minutes": 5,
+      "stage": "Gestures, pulse and pitch",
+      "version": 1,
+      "reflection": "Briefly name one choice and its intended effect; listening or playing observations are your self-report.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      },
+      "musicExample": {
+        "kind": "bard-music-v1",
+        "id": "717de6c2-d91e-43dd-bd19-a14b4aa040e0",
+        "tuning": "standard",
+        "capo": 0,
+        "intent": "Original teaching demonstration — adapt it to your own intention.",
+        "observation": "",
+        "tempo": 80,
+        "phrases": [
+          {
+            "name": "Idea A",
+            "meter": "4/4",
+            "bars": 1,
+            "notes": [
+              {
+                "tick": 0,
+                "string": 0,
+                "fret": 0,
+                "duration": 2
+              },
+              {
+                "tick": 2,
+                "string": 0,
+                "fret": 1,
+                "duration": 2
+              },
+              {
+                "tick": 4,
+                "string": 0,
+                "fret": 3,
+                "duration": 2
+              }
+            ]
+          },
+          {
+            "name": "Answer B",
+            "meter": "4/4",
+            "bars": 1,
+            "notes": [
+              {
+                "tick": 0,
+                "string": 0,
+                "fret": 0,
+                "duration": 2
+              },
+              {
+                "tick": 2,
+                "string": 0,
+                "fret": 7,
+                "duration": 2
+              },
+              {
+                "tick": 4,
+                "string": 0,
+                "fret": 5,
+                "duration": 2
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "music-08",
+      "faculty": "music",
+      "title": "A scale as a palette",
+      "discipline": "The Lute",
+      "objective": "Use a major collection to create a phrase, not to pass a speed test.",
+      "explanation": "C major uses C D E F G A B, then C again. The ascending semitone pattern is 2–2–1–2–2–2–1. Use the pitch labels to find comfortable locations. Choose a three-note idea and an answering gesture from this palette. An answer may change direction, rhythm or ending; running a scale quickly is not the task.",
+      "example": "A C–E–D idea and a D–G–C answer can use the same collection differently.",
+      "weakExample": "Ascending a memorised scale alone does not demonstrate answering an idea.",
+      "exercise": "Build C major with whole/half-step guidance; choose three notes and invent an answer.",
+      "minimumTask": "Build C major with whole/half-step guidance; choose three notes and invent an answer.",
+      "extension": "Optional 15–20 minutes: play and revise your saved idea, record a local take if useful, and compare one alternative. Stop and resume later; speed and difficulty are not goals.",
+      "transferPrompt": "In C major, answer a new three-note idea while changing only the ending.",
+      "minimumWords": 1,
+      "prerequisite": "music-07",
+      "assessment": [
+        "Chosen pitches fit the declared collection; the answer changes an identifiable feature.",
+        "Document one choice, a comparison and an intended effect. Separate the written plan from your own listening observations."
+      ],
+      "skillDependencies": ["music-07"],
+      "review": ["music-07"],
+      "sources": ["J2"],
+      "minutes": 5,
+      "stage": "Gestures, pulse and pitch",
+      "version": 1,
+      "reflection": "Briefly name one choice and its intended effect; listening or playing observations are your self-report.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      },
+      "musicExample": {
+        "kind": "bard-music-v1",
+        "id": "510e2be5-5f50-45ef-b40f-9a1d06962b82",
+        "tuning": "standard",
+        "capo": 0,
+        "intent": "Original teaching demonstration — adapt it to your own intention.",
+        "observation": "",
+        "tempo": 80,
+        "phrases": [
+          {
+            "name": "Idea A",
+            "meter": "4/4",
+            "bars": 1,
+            "notes": [
+              {
+                "tick": 0,
+                "string": 1,
+                "fret": 1,
+                "duration": 2
+              },
+              {
+                "tick": 2,
+                "string": 1,
+                "fret": 5,
+                "duration": 2
+              },
+              {
+                "tick": 4,
+                "string": 1,
+                "fret": 3,
+                "duration": 2
+              }
+            ]
+          },
+          {
+            "name": "Answer B",
+            "meter": "4/4",
+            "bars": 1,
+            "notes": [
+              {
+                "tick": 0,
+                "string": 1,
+                "fret": 3,
+                "duration": 2
+              },
+              {
+                "tick": 2,
+                "string": 0,
+                "fret": 3,
+                "duration": 2
+              },
+              {
+                "tick": 4,
+                "string": 1,
+                "fret": 1,
+                "duration": 2
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "music-09",
+      "faculty": "music",
+      "title": "First miniature",
+      "discipline": "The Lute",
+      "objective": "Combine rhythm, pitch choice and an intention in a two-bar original sketch.",
+      "explanation": "Bring back one gesture from an earlier saved sketch. Repeat one feature so the miniature has an identity, then answer with a changed pitch, rhythm or ending. Two countable bars plus one short comparison are enough today. A complete song is optional later work, not a five-minute requirement.",
+      "example": "Keep the first bar’s attacks but end the answer on a different chosen note.",
+      "weakExample": "Adding an unrelated bar without a rationale gives weak continuity evidence.",
+      "exercise": "Reuse an earlier gesture, add one answering bar, and explain one retained and one changed feature.",
+      "minimumTask": "Reuse an earlier gesture, add one answering bar, and explain one retained and one changed feature.",
+      "extension": "Optional 15–20 minutes: play and revise your saved idea, record a local take if useful, and compare one alternative. Stop and resume later; speed and difficulty are not goals.",
+      "transferPrompt": "Use a new intention and earlier rhythm to make a different two-bar miniature; name one retained and one changed feature.",
+      "minimumWords": 1,
+      "prerequisite": "music-04",
+      "assessment": [
+        "Both bars are documented; rhythm and pitch choices can be traced to the intention.",
+        "Document one choice, a comparison and an intended effect. Separate the written plan from your own listening observations."
+      ],
+      "skillDependencies": ["music-04", "music-08"],
+      "review": ["music-04", "music-08"],
+      "sources": ["R1", "J1"],
+      "minutes": 5,
+      "stage": "Gestures, pulse and pitch",
+      "version": 1,
+      "reflection": "Briefly name one choice and its intended effect; listening or playing observations are your self-report.",
+      "timing": {
+        "notice": 1,
+        "write": 3,
+        "reflect": 1
+      },
+      "musicExample": {
+        "kind": "bard-music-v1",
+        "id": "0f4f9746-768e-4cd4-85d1-239792e1b75d",
+        "tuning": "standard",
+        "capo": 0,
+        "intent": "Original teaching demonstration — adapt it to your own intention.",
+        "observation": "",
+        "tempo": 80,
+        "phrases": [
+          {
+            "name": "Idea A",
+            "meter": "4/4",
+            "bars": 2,
+            "notes": [
+              {
+                "tick": 0,
+                "string": 0,
+                "fret": 0,
+                "duration": 2
+              },
+              {
+                "tick": 2,
+                "string": 0,
+                "fret": 1,
+                "duration": 2
+              },
+              {
+                "tick": 4,
+                "string": 0,
+                "fret": 3,
+                "duration": 2
+              },
+              {
+                "tick": 8,
+                "string": 0,
+                "fret": 0,
+                "duration": 2
+              },
+              {
+                "tick": 10,
+                "string": 0,
+                "fret": 1,
+                "duration": 2
+              },
+              {
+                "tick": 12,
+                "string": 0,
+                "fret": 0,
+                "duration": 2
+              }
+            ]
+          },
+          {
+            "name": "Answer B",
+            "meter": "4/4",
+            "bars": 1,
+            "notes": []
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+node_modules/
+dist/
+dist-electron/
+release/
+*.log
+artifacts/
+test-results/
+playwright-report/
+# Private reference library and extraction must never enter version control.
+*.epub
+*.pdf
+*.mobi
+*.azw3
+Writing/
+Music/
+private-library/
+reference-books/
+*Books*.zip
+Writing.zip
+MELODY~1.zip
+THESON~1.zip

@@ -1,0 +1,7 @@
+node_modules
+dist
+dist-electron
+release
+artifacts
+test-results
+package-lock.json

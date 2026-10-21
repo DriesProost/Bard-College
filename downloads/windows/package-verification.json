@@ -1,0 +1,27 @@
+{
+  "version": "1.2.0",
+  "packages": [
+    {
+      "platform": "win-unpacked",
+      "writing": 38,
+      "music": 9,
+      "sourceBytesVerified": true,
+      "writingObjectsUnchanged": true,
+      "noPrivateBooksRecordingsOrTestFixtures": true
+    },
+    {
+      "platform": "linux-unpacked",
+      "writing": 38,
+      "music": 9,
+      "sourceBytesVerified": true,
+      "writingObjectsUnchanged": true,
+      "noPrivateBooksRecordingsOrTestFixtures": true
+    }
+  ],
+  "installer": {
+    "bytes": 140689627,
+    "sha256": "f180d615bd44486b612491cb29d5cb5b905459cd9cd0a15ca4b5f2b00457d5cb",
+    "unsigned": true
+  },
+  "windowsExecutionTested": false
+}
