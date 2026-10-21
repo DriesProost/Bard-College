@@ -1,3 +1,5 @@
+> Version **1.4.0** presents Explanation → Example → Your input → Teacher review → Done. Extra tasks, notes, self-checks and references are under More options; no reflection is required to finish. See [SIMPLE_LESSONS_VALIDATION.md](SIMPLE_LESSONS_VALIDATION.md).
+
 > Version 1.3.0 update: lessons now require a Professor introduction and review of the current draft. Session limits, clear daily steps, optional plain-language check-ins and the renamed new-exercise action are documented in [GUIDED_LESSONS_VALIDATION.md](GUIDED_LESSONS_VALIDATION.md). This supersedes earlier optional-AI completion behavior; the approved curriculum and historical progress are unchanged.
 
 # Curriculum system — Phase 2

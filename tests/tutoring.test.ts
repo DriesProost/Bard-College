@@ -56,7 +56,8 @@ test("lesson completion requires real-session review of the current draft, versi
       () => s.saveAttempt({ ...a, practicePrompt: lessons[0].transferPrompt }),
       /Professor/,
     );
-    s.saveAttempt(a);
+    s.saveAttempt({ ...a, reflection: "" });
+    assert.equal(s.state().attempts[0].reflection, "");
     assert.ok(s.state().attempts[0].completedAt);
     assert.ok(s.tutorSession(a.lessonId)!.completedAt);
     assert.equal(s.state().evidence.length, 0);

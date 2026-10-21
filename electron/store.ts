@@ -378,10 +378,6 @@ export class Store {
         .get(a.lessonId) as unknown as Attempt | undefined;
       const done =
         old?.completedAt || (a.complete ? new Date().toISOString() : "");
-      if (a.complete && a.reflection.trim().length < 3)
-        throw Error(
-          "Add a short reflection explaining one creative choice before completing the lesson.",
-        );
       if (lesson.faculty === "music" && a.body && !parseSketch(a.body))
         throw Error(
           "Invalid musical sketch. Your earlier saved attempt is unchanged.",

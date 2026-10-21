@@ -716,7 +716,7 @@ function LessonCard({
             </li>
             <li className={daily.done ? "done" : ""}>
               Finish today’s practice{" "}
-              <small>One brief observation; longer work can wait.</small>
+              <small>Save your reviewed answer. Longer work can wait.</small>
             </li>
           </ol>
           <p className="daily-status" role="status">
@@ -890,21 +890,24 @@ function Tutor({
       )}
       {!ended && (
         <>
-          <label>
-            {feedback
-              ? "One follow-up question (optional)"
-              : "Anything you want the Professor to notice? (optional)"}
-            <input
-              value={question}
-              onChange={(e) => setQuestion(e.target.value)}
-              maxLength={2000}
-              placeholder={
-                lessonId?.startsWith("music-")
-                  ? "Does the written answer contrast with the first gesture?"
-                  : "Does the last line support my intention?"
-              }
-            />
-          </label>
+          <details>
+            <summary>Ask a specific question (optional)</summary>
+            <label>
+              {feedback
+                ? "One follow-up question (optional)"
+                : "Anything you want the Professor to notice? (optional)"}
+              <input
+                value={question}
+                onChange={(e) => setQuestion(e.target.value)}
+                maxLength={2000}
+                placeholder={
+                  lessonId?.startsWith("music-")
+                    ? "Does the written answer contrast with the first gesture?"
+                    : "Does the last line support my intention?"
+                }
+              />
+            </label>
+          </details>
           <button
             className="primary"
             disabled={
@@ -1077,8 +1080,14 @@ function LessonView({
       setSaving(false);
     }
   }
+  const input = revision || body;
+  const changeInput = (value: string) => {
+    setBody(value);
+    setRevision("");
+  };
+  const path = lessons.filter((l) => l.faculty === lesson.faculty);
   return (
-    <>
+    <div className="simple-lesson">
       <button
         className="text-button back"
         onClick={async () => {
@@ -1087,264 +1096,226 @@ function LessonView({
       >
         <ChevronLeft size={16} /> Back to the Academy
       </button>
-      <div className="lesson-header">
+      <header className="lesson-header">
         <div className="eyebrow">
-          {lesson.discipline} · LESSON{" "}
-          {lessons.filter((l) => l.faculty === lesson.faculty).indexOf(lesson) +
-            1}{" "}
-          OF {lessons.filter((l) => l.faculty === lesson.faculty).length} ·
-          ABOUT 5 MINUTES
+          {lesson.faculty === "music" ? "MUSIC" : "WRITING"} · LESSON{" "}
+          {path.indexOf(lesson) + 1} OF {path.length} · ABOUT 5 MINUTES
         </div>
         <h1>{lesson.title}</h1>
-        <p>{lesson.objective}</p>
-      </div>
-      <section
-        className="paper-card professor-guidance"
-        aria-label="Your lesson with the Professor"
-      >
+      </header>
+      <section className="paper-card" aria-labelledby="explanation-title">
+        <h2 id="explanation-title">1. Explanation</h2>
         {session?.guidance ? (
-          <>
-            <div className="eyebrow">YOUR PROFESSOR’S INTRODUCTION</div>
-            <h2>One small skill today</h2>
-            <p>{session.guidance.explanation}</p>
-            <p>
-              <strong>Notice:</strong> {session.guidance.notice}
-            </p>
-            <p>
-              <strong>Start here:</strong> {session.guidance.firstStep}
-            </p>
-            <p>
-              <strong>Enough for today:</strong> {session.guidance.finishLine}
-            </p>
-          </>
+          <p>{session.guidance.explanation}</p>
         ) : (
           <>
-            <h2>Start your lesson with the Professor</h2>
-            <p>
-              The Professor will introduce this exercise and guide your attempt.
-              Your earlier drafts and completions are kept.
-            </p>
+            <p>Start the lesson for a short explanation from your teacher.</p>
             <button
               className="primary"
               disabled={starting || !state.hasKey}
               onClick={() => void startLesson()}
             >
-              {starting
-                ? "The Professor is preparing your lesson…"
-                : "Start lesson"}
+              {starting ? "Preparing your lesson…" : "Start lesson"}
             </button>
-            {!state.hasKey && (
-              <p className="hint">
-                Add your OpenAI API key in Settings to start lessons.
-              </p>
-            )}
+            {!state.hasKey && <p>Add your API key in Settings to start.</p>}
           </>
         )}
       </section>
-      <div className="lesson-layout">
-        <article className="paper-card lesson-concept">
-          <span className="step-label">01 · THE IDEA</span>
-          <h2>One thing to notice</h2>
-          <p>{lesson.explanation}</p>
-          <span className="step-label">02 · SEE IT AT WORK</span>
-          <blockquote>{lesson.example}</blockquote>
-          {lesson.weakExample && (
+      <section className="paper-card" aria-labelledby="example-title">
+        <h2 id="example-title">2. Example</h2>
+        <blockquote>{lesson.example}</blockquote>
+        {session?.guidance && <p>{session.guidance.notice}</p>}
+      </section>
+      <section className="paper-card" aria-labelledby="input-title">
+        <h2 id="input-title">3. Your input</h2>
+        <p className="plain-task">
+          <strong>What to do:</strong>{" "}
+          {practicePrompt || lesson.minimumTask || lesson.exercise}
+        </p>
+        {session?.guidance && (
+          <p className="hint">{session.guidance.firstStep}</p>
+        )}
+        <fieldset className="lesson-work" disabled={!session?.guidance}>
+          {lesson.faculty === "music" ? (
+            <MusicWorkbench
+              key={id + practicePrompt}
+              example={lesson.musicExample}
+              value={input}
+              onChange={changeInput}
+              lessonId={id}
+              fail={fail}
+              beforeRecord={() => save(false)}
+            />
+          ) : (
             <>
-              <h3>A weaker fit for this intention</h3>
-              <p>{lesson.weakExample}</p>
-              <p className="hint">
-                This is contextual craft advice, not a rule forbidding an
-                artistic choice.
-              </p>
+              <label className="sr-only" htmlFor="exercise">
+                Your exercise
+              </label>
+              <textarea
+                id="exercise"
+                rows={7}
+                value={input}
+                onChange={(e) => changeInput(e.target.value)}
+                maxLength={20000}
+                placeholder="Write your answer here…"
+              />
             </>
           )}
-          <h3>What to look for</h3>
-          <ul className="assessment-list">
+          <div className="editor-meta">
+            <span>
+              {lesson.faculty === "music"
+                ? "Musical sketch"
+                : `${words(input)} words`}
+            </span>
+            <span>{saved ? "Saved locally" : "Saving…"}</span>
+          </div>
+        </fieldset>
+      </section>
+      <section
+        className="paper-card lesson-feedback"
+        aria-labelledby="review-title"
+      >
+        <h2 id="review-title">4. Teacher review</h2>
+        <Tutor
+          state={state}
+          fail={fail}
+          refresh={refresh}
+          text={input}
+          onBusyChange={setTutorBusy}
+          beforeRequest={async () => {
+            if (timer.current) clearTimeout(timer.current);
+            await window.bard.saveAttempt({
+              lessonId: id,
+              ...latestAttempt.current,
+              complete: false,
+            });
+          }}
+          practicePrompt={practicePrompt}
+          lessonId={id}
+          initial={attempt?.feedback}
+          initialText={attempt?.feedbackText}
+        />
+        {session && session.turns.length > 0 && !session.completedAt && (
+          <p className="hint">
+            Want to change something? Edit your answer above, then ask for
+            another review. You can also finish after one review.
+          </p>
+        )}
+      </section>
+      <section
+        className="paper-card lesson-finish"
+        aria-labelledby="done-title"
+      >
+        <h2 id="done-title">5. Done</h2>
+        {session?.completedAt ? (
+          <p role="status">
+            Done for today. Your answer and teacher’s feedback are saved.
+          </p>
+        ) : (
+          <p>
+            {reviewed
+              ? "You have your teacher’s feedback. You can finish now."
+              : "Write your answer and get your teacher’s review, then finish here."}
+          </p>
+        )}
+        <button
+          className="primary"
+          disabled={
+            saving ||
+            tutorBusy ||
+            !reviewed ||
+            !!session?.completedAt ||
+            (lesson.faculty === "music"
+              ? !meaningfulSketch(input)
+              : words(input) < lesson.minimumWords)
+          }
+          onClick={() => save(true)}
+        >
+          <Check size={16} />
+          {session?.completedAt ? "Practice finished" : "Finish practice"}
+        </button>
+        {session?.completedAt && path.indexOf(lesson) < path.length - 1 && (
+          <button
+            className="text-button"
+            onClick={() => onNext(path[path.indexOf(lesson) + 1].id)}
+          >
+            Next lesson <ArrowRight size={16} />
+          </button>
+        )}
+      </section>
+      <details className="paper-card lesson-options">
+        <summary>More options</summary>
+        <button className="text-button" onClick={() => save(false)}>
+          Save draft
+        </button>
+        <label>
+          What did you try, and what changed? (optional)
+          <textarea
+            rows={2}
+            maxLength={2000}
+            value={reflection}
+            onChange={(e) => setReflection(e.target.value)}
+            placeholder="A short note for yourself, if useful."
+          />
+        </label>
+        <details>
+          <summary>More explanation and what to look for</summary>
+          <p>{lesson.objective}</p>
+          <p>{lesson.explanation}</p>
+          <p>{lesson.weakExample}</p>
+          <ul>
             {lesson.assessment.map((c) => (
               <li key={c}>{c}</li>
             ))}
           </ul>
-          {lesson.review.length > 0 && (
-            <div className="review-links">
-              <p className="hint">
-                Before writing, recall one choice from an earlier exercise:
-              </p>
-              {lesson.review.map((id) => (
-                <button
-                  key={id}
-                  className="text-button"
-                  onClick={() => onNext(id)}
-                >
-                  {lessons.find((l) => l.id === id)?.title}{" "}
-                  <ArrowRight size={13} />
-                </button>
-              ))}
-            </div>
-          )}
-          <details>
-            <summary>Sources and teaching limits</summary>
+          {lesson.skillDependencies.length > 0 && (
             <p>
-              Examples, tasks and assessment are original instructional design.
-              Private books and excerpts are never automatically sent to the
-              tutor.
+              Useful earlier lessons:{" "}
+              {lesson.skillDependencies
+                .map((dep) => lessons.find((l) => l.id === dep)?.title)
+                .join(", ")}
+              . These are suggestions, not locks.
             </p>
-            {lesson.sources.map((id) => (
-              <div key={id}>
-                <strong>{state.sources[id]?.title || id}</strong>
-                <p>
-                  {state.sources[id]?.locator ||
-                    "Legacy reference; exact scope not recorded."}
-                </p>
-                <p className="hint">
-                  {state.sources[id]?.scope || "Unverified custom reference."}
-                </p>
-              </div>
-            ))}
+          )}
+        </details>
+        {lesson.extension && (
+          <details>
+            <summary>Optional longer work — saved and resumable</summary>
+            <p>{lesson.extension}</p>
           </details>
-          <div className="margin-note">
-            <Leaf size={18} />
-            <p>{personalPrompt(state.profile)}</p>
-          </div>
-        </article>
-        <section className="paper-card exercise">
-          <span className="step-label">03 · YOUR TURN</span>
-          <h2>A little deliberate practice</h2>
-          {lesson.transferPrompt && (
-            <div className="new-exercise">
-              <p>
-                Want to use this skill in a different situation? This opens a
-                fresh draft and keeps the current one in earlier attempts. It is
-                optional.
-              </p>
-              <button
-                className="secondary"
-                disabled={saving || starting}
-                onClick={async () => {
-                  if (!(await save(false))) return;
-                  setPracticePrompt(
-                    practicePrompt ? "" : lesson.transferPrompt,
-                  );
-                  setBody("");
-                  setRevision("");
-                  setReflection("");
-                }}
-              >
-                {practicePrompt
-                  ? "Return to the original exercise"
-                  : "Practise this skill with a new exercise"}
-              </button>
-            </div>
-          )}
-          <p>{practicePrompt || lesson.minimumTask || lesson.exercise}</p>
-          {lesson.extension && (
-            <details>
-              <summary>Optional longer work — saved and resumable</summary>
-              <p>{lesson.extension}</p>
-              <p>{lesson.exercise}</p>
-            </details>
-          )}
-          {attempt?.completedAt && (
-            <p className="hint">
-              Previously completed practice is retained. Completion is not skill
-              evidence.
+        )}
+        {lesson.transferPrompt && (
+          <details>
+            <summary>Try a different exercise</summary>
+            <p>
+              This opens a fresh draft for the same skill. Your current work
+              stays in earlier attempts. It is optional.
             </p>
-          )}
-          {!!attempt?.feedback &&
-            attempt.feedbackVersion !== lesson.version && (
-              <p className="hint">
-                Saved feedback belongs to an earlier content version and is
-                retained for reference.
-              </p>
-            )}
-          <p className="hint">
-            1 min notice · 3 min create · 1 min reflect. {lesson.reflection}
-          </p>
-          <fieldset className="lesson-work" disabled={!session?.guidance}>
-            {lesson.faculty === "music" ? (
-              <MusicWorkbench
-                key={id + practicePrompt}
-                example={lesson.musicExample}
-                value={body}
-                onChange={setBody}
-                lessonId={id}
-                fail={fail}
-                beforeRecord={() => save(false)}
-              />
-            ) : (
-              <>
-                <label className="sr-only" htmlFor="exercise">
-                  Your exercise
-                </label>
-                <textarea
-                  id="exercise"
-                  rows={7}
-                  value={body}
-                  onChange={(e) => setBody(e.target.value)}
-                  maxLength={20000}
-                  placeholder="An imperfect first line is a perfectly good beginning…"
-                />
-              </>
-            )}
-            <div className="editor-meta">
-              <span>
-                {lesson.faculty === "music"
-                  ? "Musical sketch"
-                  : `${words(body)} words`}
-              </span>
-              <span>{saved ? "Saved locally" : "Saving…"}</span>
-            </div>
-            {!unlocked && (
-              <p className="hint">
-                Recommended first:{" "}
-                {lesson.skillDependencies
-                  .map((id) => lessons.find((l) => l.id === id)?.title)
-                  .join(", ")}
-                . You can still practise or revisit a skill now; prior
-                completion does not prove readiness.
-              </p>
-            )}
-            <label>
-              What did you try, and what changed?
-              <textarea
-                rows={2}
-                maxLength={2000}
-                value={reflection}
-                onChange={(e) => setReflection(e.target.value)}
-                placeholder="For example: I removed one word so the last line lands more clearly."
-              />
-            </label>
-            <div className="button-row">
-              <button
-                className="primary"
-                disabled={
-                  saving ||
-                  tutorBusy ||
-                  !reviewed ||
-                  !!session?.completedAt ||
-                  (lesson.faculty === "music"
-                    ? !meaningfulSketch(revision || body)
-                    : words(body) < lesson.minimumWords) ||
-                  reflection.trim().length < 3
-                }
-                onClick={() => save(true)}
-              >
-                <Check size={16} />
-                {session?.completedAt ? "Practice finished" : "Finish practice"}
-              </button>
-              <button className="text-button" onClick={() => save(false)}>
-                Save draft
-              </button>
-            </div>
-            {!reviewed && (
-              <p className="hint">
-                Get the Professor’s feedback on your current draft before
-                finishing. One review is enough; follow-ups are optional.
-              </p>
-            )}
-          </fieldset>
-        </section>
-      </div>
-      <section className="paper-card">
+            <button
+              className="secondary"
+              disabled={saving || starting}
+              onClick={async () => {
+                if (!(await save(false))) return;
+                setPracticePrompt(practicePrompt ? "" : lesson.transferPrompt);
+                setBody("");
+                setRevision("");
+                setReflection("");
+              }}
+            >
+              {practicePrompt
+                ? "Return to the original exercise"
+                : "Practise this skill with a new exercise"}
+            </button>
+          </details>
+        )}
+        <EvidencePanel
+          key={id}
+          lesson={lesson}
+          state={state}
+          beforeSave={() => save(false)}
+          refresh={refresh}
+          fail={fail}
+        />
         <details>
           <summary
             onClick={() =>
@@ -1354,28 +1325,16 @@ function LessonView({
             Earlier saved attempts
           </summary>
           {!history.length && (
-            <p>
-              Earlier versions appear here after you change saved work. Your
-              current draft is saved separately.
-            </p>
+            <p>Earlier versions appear here after you change saved work.</p>
           )}
           {history.map((h) => (
-            <div key={h.id} className="evidence-record">
-              <p>
-                {new Date(h.createdAt).toLocaleString()} · content version{" "}
-                {h.contentVersion || "legacy"}
-              </p>
-              <p>{h.practicePrompt || "Original exercise"}</p>
+            <div className="evidence-record" key={h.id}>
+              <p>{new Date(h.createdAt).toLocaleString()}</p>
               <blockquote>
-                {lesson.faculty === "music" ? musicText(h.body) : h.body}
+                {lesson.faculty === "music"
+                  ? musicText(h.revision || h.body)
+                  : h.revision || h.body}
               </blockquote>
-              {h.revision && (
-                <blockquote>
-                  {lesson.faculty === "music"
-                    ? musicText(h.revision)
-                    : h.revision}
-                </blockquote>
-              )}
               <p>{h.reflection}</p>
               <button
                 className="secondary"
@@ -1396,113 +1355,36 @@ function LessonView({
             </div>
           ))}
         </details>
-      </section>
-      <EvidencePanel
-        key={id}
-        lesson={lesson}
-        state={state}
-        beforeSave={() => save(false)}
-        refresh={refresh}
-        fail={fail}
-      />
-      <section className="paper-card lesson-feedback">
-        <span className="step-label">04 · REFLECT & REVISE</span>
-        <h2>A conversation about your craft</h2>
-        <Tutor
-          state={state}
-          fail={fail}
-          refresh={refresh}
-          text={revision || body}
-          onBusyChange={setTutorBusy}
-          beforeRequest={async () => {
-            if (timer.current) clearTimeout(timer.current);
-            await window.bard.saveAttempt({
-              lessonId: id,
-              ...latestAttempt.current,
-              complete: false,
-            });
-          }}
-          practicePrompt={practicePrompt}
-          lessonId={id}
-          initial={attempt?.feedback}
-          initialText={attempt?.feedbackText}
-        />
         <details>
-          <summary>Try a revision</summary>
-          <fieldset className="lesson-work" disabled={!session?.guidance}>
-            <p>Keep your original. Give the idea another pass.</p>
-            {lesson.faculty === "music" ? (
-              <>
-                {!revision && (
-                  <button
-                    className="secondary"
-                    onClick={() => setRevision(body)}
-                  >
-                    Copy original into revision
-                  </button>
-                )}
-                {revision && (
-                  <MusicWorkbench
-                    value={revision}
-                    onChange={setRevision}
-                    lessonId={id}
-                    fail={fail}
-                    beforeRecord={() => save(false)}
-                    revision
-                  />
-                )}
-              </>
-            ) : (
-              <>
-                <textarea
-                  aria-label="Keep your original. Give the idea another pass."
-                  rows={5}
-                  value={revision}
-                  onChange={(e) => setRevision(e.target.value)}
-                  maxLength={20000}
-                />
-              </>
-            )}
-          </fieldset>
-          <button className="secondary" onClick={() => save(false)}>
-            Save revision
-          </button>
+          <summary>Sources and teaching limits</summary>
+          <p>
+            Examples and exercises are original. The teacher reviews the written
+            plan; recordings are not sent or heard.
+          </p>
+          {lesson.sources.map((key) => (
+            <div key={key}>
+              <strong>{state.sources[key]?.title || key}</strong>
+              <p>{state.sources[key]?.locator}</p>
+              <p>{state.sources[key]?.scope}</p>
+            </div>
+          ))}
         </details>
-      </section>
-      <div className="button-row lesson-bottom">
         <button
-          className="secondary"
+          className="text-button"
           onClick={() =>
             onStudio({
               title: lesson.title + " — practice",
-              body:
-                lesson.faculty === "music"
-                  ? musicText(revision || body)
-                  : revision || body,
+              body: lesson.faculty === "music" ? musicText(input) : input,
             })
           }
         >
           Open this draft in the Scriptorium <Feather size={16} />
         </button>
-        {attempt?.completedAt &&
-          lessons.filter((l) => l.faculty === lesson.faculty).indexOf(lesson) <
-            lessons.filter((l) => l.faculty === lesson.faculty).length - 1 && (
-            <button
-              className="primary"
-              onClick={() => {
-                const path = lessons.filter(
-                  (l) => l.faculty === lesson.faculty,
-                );
-                onNext(path[path.indexOf(lesson) + 1].id);
-              }}
-            >
-              Next lesson <ArrowRight size={16} />
-            </button>
-          )}
-      </div>
-    </>
+      </details>
+    </div>
   );
 }
+
 function Studio({
   project,
   state,

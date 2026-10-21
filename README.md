@@ -8,7 +8,7 @@ A local-first Windows desktop college for poetry and songwriting. Electron, Reac
 
 ## Install on Windows
 
-Use `release/Bards-College-Setup-1.3.0-x64.exe` on Windows 10/11 x64. The installed application is self-contained: **no VS Code, Node.js, Git or development server is required; local writing and saved recordings work offline, while new lesson introductions and reviews require the API**. AI needs a connection and your own API key. The installer is unsigned; see [WINDOWS_VALIDATION.md](WINDOWS_VALIDATION.md) for installation, key protection and the PC acceptance check.
+Use `release/Bards-College-Setup-1.4.0-x64.exe` on Windows 10/11 x64. The installed application is self-contained: **no VS Code, Node.js, Git or development server is required; local writing and saved recordings work offline, while new lesson introductions and reviews require the API**. AI needs a connection and your own API key. The installer is unsigned; see [WINDOWS_VALIDATION.md](WINDOWS_VALIDATION.md) for installation, key protection and the PC acceptance check.
 
 For development, install Node.js 24 LTS and Git, clone the repository, then run `npm ci` and `npm run dev`. Main-process edits need a restart. Use `npm run build` followed by `npm start` to run the production application from source. Run `npm run dist:win` to produce the NSIS installer in `release/` (normal Windows builds do not need Wine). The supported custom NSIS script generates its unsigned uninstaller at installation time; the exact-file removal manifest preserves unrelated files and personal user data. Only English installer strings are configured.
 
@@ -16,7 +16,7 @@ All dependency versions are recorded in `package-lock.json`. Electron and packag
 
 ## A first visit
 
-Enter your name, interests, genres, experience, preferred form and daily goal. The Great Hall shows a clear five-minute task for the chosen faculty. Start with the Professor’s introduction, make a small attempt, get feedback and finish with a brief observation. One review is enough; at most two follow-ups are available per session. Completion does not require praise or prove mastery. The Academy has 38 Writing lessons and nine Music foundations; prerequisite links recommend skills without locking one faculty behind the other. The dashboard also suggests spaced revisits after 1, 3, 7 and 14 days; missing a day does not remove progress.
+Enter your name, interests, genres, experience, preferred form and daily goal. The Great Hall shows a clear five-minute task for the chosen faculty. Start with the Professor’s introduction, make a small attempt, get feedback and finish when you have the teacher’s review. One review is enough; at most two follow-ups are available per session. Completion does not require praise or prove mastery. The Academy has 38 Writing lessons and nine Music foundations; prerequisite links recommend skills without locking one faculty behind the other. The dashboard also suggests spaced revisits after 1, 3, 7 and 14 days; missing a day does not remove progress.
 
 The Scriptorium supports plain text and Markdown source, named song sections, autosave, optional line numbers, approximate **English** syllable counts, manual revision snapshots, completion markers, focus mode and Markdown/plain-text export. This is intentionally a multiline Markdown editor rather than a WYSIWYG document editor. Save a snapshot before an experiment; restoring a draft preserves the current version first. Ctrl/⌘ S saves. Escape leaves focus mode. The Songbook searches titles and text and filters completed pieces. Deleting a piece also deletes its snapshots; the confirmation explains this.
 
@@ -49,13 +49,17 @@ The additive SQLite migration makes a consistent pre-change recovery copy (inclu
 - `src/shared/`: validated data contracts, curriculum schema, progression and approximate language helpers.
 - `src/`: React views and responsive parchment/forest design. Reduced motion respects OS preferences and an app setting; native dialogs trap focus.
 
-Progress levels describe **practice**, not measured mastery. New completion requires a meaningful attempt, a short observation and the Professor’s feedback on the current draft. AI approval, praise and a numerical score are never required. Milestones are idempotent, revision XP is bounded per piece/lesson, and revisiting a completed lesson awards at most five XP per lesson per day only after text and reflection change. This discourages meaningless toggling, but is not an anti-cheat system.
+Progress levels describe **practice**, not measured mastery. New completion requires a meaningful attempt, the Professor’s feedback on the current draft. AI approval, praise and a numerical score are never required. Milestones are idempotent, revision XP is bounded per piece/lesson, and revisiting a completed lesson awards at most five XP per lesson per day only after text and reflection change. This discourages meaningless toggling, but is not an anti-cheat system.
 
 ## Local guitar practice
 
 Open The Academy → Music faculty. Each lesson provides a five-minute minimum, original comparison, practical example, optional extension and offline assessment criteria. Load the demonstration to explore it, then adapt it to your own musical intent. Choose a fret and duration and click a string/count cell; arrows navigate, digits enter frets 0–9, and Delete inserts a rest. The fret field supports 10–24. Each column is one eighth note; holds and rests are explicit. Standard tuning and no capo are the current scope. Sounding note names and accessible counted text accompany the tab; standard staff engraving is not included.
 
 Once your lesson has started, use Record guitar to grant microphone access and capture up to two minutes. Stop and save creates a local WebM/Opus take linked to the lesson/sketch; Listen and Delete work offline after restart. Storage is capped at 200 takes / 256 MiB, with a 12 MiB limit per take. A failed save offers retry/discard. Recordings are ordinary private-profile files, not encrypted by the API-key vault. Copy the whole closed profile for backup. The professor has not heard the recordings and cannot assess performance, intonation or guitar comfort. Synthetic playback is a reference for the documented rhythm/pitches, not an imitation or evaluation of your playing.
+
+## Simple lesson flow
+
+Version 1.4.0 presents one column: **Explanation → Example → Your input → Teacher review → Done**. The teacher uses a short explanation and points to the supplied example; the input shows one concrete task. Edit the same answer box after feedback. Reflections are optional. Sources, extra practice, self-checks, earlier attempts and export sit under **More options**, away from the main flow. Existing lesson IDs, content, progress and drafts are preserved; earlier versions of an edited answer remain in attempt history. See [SIMPLE_LESSONS_VALIDATION.md](SIMPLE_LESSONS_VALIDATION.md).
 
 ## Guided daily lessons
 

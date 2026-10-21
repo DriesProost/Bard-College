@@ -1,5 +1,5 @@
 {
-  "version": "1.3.0",
+  "version": "1.4.0",
   "packages": [
     {
       "platform": "win-unpacked",
@@ -19,8 +19,8 @@
     }
   ],
   "installer": {
-    "bytes": 140693345,
-    "sha256": "36cb60a39ceaba213b59a1a82edd4cfc0602c4d14058e6d16bc29159ceb1ba98",
+    "bytes": 140693197,
+    "sha256": "9bedf33b750b5aa9333df89181dc5cf21b840f47f90e0ba7bd07cebaecac9afd",
     "unsigned": true
   },
   "windowsExecutionTested": false

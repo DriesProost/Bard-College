@@ -123,12 +123,8 @@ test("snapshots deduplicate, preserve earlier writing, and cascade on delete", (
     s.deleteProject(p.id);
     assert.equal(s.history(p.id).length, 0);
   }));
-test("participation requires a brief attempt and reflection; XP is idempotent and does not establish skill", () =>
+test("participation requires a reviewed attempt; XP is idempotent and does not establish skill", () =>
   withStore((s) => {
-    assert.throws(
-      () => saveReviewedAttempt(s, { ...attempt(), reflection: "" }),
-      /reflection/,
-    );
     assert.throws(
       () => saveReviewedAttempt(s, { ...attempt(), body: "few words" }),
       /at least 3 words/,

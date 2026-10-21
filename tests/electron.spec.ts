@@ -97,6 +97,20 @@ test("desktop workflow: profile, practice, autosave, revisions, export and resta
     await expect(
       page.getByRole("heading", { name: "Something you can touch" }),
     ).toBeVisible();
+    expect(
+      await page.locator(".simple-lesson > section > h2").allTextContents(),
+    ).toEqual([
+      "1. Explanation",
+      "2. Example",
+      "3. Your input",
+      "4. Teacher review",
+      "5. Done",
+    ]);
+    await expect(
+      page.getByText("Optional check-in: how much help did you need?", {
+        exact: true,
+      }),
+    ).not.toBeVisible();
     await expect(page.getByLabel("Your exercise")).toBeDisabled();
     await expect(
       page.getByRole("button", { name: "Start lesson", exact: true }),
@@ -335,10 +349,12 @@ test("AI connection status and complete feedback → revision → songbook → r
       .getByRole("button", { name: "Start lesson", exact: true })
       .click();
     await expect(page.getByLabel("Your exercise")).toBeEnabled();
+    await page.screenshot({
+      path: "artifacts/simple-lesson.png",
+      fullPage: true,
+    });
     await page.getByLabel("Your exercise").fill(original);
-    await page
-      .getByLabel("What did you try, and what changed?")
-      .fill("The teaspoon shows a daily habit interrupted.");
+    await page.getByText("More options", { exact: true }).click();
     await expect(
       page.getByRole("button", { name: "Finish practice", exact: true }),
     ).toBeDisabled();
@@ -348,13 +364,8 @@ test("AI connection status and complete feedback → revision → songbook → r
     await expect(
       page.getByRole("heading", { name: "What’s working" }),
     ).toBeVisible();
-    await page.getByText("Try a revision", { exact: true }).click();
-    await page
-      .getByLabel("Keep your original. Give the idea another pass.")
-      .fill(revised);
-    await page
-      .getByRole("button", { name: "Save revision", exact: true })
-      .click();
+    await page.getByLabel("Your exercise").fill(revised);
+    await page.getByRole("button", { name: "Save draft", exact: true }).click();
     await expect(page.getByRole("note")).toContainText("earlier draft");
     await expect(
       page.getByRole("heading", { name: "What’s working" }),
@@ -408,6 +419,7 @@ test("AI connection status and complete feedback → revision → songbook → r
     await page
       .getByRole("button", { name: "Reopen today’s lesson", exact: true })
       .click();
+    await page.getByText("More options", { exact: true }).click();
     await page
       .getByRole("button", { name: "Open this draft in the Scriptorium" })
       .click();
@@ -433,15 +445,21 @@ test("AI connection status and complete feedback → revision → songbook → r
       .getByRole("button", { name: "The Academy", exact: false })
       .click();
     await page.getByRole("button", { name: /LESSON 01/ }).click();
-    await expect(page.getByLabel("Your exercise")).toHaveValue(original);
+    await expect(page.getByLabel("Your exercise")).toHaveValue(revised);
     await expect(
       page.getByRole("heading", { name: "What’s working" }),
     ).toBeVisible();
     await expect(page.getByRole("note")).toHaveCount(0);
-    await page.getByText("Try a revision", { exact: true }).click();
+    await expect(page.getByLabel("Your exercise")).toHaveValue(revised);
+    await page.getByText("More options", { exact: true }).click();
+    await page.getByText("Earlier saved attempts", { exact: true }).click();
     await expect(
-      page.getByLabel("Keep your original. Give the idea another pass."),
-    ).toHaveValue(revised);
+      page
+        .getByText("Earlier saved attempts", { exact: true })
+        .locator("..")
+        .getByText(original, { exact: true })
+        .first(),
+    ).toBeVisible();
   } finally {
     await app.close();
     rmSync(config, { recursive: true, force: true });
@@ -614,8 +632,9 @@ test("Phase 1 upgrades a legacy profile offline, keeps Music separate and persis
     await page
       .getByLabel("Your exercise")
       .fill("The lamp stayed bright. I left that night.");
+    await page.getByText("More options", { exact: true }).click();
     await page
-      .getByLabel("What did you try, and what changed?")
+      .getByLabel("What did you try, and what changed? (optional)")
       .fill("Less settled");
     await page
       .getByRole("button", { name: "Ask the Professor", exact: true })
@@ -643,6 +662,7 @@ test("Phase 1 upgrades a legacy profile offline, keeps Music separate and persis
     await expect(
       page.getByRole("status").filter({ hasText: "Self-assessment saved" }),
     ).toBeVisible();
+    await page.getByText("Try a different exercise", { exact: true }).click();
     await page
       .getByRole("button", {
         name: "Practise this skill with a new exercise",
@@ -658,7 +678,7 @@ test("Phase 1 upgrades a legacy profile offline, keeps Music separate and persis
       .getByLabel("Your exercise")
       .fill("Keep the lamp alive. I cannot promise life.");
     await page
-      .getByLabel("What did you try, and what changed?")
+      .getByLabel("What did you try, and what changed? (optional)")
       .fill("Open ending");
     await page.getByRole("button", { name: "Save draft", exact: true }).click();
     await page.getByLabel("Evidence for criterion 1").selectOption("retained");
@@ -674,6 +694,8 @@ test("Phase 1 upgrades a legacy profile offline, keeps Music separate and persis
     await page.getByText("Earlier saved attempts", { exact: true }).click();
     await expect(
       page
+        .getByText("Earlier saved attempts", { exact: true })
+        .locator("..")
         .locator(".evidence-record")
         .filter({ hasText: "The lamp stayed bright" })
         .first(),
@@ -779,6 +801,10 @@ test("custom curriculum merge preview retains edited content and saved work", as
       .getByRole("button", { name: "The Academy", exact: false })
       .click();
     await page.getByRole("button", { name: /LESSON 01/ }).click();
+    await page.getByText("More options", { exact: true }).click();
+    await page
+      .getByText("More explanation and what to look for", { exact: true })
+      .click();
     await expect(
       page.getByText("A treasured custom teaching note.", { exact: true }),
     ).toBeVisible();

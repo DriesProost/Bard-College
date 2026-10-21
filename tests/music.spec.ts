@@ -81,8 +81,9 @@ test("Music foundations: counted keyboard tab, synthetic playback, local capture
         name: /Idea A, high e, bar 1, eighth slot 2,/,
       }),
     ).toHaveAttribute("aria-label", /rest/);
+    await page.getByText("More options", { exact: true }).click();
     await page
-      .getByLabel("What did you try, and what changed?")
+      .getByLabel("What did you try, and what changed? (optional)")
       .fill("The higher answer leaves a question.");
     await page
       .getByRole("button", { name: "Play Idea A", exact: true })
@@ -256,6 +257,7 @@ test("Music foundations: counted keyboard tab, synthetic playback, local capture
     );
     await page.getByRole("button", { name: "Back to the Academy" }).click();
     await page.getByRole("button", { name: /An idea before a scale/ }).click();
+    await page.getByText("More options", { exact: true }).click();
     await page
       .getByRole("button", {
         name: "Start another practice session",
@@ -279,17 +281,11 @@ test("Music foundations: counted keyboard tab, synthetic playback, local capture
     expect(input.studentText).toContain("Written musical plan (not heard)");
     expect(calls[0].input).not.toContain("audio/webm");
     expect(calls[0].input).not.toContain(takes[0].id);
-    await page.getByText("Try a revision", { exact: true }).click();
-    await page
-      .getByRole("button", { name: "Copy original into revision", exact: true })
-      .click();
     await page
       .getByLabel("Musical intention", { exact: true })
       .last()
       .fill("A more open question");
-    await page
-      .getByRole("button", { name: "Save revision", exact: true })
-      .click();
+    await page.getByRole("button", { name: "Save draft", exact: true }).click();
     await page.screenshot({
       path: "artifacts/phase2-conservatory.png",
       fullPage: true,
@@ -309,7 +305,7 @@ test("Music foundations: counted keyboard tab, synthetic playback, local capture
     state = await page.evaluate(() => window.bard.load());
     expect(state.evidence[0].faculty).toBe("music");
     expect(
-      state.attempts.find((a) => a.lessonId === "music-01")!.revision,
+      state.attempts.find((a) => a.lessonId === "music-01")!.body,
     ).toContain("A more open question");
     expect(
       await page.evaluate(() => window.bard.listRecordings("music-01")),

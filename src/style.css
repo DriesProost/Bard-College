@@ -2087,3 +2087,32 @@ dialog p {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+.simple-lesson {
+  max-width: 940px;
+  margin: 0 auto;
+}
+.simple-lesson > .paper-card {
+  margin-bottom: 20px;
+}
+.simple-lesson h2 {
+  font-size: 23px;
+  margin: 0 0 16px;
+}
+.simple-lesson .plain-task {
+  font-size: 16px;
+  line-height: 1.7;
+}
+.simple-lesson blockquote {
+  margin: 12px 0;
+}
+.simple-lesson .lesson-options > summary {
+  cursor: pointer;
+}
+.simple-lesson .lesson-options > *:not(summary) {
+  margin-top: 18px;
+}
+.simple-lesson .evidence-panel {
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
