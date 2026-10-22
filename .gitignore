@@ -19,3 +19,6 @@ reference-books/
 Writing.zip
 MELODY~1.zip
 THESON~1.zip
+
+# Explicitly requested download of the user-uploaded Fry EPUB; other books stay excluded.
+!downloads/books/Stephen-Fry-The-Ode-Less-Travelled.epub

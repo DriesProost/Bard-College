@@ -6,6 +6,10 @@ A local-first Windows desktop college for poetry and songwriting. Electron, Reac
 
 [Download the repository ZIP](https://github.com/DriesProost/Bard-College/archive/refs/heads/main.zip), extract it, and follow [the Windows instructions](downloads/windows/README.md). The installer is included in three parts with a checksum-verifying helper. No development tools are needed to install.
 
+## Requested book download
+
+[Stephen Fry — The Ode Less Travelled (EPUB)](downloads/books/README.md) is available separately at your request. Application builds still exclude all reference books; the other books remain private.
+
 ## Install on Windows
 
 Use `release/Bards-College-Setup-1.4.0-x64.exe` on Windows 10/11 x64. The installed application is self-contained: **no VS Code, Node.js, Git or development server is required; local writing and saved recordings work offline, while new lesson introductions and reviews require the API**. AI needs a connection and your own API key. The installer is unsigned; see [WINDOWS_VALIDATION.md](WINDOWS_VALIDATION.md) for installation, key protection and the PC acceptance check.
